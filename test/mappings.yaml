@@ -1,8 +1,0 @@
-gender:
-  M: 8507   # Male
-  F: 8532   # Female
-
-admission_type:
-  EMERGENCY: 9203
-  ELECTIVE: 9202
-  URGENT: 9201
