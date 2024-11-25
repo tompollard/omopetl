@@ -16,9 +16,9 @@ myproject/
 ├── config/
 │   ├── etl_config.yaml      # ETL configuration
 │   ├── mappings.yaml        # Column mappings and transformations
-│   ├── source_schema.yaml    # Source schema
-│   ├── target_schema.yaml     # Target schema (OMOP)
+│   ├── source_schema.yaml   # Source schema
+│   ├── target_schema.yaml   # Target schema (OMOP)
 ├── data/
-│   ├── source/               # Input CSV files
-│   ├── target/                # Output CSV files (OMOP)
+│   ├── source/              # Input CSV files
+│   ├── target/              # Output CSV files (OMOP)
 ```
