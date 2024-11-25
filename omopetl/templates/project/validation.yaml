@@ -1,0 +1,11 @@
+validation:
+  person:
+    - column: birth_datetime
+      rule: not_null
+  visit_occurrence:
+    - column: visit_start_datetime
+      rule: not_null
+  condition_occurrence:
+    - column: condition_concept_id
+      rule: valid_concept
+      vocabulary: SNOMED
