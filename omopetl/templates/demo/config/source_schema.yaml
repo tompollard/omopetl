@@ -1,0 +1,10 @@
+patients:
+  table_name: patients
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    gender:
+      type: String
+    dob:
+      type: DateTime
