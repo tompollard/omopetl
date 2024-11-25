@@ -1,14 +1,95 @@
 person_mapping:
   - source_column: subject_id
     target_column: person_id
-
-  - source_column: dob
-    target_column: birth_datetime
-
   - source_column: gender
     target_column: gender_concept_id
     transformation:
       type: map
       values:
-        M: 8507  # Male
-        F: 8532  # Female
+        M: 8507
+        F: 8532
+  - source_column: dob
+    target_column: birth_datetime
+
+visit_occurrence_mapping:
+  - source_column: hadm_id
+    target_column: visit_occurrence_id
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: admittime
+    target_column: visit_start_datetime
+  - source_column: dischtime
+    target_column: visit_end_datetime
+  - source_column: admission_type
+    target_column: visit_concept_id
+    transformation:
+      type: map
+      values:
+        EMERGENCY: 9203
+        URGENT: 9203
+        ELECTIVE: 9201
+
+visit_detail_mapping:
+  - source_column: stay_id
+    target_column: visit_detail_id
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: hadm_id
+    target_column: visit_occurrence_id
+  - source_column: intime
+    target_column: visit_detail_start_datetime
+  - source_column: outtime
+    target_column: visit_detail_end_datetime
+
+death_mapping:
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: dod
+    target_column: death_datetime
+
+condition_occurrence_mapping:
+  - source_column: icd_code
+    target_column: condition_source_value
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: hadm_id
+    target_column: visit_occurrence_id
+  - source_column: seq_num
+    target_column: condition_start_datetime
+  - source_column: icd_version
+    target_column: condition_concept_id
+    transformation:
+      type: lookup
+      vocabulary: icd_to_snomed
+
+procedure_occurrence_mapping:
+  - source_column: icd_code
+    target_column: procedure_source_value
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: hadm_id
+    target_column: visit_occurrence_id
+  - source_column: icd_version
+    target_column: procedure_concept_id
+    transformation:
+      type: lookup
+      vocabulary: icd_to_snomed
+
+measurement_mapping:
+  - source_column: itemid
+    target_column: measurement_source_value
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: hadm_id
+    target_column: visit_occurrence_id
+  - source_column: charttime
+    target_column: measurement_datetime
+  - source_column: value
+    target_column: value_as_number
+  - source_column: valuenum
+    target_column: value_as_concept_id
+    transformation:
+      type: map
+      values:
+        0: 0
+        1: 1

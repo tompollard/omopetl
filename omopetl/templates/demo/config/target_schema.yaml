@@ -8,3 +8,18 @@ person:
       type: Integer
     birth_datetime:
       type: DateTime
+
+visit_occurrence:
+  table_name: visit_occurrence
+  columns:
+    visit_occurrence_id:
+      type: Integer
+      primary_key: true
+    person_id:
+      type: Integer
+    visit_concept_id:
+      type: Integer
+    visit_start_datetime:
+      type: DateTime
+    visit_end_datetime:
+      type: DateTime
