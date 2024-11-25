@@ -1,0 +1,10 @@
+person:
+  table_name: person
+  columns:
+    person_id:
+      type: Integer
+      primary_key: true
+    gender_concept_id:
+      type: Integer
+    birth_datetime:
+      type: DateTime

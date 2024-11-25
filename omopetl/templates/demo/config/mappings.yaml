@@ -1,8 +1,14 @@
-gender:
-  M: 8507   # Male
-  F: 8532   # Female
+person_mapping:
+  - source_column: subject_id
+    target_column: person_id
 
-admission_type:
-  EMERGENCY: 9203
-  ELECTIVE: 9202
-  URGENT: 9201
+  - source_column: dob
+    target_column: birth_datetime
+
+  - source_column: gender
+    target_column: gender_concept_id
+    transformation:
+      type: map
+      values:
+        M: 8507  # Male
+        F: 8532  # Female

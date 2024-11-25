@@ -1,25 +1,13 @@
 etl:
   source:
-    database: mimic
-    connection:
-      type: postgres
-      host: localhost
-      port: 5432
-      user: mimic_user
-      password: mimic_password
-      database: mimic_db
-
+    type: csv
+    directory: ./data/source
+    schema_file: source_schema.yaml
   target:
-    database: omop
-    connection:
-      type: postgres
-      host: localhost
-      port: 5432
-      user: omop_user
-      password: omop_password
-      database: omop_db
-
-  steps:
-    extract: []
-    transform: []
-    load: []
+    type: csv
+    directory: ./data/target
+    schema_file: target_schema.yaml
+  mappings:
+    - source_table: patients
+      target_table: person
+      column_mappings: person_mapping
