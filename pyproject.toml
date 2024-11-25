@@ -1,0 +1,7 @@
+[project]
+name = "omopetl"
+version = "0.1"
+dependencies = ["click"]
+
+[project.scripts]
+omopetl = "omopetl.cli:cli"
