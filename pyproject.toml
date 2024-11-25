@@ -1,7 +1,16 @@
 [project]
 name = "omopetl"
-version = "0.1"
-dependencies = ["click"]
+version = "0.1.0"
+description = "A package for transforming data to OMOP"
+dependencies = [
+    "click>=8.0.0",        # For the CLI interface
+    "pandas>=2.0.0",       # For data manipulation
+    "sqlalchemy>=2.0.0",   # For ORM-based database interactions
+    "pyyaml>=6.0",         # For YAML configuration parsing
+]
 
 [project.scripts]
 omopetl = "omopetl.cli:cli"
+
+[tool.pytest.ini_options]
+norecursedirs = ["omopetl/templates"]
