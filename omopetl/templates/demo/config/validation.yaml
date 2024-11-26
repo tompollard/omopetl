@@ -1,11 +1,19 @@
 validation:
   person:
     - column: birth_datetime
-      rule: not_null
+      rule: range
+      min: "1900-01-01"
+      max: "2023-12-31"
   visit_occurrence:
     - column: visit_start_datetime
       rule: not_null
+    - column: visit_occurrence_id
+      rule: unique
   condition_occurrence:
     - column: condition_concept_id
       rule: valid_concept
       vocabulary: SNOMED
+  measurement:
+    - column: measurement_source_value
+      rule: regex
+      pattern: "^[A-Z0-9_-]+$"

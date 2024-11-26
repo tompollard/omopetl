@@ -1,4 +1,5 @@
-click==8.1.3              # For building the command-line interface
-pandas==2.0.3             # For data manipulation and transformation
-PyYAML==6.0.2
-sqlalchemy==2.0.20        # For ORM-based database interactions
+click>=8.1.3              # For building the command-line interface
+numpy>=2.1.3              # Numerical
+pandas>=2.0.3             # For data manipulation and transformation
+PyYAML>=6.0.2
+sqlalchemy>=2.0.20        # For ORM-based database interactions

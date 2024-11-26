@@ -8,3 +8,83 @@ person:
       type: Integer
     birth_datetime:
       type: DateTime
+
+visit_occurrence:
+  table_name: visit_occurrence
+  columns:
+    visit_occurrence_id:
+      type: Integer
+      primary_key: true
+    person_id:
+      type: Integer
+    visit_concept_id:
+      type: Integer
+    visit_start_datetime:
+      type: DateTime
+    visit_end_datetime:
+      type: DateTime
+
+visit_detail:
+  table_name: visit_detail
+  columns:
+    visit_detail_id:
+      type: Integer
+    person_id:
+      type: Integer
+    visit_occurrence_id:
+      type: Integer
+    visit_detail_start_datetime:
+      type: DateTime
+    visit_detail_end_datetime:
+      type: DateTime
+
+death:
+  table_name: death
+  columns:
+    person_id:
+      type: Integer
+      primary_key: true
+    death_datetime:
+      type: DateTime
+
+condition_occurrence:
+  table_name: condition_occurrence
+  columns:
+    condition_source_value:
+      type: String
+    person_id:
+      type: Integer
+    visit_occurrence_id:
+      type: Integer
+    condition_start_datetime:
+      type: DateTime
+    condition_concept_id:
+      type: Integer
+
+procedure_occurrence:
+  table_name: procedure_occurrence
+  columns:
+    procedure_source_value:
+      type: String
+    person_id:
+      type: Integer
+    visit_occurrence_id:
+      type: Integer
+    procedure_concept_id:
+      type: Integer
+
+measurement:
+  table_name: measurement
+  columns:
+    measurement_source_value:
+      type: String
+    person_id:
+      type: Integer
+    visit_occurrence_id:
+      type: Integer
+    measurement_datetime:
+      type: DateTime
+    value_as_number:
+      type: Float
+    value_as_concept_id:
+      type: Integer
