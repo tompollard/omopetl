@@ -1,0 +1,100 @@
+icd_code,icd_version,long_title
+0090,9,"Infectious colitis, enteritis, and gastroenteritis"
+01160,9,"Tuberculous pneumonia [any form], unspecified"
+01186,9,"Other specified pulmonary tuberculosis, tubercle bacilli not found by bacteriological or histological examination, but tuberculosis confirmed by other methods [inoculation of animals]"
+01200,9,"Tuberculous pleurisy, unspecified"
+01236,9,"Tuberculous laryngitis, tubercle bacilli not found by bacteriological or histological examination, but tuberculosis confirmed by other methods [inoculation of animals]"
+01525,9,"Tuberculosis of knee, tubercle bacilli not found by bacteriological examination, but tuberculosis confirmed histologically"
+01631,9,"Tuberculosis of other urinary organs, bacteriological or histological examination not done"
+01641,9,"Tuberculosis of epididymis, bacteriological or histological examination not done"
+01721,9,"Tuberculosis of peripheral lymph nodes, bacteriological or histological examination not done"
+01725,9,"Tuberculosis of peripheral lymph nodes, tubercle bacilli not found by bacteriological examination, but tuberculosis confirmed histologically"
+01730,9,"Tuberculosis of eye, unspecified"
+01790,9,"Tuberculosis of other specified organs, unspecified"
+01886,9,"Other specified miliary tuberculosis, tubercle bacilli not found by bacteriological or histological examination, but tuberculosis confirmed by other methods [inoculation of animals]"
+04149,9,Other and unspecified Escherichia coli [E. coli]
+05600,9,Rubella with unspecified neurological complication
+0701,9,Viral hepatitis A without mention of hepatic coma
+07022,9,Chronic viral hepatitis B with hepatic coma without hepatitis delta
+09152,9,Syphilitic iridocyclitis (secondary)
+0919,9,Unspecified secondary syphilis
+0957,9,"Syphilis of synovium, tendon, and bursa"
+0993,9,Reiter's disease
+1033,9,Mixed lesions of pinta
+11505,9,"Infection by Histoplasma capsulatum, pneumonia"
+1221,9,Echinococcus granulosus infection of lung
+13103,9,Trichomonal prostatitis
+1410,9,Malignant neoplasm of base of tongue
+1503,9,Malignant neoplasm of upper third of esophagus
+1514,9,Malignant neoplasm of body of stomach
+1601,9,"Malignant neoplasm of auditory tube, middle ear, and mastoid air cells"
+1710,9,"Malignant neoplasm of connective and other soft tissue of head, face, and neck"
+1714,9,Malignant neoplasm of connective and other soft tissue of thorax
+17360,9,"Unspecified malignant neoplasm of skin of upper limb, including shoulder"
+1737,9,"Other malignant neoplasm of skin of lower limb, including hip"
+1917,9,Malignant neoplasm of brain stem
+1961,9,Secondary and unspecified malignant neoplasm of intrathoracic lymph nodes
+1992,9,Malignant neoplasm associated with transplant organ
+20086,9,"Other named variants of lymphosarcoma and reticulosarcoma, intrapelvic lymph nodes"
+20223,9,"Sezary's disease, intra-abdominal lymph nodes"
+20240,9,"Leukemic reticuloendotheliosis, unspecified site, extranodal and solid organ sites"
+20491,9,"Unspecified lymphoid leukemia, in remission"
+20511,9,"Chronic myeloid leukemia, in remission"
+2165,9,"Benign neoplasm of skin of trunk, except scrotum"
+22803,9,Hemangioma of retina
+22809,9,Hemangioma of other sites
+2308,9,Carcinoma in situ of liver and biliary system
+2355,9,Neoplasm of uncertain behavior of other and unspecified digestive organs
+23699,9,Neoplasm of uncertain behavior of other and unspecified urinary organs
+2373,9,Neoplasm of uncertain behavior of paraganglia
+23877,9,Post-transplant lymphoproliferative disorder (PTLD)
+24231,9,"Toxic nodular goiter, unspecified type, with mention of thyrotoxic crisis or storm"
+25010,9,"Diabetes with ketoacidosis, type II or unspecified type, not stated as uncontrolled"
+2651,9,Other and unspecified manifestations of thiamine deficiency
+2750,9,Disorders of iron metabolism
+27905,9,Immunodeficiency with increased IgM
+27953,9,Acute on chronic graft-versus-host disease
+28809,9,Other neutropenia
+29010,9,"Presenile dementia, uncomplicated"
+29282,9,Drug-induced persisting dementia
+29512,9,"Disorganized type schizophrenia, chronic"
+29514,9,"Disorganized type schizophrenia, chronic with acute exacerbation"
+29981,9,"Other specified pervasive developmental disorders, residual state"
+30023,9,Social phobia
+30159,9,Other histrionic personality disorder
+3022,9,Pedophilia
+30282,9,Voyeurism
+30285,9,Gender identity disorder in adolescents or adults
+30440,9,"Amphetamine and other psychostimulant dependence, unspecified"
+30543,9,"Sedative, hypnotic or anxiolytic abuse, in remission"
+32713,9,Recurrent hypersomnia
+3373,9,Autonomic dysreflexia
+33920,9,"Post-traumatic headache, unspecified"
+34432,9,Monoplegia of lower limb affecting nondominant side
+3481,9,Anoxic brain damage
+3524,9,Disorders of accessory [11th] nerve
+3564,9,Idiopathic progressive polyneuropathy
+36024,9,Other metallosis of globe
+36029,9,Other degenerative disorders of globe
+36102,9,"Recent retinal detachment, partial, with multiple defects"
+36207,9,Diabetic macular edema
+36229,9,Other nondiabetic proliferative retinopathy
+36270,9,"Hereditary retinal dystrophy, unspecified"
+36352,9,"Circumpapillary dystrophy of choroid, total"
+36403,9,"Secondary iridocyclitis, infectious"
+36475,9,Pupillary abnormalities
+36562,9,Glaucoma associated with ocular inflammations
+36652,9,"Other after-cataract, not obscuring vision"
+36833,9,Fusion with defective stereopsis
+36961,9,One eye: total vision impairment; other eye: not specified
+37261,9,Granuloma of conjunctiva
+37275,9,Conjunctival cysts
+37420,9,"Lagophthalmos, unspecified"
+37832,9,Hypotropia
+37851,9,"Third or oculomotor nerve palsy, partial"
+37951,9,Congenital nystagmus
+37958,9,Deficiencies of smooth pursuit movements
+38052,9,Acquired stenosis of external ear canal secondary to surgery
+38630,9,"Labyrinthitis, unspecified"
+3961,9,Mitral valve stenosis and aortic valve insufficiency
+40519,9,Other benign secondary hypertension
