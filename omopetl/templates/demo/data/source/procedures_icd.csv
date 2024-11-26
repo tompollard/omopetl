@@ -1,0 +1,3 @@
+subject_id,hadm_id,icd_code,icd_version
+1,101,99.04,9
+2,102,37.22,9

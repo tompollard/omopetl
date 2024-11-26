@@ -1,0 +1,3 @@
+itemid,subject_id,hadm_id,charttime,value,valuenum,valueuom
+220045,1,101,2020-05-01 12:15:00,120,120,bpm
+220210,2,102,2019-11-01 13:00:00,98.6,98.6,°F

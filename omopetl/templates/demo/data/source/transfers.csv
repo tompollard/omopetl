@@ -1,0 +1,4 @@
+transfer_id,hadm_id,transfer_time,leave_time,service
+1,101,2020-05-01 13:00:00,2020-05-02 10:00:00,Cardiology
+2,101,2020-05-02 11:00:00,2020-05-05 14:00:00,Neurology
+3,102,2019-11-01 10:00:00,2019-11-07 16:00:00,Surgery
