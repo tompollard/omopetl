@@ -213,3 +213,128 @@ At the core of the `omopetl` project are the transformations. These are a set of
     - type: filter
       condition: "visit_start_datetime >= '2020-01-01'"
 ```
+
+## Configuring your transformation
+
+After creating your new project with `omopetl startproject <PROJECTNAME>`, you will need to configure the transformation. We recommend the following approach:
+
+1. Update `source_schema.yaml` to match your list of source tables, e.g.:
+
+```
+patients:
+  table_name: patients
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    gender:
+      type: String
+
+admissions:
+  table_name: admissions
+  columns:
+    hadm_id:
+      type: Integer
+      primary_key: true
+    subject_id:
+      type: Integer
+    admittime:
+      type: DateTime
+    dischtime:
+      type: DateTime
+```
+
+This file is primarily used for validating your transform (for example, making sure that relationships are maintained between variables).
+
+2. Update `source_schema.yaml` to match your list of target tables, e.g.:
+
+```
+person:
+  table_name: person
+  columns:
+    person_id:
+      type: Integer
+      primary_key: true
+    gender_concept_id:
+      type: Integer
+
+visit_occurrence:
+  table_name: visit_occurrence
+  columns:
+    visit_occurrence_id:
+      type: Integer
+      primary_key: true
+    person_id:
+      type: Integer
+    visit_start_datetime:
+      type: DateTime
+    visit_end_datetime:
+      type: DateTime
+```
+
+This file is primarily used for validating your transform (for example, making sure that relationships are maintained between variables).
+
+3. Add details of your source tables and column mapping rules to `etl_config.yaml`:
+
+```
+etl:
+  source:
+    type: csv
+    directory: ./data/source
+    schema_file: ./config/source_schema.yaml
+
+  target:
+    type: csv
+    directory: ./data/target
+    schema_file: ./config/target_schema.yaml
+
+  mappings:
+    - source_tables:                           # list of tables used for creating the target table
+        - patients
+      target_table: person                     # target table
+      column_mappings: person_mapping          # refers to a ruleset in mappings.yaml
+
+    - source_tables:
+        - admissions
+        - transfers
+      target_table: visit_occurrence
+      column_mappings: visit_occurrence_mapping
+```
+
+4. Add your transformations to `mappings.yaml`:
+
+```
+person_mapping:
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: gender
+    target_column: gender_concept_id
+    transformation:
+      type: map
+      values:
+        M: 8507
+        F: 8532
+
+visit_occurrence_mapping:
+  - source_column: hadm_id
+    target_column: visit_occurrence_id
+  - source_column: subject_id
+    target_column: person_id
+  - source_column: admittime
+    target_column: visit_start_datetime
+  - source_column: dischtime
+    target_column: visit_end_datetime
+```
+
+We suggest starting out with the simple transformations first. For example, try creating a first version of your transformation using only direct mappings.
+
+5. Add custom validation rules to `validation.yaml`. For example, if dates of birth should be within the range of `1900-01-01` and `2023-12-31`, you might choose to add the following rule:
+
+```
+validation:
+  person:
+    - column: birth_datetime
+      rule: range
+      min: "1900-01-01"
+      max: "2023-12-31"
+```
