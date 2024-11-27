@@ -16,6 +16,7 @@ def create_model(table_name, schema):
         attributes[column_name] = Column(column_type, primary_key=column_properties.get('primary_key', False))
     return type(table_name.capitalize(), (Base,), attributes)
 
+
 def load_models(schema_file):
     with open(schema_file, 'r') as f:
         schema = yaml.safe_load(f)

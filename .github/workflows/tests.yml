@@ -32,3 +32,11 @@ jobs:
 
     - name: Run template tests
       run: pytest tests
+
+    - name: Test omopetl CLI commands
+      run: |
+        # Create a demo project
+        omopetl startdemo DEMO
+
+        # Run the ETL in dry mode
+        omopetl run DEMO --dry
