@@ -1,16 +1,11 @@
 person:
-  table_name: person
   columns:
     person_id:
       type: Integer
       primary_key: true
     gender_concept_id:
       type: Integer
-    birth_datetime:
-      type: DateTime
-
 visit_occurrence:
-  table_name: visit_occurrence
   columns:
     visit_occurrence_id:
       type: Integer
@@ -23,9 +18,7 @@ visit_occurrence:
       type: DateTime
     visit_end_datetime:
       type: DateTime
-
 visit_detail:
-  table_name: visit_detail
   columns:
     visit_detail_id:
       type: Integer
@@ -37,18 +30,14 @@ visit_detail:
       type: DateTime
     visit_detail_end_datetime:
       type: DateTime
-
 death:
-  table_name: death
   columns:
     person_id:
       type: Integer
       primary_key: true
     death_datetime:
       type: DateTime
-
 condition_occurrence:
-  table_name: condition_occurrence
   columns:
     condition_source_value:
       type: String
@@ -60,9 +49,7 @@ condition_occurrence:
       type: DateTime
     condition_concept_id:
       type: Integer
-
 procedure_occurrence:
-  table_name: procedure_occurrence
   columns:
     procedure_source_value:
       type: String
@@ -72,9 +59,7 @@ procedure_occurrence:
       type: Integer
     procedure_concept_id:
       type: Integer
-
 measurement:
-  table_name: measurement
   columns:
     measurement_source_value:
       type: String

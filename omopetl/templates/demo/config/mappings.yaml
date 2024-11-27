@@ -8,8 +8,6 @@ person_mapping:
       values:
         M: 8507
         F: 8532
-  - source_column: dob
-    target_column: birth_datetime
 
 visit_occurrence_mapping:
   - source_column: hadm_id

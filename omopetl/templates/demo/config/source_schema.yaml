@@ -1,59 +1,79 @@
-patients:
-  table_name: patients
-  columns:
-    subject_id:
-      type: Integer
-      primary_key: true
-    gender:
-      type: String
-    dob:
-      type: DateTime
-    dod:
-      type: DateTime
+# This schema was automatically inferred by omopetl.
+# Please review and adjust it carefully before using.
 
 admissions:
   table_name: admissions
   columns:
+    subject_id:
+      type: Integer
     hadm_id:
       type: Integer
       primary_key: true
-    subject_id:
-      type: Integer
     admittime:
-      type: DateTime
+      type: String
     dischtime:
-      type: DateTime
+      type: String
+    deathtime:
+      type: String
     admission_type:
       type: String
-
-transfers:
-  table_name: transfers
-  columns:
-    transfer_id:
-      type: Integer
-    hadm_id:
-      type: Integer
-    transfer_time:
-      type: DateTime
-    leave_time:
-      type: DateTime
-    service:
+    admit_provider_id:
       type: String
-
-icustays:
-  table_name: icustays
-  columns:
-    stay_id:
+    admission_location:
+      type: String
+    discharge_location:
+      type: String
+    insurance:
+      type: String
+    language:
+      type: String
+    marital_status:
+      type: String
+    race:
+      type: String
+    edregtime:
+      type: String
+    edouttime:
+      type: String
+    hospital_expire_flag:
       type: Integer
-      primary_key: true
+
+chartevents:
+  table_name: chartevents
+  columns:
     subject_id:
       type: Integer
     hadm_id:
       type: Integer
-    intime:
-      type: DateTime
-    outtime:
-      type: DateTime
+    stay_id:
+      type: Integer
+    caregiver_id:
+      type: Float
+    charttime:
+      type: String
+    storetime:
+      type: String
+    itemid:
+      type: Integer
+    value:
+      type: String
+    valuenum:
+      type: Float
+    valueuom:
+      type: String
+    warning:
+      type: Float
+
+d_icd_diagnoses:
+  table_name: d_icd_diagnoses
+  columns:
+    icd_code:
+      type: Integer
+      primary_key: true
+    icd_version:
+      type: Integer
+    long_title:
+      type: String
 
 diagnoses_icd:
   table_name: diagnoses_icd
@@ -62,11 +82,191 @@ diagnoses_icd:
       type: Integer
     hadm_id:
       type: Integer
+    seq_num:
+      type: Integer
+      primary_key: true
     icd_code:
       type: String
     icd_version:
       type: Integer
-    seq_num:
+
+icustays:
+  table_name: icustays
+  columns:
+    subject_id:
+      type: Integer
+    hadm_id:
+      type: Integer
+    stay_id:
+      type: Integer
+      primary_key: true
+    first_careunit:
+      type: String
+    last_careunit:
+      type: String
+    intime:
+      type: String
+    outtime:
+      type: String
+    los:
+      type: Float
+
+labevents:
+  table_name: labevents
+  columns:
+    labevent_id:
+      type: Integer
+      primary_key: true
+    subject_id:
+      type: Integer
+    hadm_id:
+      type: Float
+    specimen_id:
+      type: Integer
+    itemid:
+      type: Integer
+    order_provider_id:
+      type: Float
+    charttime:
+      type: String
+    storetime:
+      type: String
+    value:
+      type: String
+    valuenum:
+      type: Float
+    valueuom:
+      type: String
+    ref_range_lower:
+      type: Float
+    ref_range_upper:
+      type: Float
+    flag:
+      type: String
+    priority:
+      type: String
+    comments:
+      type: String
+
+microbiologyevents:
+  table_name: microbiologyevents
+  columns:
+    microevent_id:
+      type: Integer
+      primary_key: true
+    subject_id:
+      type: Integer
+    hadm_id:
+      type: Float
+    micro_specimen_id:
+      type: Integer
+    order_provider_id:
+      type: Float
+    chartdate:
+      type: String
+    charttime:
+      type: String
+    spec_itemid:
+      type: Integer
+    spec_type_desc:
+      type: String
+    test_seq:
+      type: Integer
+    storedate:
+      type: String
+    storetime:
+      type: String
+    test_itemid:
+      type: Integer
+    test_name:
+      type: String
+    org_itemid:
+      type: Float
+    org_name:
+      type: String
+    isolate_num:
+      type: Float
+    quantity:
+      type: Float
+    ab_itemid:
+      type: Float
+    ab_name:
+      type: String
+    dilution_text:
+      type: String
+    dilution_comparison:
+      type: String
+    dilution_value:
+      type: Float
+    interpretation:
+      type: String
+    comments:
+      type: String
+
+patients:
+  table_name: patients
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    gender:
+      type: String
+    anchor_age:
+      type: Integer
+    anchor_year:
+      type: Integer
+    anchor_year_group:
+      type: String
+    dod:
+      type: String
+
+procedureevents:
+  table_name: procedureevents
+  columns:
+    subject_id:
+      type: Integer
+    hadm_id:
+      type: Integer
+    stay_id:
+      type: Integer
+    caregiver_id:
+      type: Float
+    starttime:
+      type: String
+    endtime:
+      type: String
+    storetime:
+      type: String
+    itemid:
+      type: Integer
+    value:
+      type: Integer
+    valueuom:
+      type: String
+    location:
+      type: String
+    locationcategory:
+      type: String
+    orderid:
+      type: Integer
+      primary_key: true
+    linkorderid:
+      type: Integer
+    ordercategoryname:
+      type: String
+    ordercategorydescription:
+      type: String
+    patientweight:
+      type: Float
+    isopenbag:
+      type: Integer
+    continueinnextdept:
+      type: Integer
+    statusdescription:
+      type: String
+    ORIGINALAMOUNT:
+      type: Integer
+    ORIGINALRATE:
       type: Integer
 
 procedures_icd:
@@ -74,45 +274,44 @@ procedures_icd:
   columns:
     subject_id:
       type: Integer
+      primary_key: true
     hadm_id:
       type: Integer
     icd_code:
-      type: String
+      type: Float
     icd_version:
       type: Integer
 
-labevents:
-  table_name: labevents
+services:
+  table_name: services
   columns:
-    itemid:
-      type: Integer
     subject_id:
       type: Integer
     hadm_id:
       type: Integer
-    charttime:
-      type: DateTime
-    value:
+    transfertime:
       type: String
-    valuenum:
-      type: Float
-    valueuom:
+      primary_key: true
+    prev_service:
+      type: String
+    curr_service:
       type: String
 
-chartevents:
-  table_name: chartevents
+transfers:
+  table_name: transfers
   columns:
-    itemid:
-      type: Integer
     subject_id:
       type: Integer
     hadm_id:
-      type: Integer
-    charttime:
-      type: DateTime
-    value:
-      type: String
-    valuenum:
       type: Float
-    valueuom:
+    transfer_id:
+      type: Integer
+      primary_key: true
+    eventtype:
+      type: String
+    careunit:
+      type: String
+    intime:
+      type: String
+    outtime:
       type: String
