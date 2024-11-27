@@ -79,7 +79,7 @@ def validate_schema(data, schema, table_name):
 
     extra_columns = [col for col in actual_columns if col not in expected_columns]
     if extra_columns:
-        print(f"Warning: Extra columns in {table_name}: {extra_columns}")
+        print(f"Warning: Columns present in {table_name} table, but not schema file: {extra_columns}")
 
 
 def validate_data(data, validation_rules, table_name):
