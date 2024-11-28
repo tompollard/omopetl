@@ -1,7 +1,5 @@
 import yaml
 import pandas as pd
-import farmhash
-import uuid
 
 
 def load_yaml(file_path):
@@ -26,11 +24,3 @@ def load_yaml(file_path):
     except yaml.YAMLError as e:
         raise ValueError(f"Error parsing YAML file {file_path}: {e}")
     
-def generate_person_id(subject_id):
-    """
-    
-    To generate a universal unique identifier for each patient
-    
-    """
-    generated_uuid = uuid.uuid4()
-    return farmhash.fingerprint64(str(generated_uuid))

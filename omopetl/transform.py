@@ -1,6 +1,4 @@
 import pandas as pd
-import pandas as pd
-import farmhash
 import uuid
 
 
@@ -84,22 +82,10 @@ class Transformer:
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
 
-    def generate_person_id(subject_id):
-        """
-        
-        To generate a universal unique identifier for each patient
-        
-        """
-        generated_uuid = uuid.uuid4()
-        return farmhash.fingerprint64(str(generated_uuid))
-
-    def coalesce(*args):
-        """
-        
-        Return 0 if the result is NULL
-        
-        """
-        return next((arg for arg in args if arg is not None), None)
+    def transform_generate_id(self, source_column, target_column, transformation):
+        """Generate a universal unique identifier for each row in the source column."""
+        self.data[target_column] = [uuid.uuid4() for _ in range(len(self.data[source_column]))]
+        return self.data[target_column]
     
     def transform_filter(self, source_column, target_column, transformation):
         """
