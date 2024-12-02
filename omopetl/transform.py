@@ -55,7 +55,6 @@ class Transformer:
                 transformed_data[target_column] = transformed_column
 
         # Validate relationships
-        breakpoint()
         self._validate_relationships(transformed_data)
 
         return transformed_data
@@ -117,8 +116,19 @@ class Transformer:
         return self.data[source_columns].astype(str).agg(separator.join, axis=1)
 
     def transform_default(self, source_column, target_column, transformation):
-        """Assign a default value."""
-        return transformation["value"]
+        """
+        Assign a default value.
+
+        Parameters:
+        - source_column: Ignored for default transformations.
+        - target_column: The name of the target column to populate.
+        - transformation: Dictionary containing the default value.
+
+        Returns:
+        - Series: A pandas Series filled with the default value, matching the length of the source data.
+        """
+        default_value = transformation["value"]
+        return pd.Series(default_value, index=self.data.index)
 
     def transform_conditional_map(self, source_column, target_column, transformation):
         """Apply conditional mappings."""
