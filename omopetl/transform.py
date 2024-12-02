@@ -22,7 +22,7 @@ class Transformer:
         Returns:
         - DataFrame: Transformed data with only the specified columns.
         """
-        transformed_data = pd.DataFrame()  # Start with an empty DataFrame
+        transformed_data = pd.DataFrame()
 
         for mapping in column_mappings:
             source_column = mapping.get("source_column")
@@ -55,7 +55,18 @@ class Transformer:
             if target_column and transformed_column is not None:
                 transformed_data[target_column] = transformed_column
 
+        # Validate relationships
+        self._validate_relationships(transformed_data)
+
         return transformed_data
+
+    def _validate_relationships(self, transformed_data):
+        """
+        Validate source and target rows.
+        """
+        # Check alignment of rows against original data
+        if len(self.data) != len(transformed_data):
+            raise ValueError("Row count mismatch after transformations. Relationships may be broken.")
 
     # Transformation methods
     def transform_map(self, source_column, target_column, transformation):
@@ -77,7 +88,7 @@ class Transformer:
         """Normalize date values to a specific format."""
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
-    
+
     def transform_filter(self, source_column, target_column, transformation):
         """
         Filter rows based on a condition.
@@ -131,8 +142,19 @@ class Transformer:
         return self.data[source_columns].astype(str).agg(separator.join, axis=1)
 
     def transform_default(self, source_column, target_column, transformation):
-        """Assign a default value."""
-        return transformation["value"]
+        """
+        Assign a default value.
+
+        Parameters:
+        - source_column: Ignored for default transformations.
+        - target_column: The name of the target column to populate.
+        - transformation: Dictionary containing the default value.
+
+        Returns:
+        - Series: A pandas Series filled with the default value, matching the length of the source data.
+        """
+        default_value = transformation["value"]
+        return pd.Series(default_value, index=self.data.index)
 
     def transform_conditional_map(self, source_column, target_column, transformation):
         """Apply conditional mappings."""
