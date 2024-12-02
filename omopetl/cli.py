@@ -2,11 +2,9 @@ import os
 import shutil
 import click
 import yaml
-
 import pandas as pd
-
 from omopetl.pipeline import run_etl
-
+from omopetl.logger import log_info, log_warning, log_error
 
 PROJECT_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates", "project")
 DEMO_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates", "demo")
@@ -24,10 +22,12 @@ def startproject(project_name):
     """Create a new ETL project folder."""
     project_path = os.path.abspath(project_name)
     if os.path.exists(project_path):
+        log_error(f"Error: Directory '{project_name}' already exists.")
         print(f"Error: Directory '{project_name}' already exists.")
         return
 
     shutil.copytree(PROJECT_TEMPLATE_DIR, project_path)
+    log_info(f"Project '{project_name}' created successfully at {project_path}")
     print(f"Project '{project_name}' created successfully at {project_path}")
 
 
@@ -37,10 +37,12 @@ def startdemo(project_name):
     """Create a demo ETL project for a MIMIC to OMOP transformation."""
     project_path = os.path.abspath(project_name)
     if os.path.exists(project_path):
+        log_error(f"Error: Directory '{project_name}' already exists.")
         print(f"Error: Directory '{project_name}' already exists.")
         return
 
     shutil.copytree(DEMO_TEMPLATE_DIR, project_path)
+    log_info(f"Demo project '{project_name}' created successfully at {project_path}")
     print(f"Demo project '{project_name}' created successfully at {project_path}")
 
 
@@ -61,7 +63,12 @@ def inferschema(csv_directory, output_file):
         if file_name.endswith(".csv"):
             table_name = os.path.splitext(file_name)[0]
             file_path = os.path.join(csv_directory, file_name)
-            df = pd.read_csv(file_path)
+            try:
+                df = pd.read_csv(file_path)
+                log_info(f"Reading CSV file: {file_path}")
+            except Exception as e:
+                log_error(f"Error reading file {file_path}: {e}")
+                continue
 
             # Infer schema
             columns = {}
@@ -119,6 +126,7 @@ def inferschema(csv_directory, output_file):
             for table in sorted_schema
         ))
 
+    log_info(f"Inferred schema saved to {output_file}. Please review it carefully.")
     click.echo(f"Inferred schema saved to {output_file}. Please review it carefully.")
 
 
@@ -135,13 +143,16 @@ def run(project_path, dry):
     """
     project_path = os.path.abspath(project_path)
     if not os.path.exists(project_path):
+        log_error(f"Error: Project path '{project_path}' does not exist.")
         raise click.ClickException(f"Project path '{project_path}' does not exist.")
 
     # Execute the ETL pipeline
     run_etl(project_path, dry=dry)
     if dry:
+        log_info("ETL executed in dry run mode. No data was saved.")
         print("ETL executed in dry run mode. No data was saved.")
     else:
+        log_info("ETL completed successfully.")
         print("ETL completed successfully.")
 
 
