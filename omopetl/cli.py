@@ -4,7 +4,7 @@ import click
 import yaml
 import pandas as pd
 from omopetl.pipeline import run_etl
-from logger import log_info, log_warning, log_error
+from omopetl.logger import log_info, log_warning, log_error
 
 PROJECT_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates", "project")
 DEMO_TEMPLATE_DIR = os.path.join(os.path.dirname(__file__), "templates", "demo")

@@ -1,7 +1,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column
 import yaml
-from logger import log_info, log_error
+from omopetl.logger import log_info, log_error
 
 Base = declarative_base()
 

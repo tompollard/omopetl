@@ -2,7 +2,7 @@ import os
 import pandas as pd
 from omopetl.transform import Transformer
 from omopetl.utils import load_yaml
-from logger import log_info, log_warning, log_error  # Import logger
+from omopetl.logger import log_info, log_warning, log_error
 
 def extract_and_combine_data(config, source_tables, project_path, source_schema):
     """
