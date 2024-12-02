@@ -91,25 +91,6 @@ def test_generate_id(transformer):
     assert len(transformed_data) > 0
 
 
-def test_filter(transformer):
-    column_mappings = [
-        {
-            "source_column": None,  # Not applicable for filtering
-            "target_column": None,  # Filtering modifies rows, not columns
-            "transformation": {
-                "type": "filter",
-                "condition": "value > 2",  # Only rows where value > 2 should remain
-            },
-        }
-    ]
-    transformer.apply_transformations(column_mappings)
-
-    # Assert that only rows matching the filter condition remain
-    filtered_data = transformer.data
-    assert len(filtered_data) == 2
-    assert filtered_data["value"].tolist() == [2.5, 3.5]
-
-
 def test_aggregate(transformer):
     column_mappings = [
         {

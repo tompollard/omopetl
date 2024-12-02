@@ -111,19 +111,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
     group_by: [subject_id, charttime]
 ```
 
-6. Row Filtering: Include or exclude rows based on conditions.
-
-    Example: Exclude diagnoses_icd rows with icd_version = 10.
-
-```
-- source_column: icd_version
-  target_column: condition_concept_id
-  transformation:
-    type: filter
-    condition: "icd_version == 9"
-```
-
-7. Concatenation: Concatenate multiple columns into a single column, often used for generating unique identifiers.
+6. Concatenation: Concatenate multiple columns into a single column, often used for generating unique identifiers.
 
     Example: Concatenating subject_id and stay_id to form visit_detail_id.
 
@@ -135,7 +123,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
     separator: "-"
 ```
 
-8. Default Values: Assign a default value to a column when the source column is missing or null.
+7. Default Values: Assign a default value to a column when the source column is missing or null.
 
     Example: Assigning a default concept ID for missing admission_type.
 
@@ -146,7 +134,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
     value: 44818518
 ```
 
-9. Multi-Table Merging: Combine data from multiple source tables into a single target table.
+8. Multi-Table Merging: Combine data from multiple source tables into a single target table.
 
     Example: Combining admissions and transfers into VISIT_OCCURRENCE.
 
@@ -158,7 +146,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
     merge_key: hadm_id
 ```
 
-10. Conditional Transformations: Apply transformations based on conditions in the source data.
+9. Conditional Transformations: Apply transformations based on conditions in the source data.
 
     Example: Assigning different visit_concept_id values based on admission_type.
 
@@ -174,7 +162,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
         value: 9201
 ```
 
-11. Derived Columns: Calculate new columns from existing data (e.g., differences between dates).
+10. Derived Columns: Calculate new columns from existing data (e.g., differences between dates).
 
     Example: Calculating length_of_stay as the difference between dischtime and admittime.
 
@@ -186,7 +174,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
     formula: "dischtime - admittime"
 ```
 
-12. Splitting Columns: Split a single source column into multiple target columns.
+11. Splitting Columns: Split a single source column into multiple target columns.
 
     Example: Splitting dob into year_of_birth, month_of_birth, and day_of_birth.
 
@@ -200,7 +188,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
     type: split_date
 ```
 
-13. Multi-Step Transformations: Apply a sequence of transformations to a single column.
+12. Multi-Step Transformations: Apply a sequence of transformations to a single column.
 
     Example: Normalize a date and then filter rows based on the normalized value.
 
@@ -246,7 +234,9 @@ admissions:
 
 This file is primarily used for validating your transform (for example, making sure that relationships are maintained between variables).
 
-2. Update `source_schema.yaml` to match your list of target tables, e.g.:
+You can use `omopetl inferschema <PATH_TO_DATA>` to create a draft schema based on a set of CSV files. Careful though, the `primary_key` fields are likely to be incorrect, so review is needed.
+
+2. Update `target_schema.yaml` to match your list of target tables, e.g.:
 
 ```
 person:
