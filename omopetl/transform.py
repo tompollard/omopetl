@@ -76,8 +76,7 @@ class Transformer:
     
     def transform_generate_id(self, source_column, target_column, transformation):
         """Generate a universal unique identifier for each row in the source column."""
-        new_uuid = uuid.uuid4()
-        return new_uuid
+        return [str(uuid.uuid4()) for _ in range(len(self.data))]
 
     def transform_lookup(self, source_column, target_column, transformation):
         """Perform a lookup transformation using a vocabulary."""

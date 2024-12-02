@@ -87,7 +87,7 @@ def test_generate_id(transformer):
         }
     ]
     transformed_data = transformer.apply_transformations(column_mappings)
-    assert transformed_data.tolist() is not None
+    assert transformed_data is not None
     assert len(transformed_data) > 0
 
 
