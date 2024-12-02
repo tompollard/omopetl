@@ -78,26 +78,6 @@ class Transformer:
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
     
-    def transform_filter(self, source_column, target_column, transformation):
-        """
-        Filter rows based on a condition.
-
-        Parameters:
-        - source_column: Not applicable for filtering.
-        - target_column: Not applicable for filtering.
-        - transformation: Transformation details including condition.
-
-        Returns:
-        - None: The filtering operation modifies self.data in place.
-        """
-        condition = transformation["condition"]
-
-        # Apply the condition to filter rows in the DataFrame
-        self.data = self.data.query(condition).copy()
-
-        # No return; filtering modifies self.data directly
-        return None
-
     def transform_aggregate(self, source_column, target_column, transformation):
         """Aggregate values based on a group_by condition."""
         group_by = transformation["group_by"]

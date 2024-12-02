@@ -77,6 +77,20 @@ def test_normalize_date(transformer):
     assert transformed_data["birth_datetime"].tolist() == ["1980-01-01", "1990-05-20", "2000-07-15"]
 
 
+def test_generate_id(transformer):
+    column_mappings = [
+        {
+            "target_column": "person_id",
+            "transformation": {
+                "type": "generate_id"
+            },
+        }
+    ]
+    transformed_data = transformer.apply_transformations(column_mappings)
+    assert transformed_data.tolist() is not None
+    assert len(transformed_data) > 0
+
+
 def test_filter(transformer):
     column_mappings = [
         {
