@@ -1,6 +1,5 @@
 person_mapping:
-  - source_column: subject_id
-    target_column: person_id
+  - target_column: person_id
     transformation:
       type: generate_id
   - source_column: gender

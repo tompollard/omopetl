@@ -1,5 +1,4 @@
 import yaml
-import pandas as pd
 
 
 def load_yaml(file_path):
