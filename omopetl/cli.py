@@ -75,6 +75,7 @@ def inferschema(csv_directory, output_file):
             potential_primary_keys = []
 
             for col_name, dtype in df.dtypes.items():
+                # Map Pandas dtypes to schema types
                 if pd.api.types.is_integer_dtype(dtype):
                     col_type = "Integer"
                 elif pd.api.types.is_float_dtype(dtype):
@@ -86,17 +87,21 @@ def inferschema(csv_directory, output_file):
                 else:
                     col_type = "String"
 
+                # Add column to schema
                 columns[col_name] = {"type": col_type}
 
+                # Check uniqueness and non-null for potential primary key
                 if df[col_name].is_unique and df[col_name].notnull().all():
                     potential_primary_keys.append(col_name)
 
+            # Apply heuristics to select the primary key
             primary_key = None
             for key_candidate in potential_primary_keys:
                 if key_candidate == "id" or key_candidate == f"{table_name}_id" or key_candidate.endswith("_id"):
                     primary_key = key_candidate
                     break
             if not primary_key and potential_primary_keys:
+                # Default to the first unique column
                 primary_key = potential_primary_keys[0]
 
             if primary_key:
@@ -104,14 +109,18 @@ def inferschema(csv_directory, output_file):
 
             schema[table_name] = {"table_name": table_name, "columns": columns}
 
+    # Sort schema file alphabetically
     sorted_schema = dict(sorted(schema.items()))
 
+    # Write schema to YAML with a header comment and empty lines between tables
     with open(output_file, "w") as yaml_file:
+        # Add header
         yaml_file.write(
             "# This schema was automatically inferred by omopetl.\n"
             "# Please review and adjust it carefully before using.\n\n"
         )
 
+        # Write schema with empty lines between tables
         yaml_file.write("\n".join(
             yaml.dump({table: sorted_schema[table]}, default_flow_style=False, sort_keys=False)
             for table in sorted_schema
@@ -137,6 +146,7 @@ def run(project_path, dry):
         log_error(f"Error: Project path '{project_path}' does not exist.")
         raise click.ClickException(f"Project path '{project_path}' does not exist.")
 
+    # Execute the ETL pipeline
     run_etl(project_path, dry=dry)
     if dry:
         log_info("ETL executed in dry run mode. No data was saved.")

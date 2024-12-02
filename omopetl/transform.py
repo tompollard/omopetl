@@ -77,6 +77,7 @@ class Transformer:
         """
         Validate source and target rows.
         """
+        # Check alignment of rows against original data
         if len(self.data) != len(transformed_data):
             logger.error("Row count mismatch after transformations. Relationships may be broken.")
             raise ValueError("Row count mismatch after transformations. Relationships may be broken.")
@@ -123,7 +124,15 @@ class Transformer:
         return self.data[target_column]
 
     def transform_concatenate(self, source_columns, target_column, transformation):
-        """Concatenate multiple columns into a single column."""
+        """
+        Concatenate multiple columns into a single column.
+        Parameters:
+            - source_columns: List of columns to concatenate.
+            - target_column: The resulting target column name.
+            - transformation: Dictionary containing transformation details.
+        Returns:
+            - Series: Concatenated column as a pandas Series.
+        """
         logger.info(f"Concatenating columns {', '.join(source_columns)} into {target_column}")
         if not source_columns:
             raise KeyError("source_columns is required for concatenate transformation.")
@@ -131,7 +140,15 @@ class Transformer:
         return self.data[source_columns].astype(str).agg(separator.join, axis=1)
 
     def transform_default(self, source_column, target_column, transformation):
-        """Assign a default value."""
+        """
+        Assign a default value.
+        Parameters:
+            - source_column: Ignored for default transformations.
+            - target_column: The name of the target column to populate.
+            - transformation: Dictionary containing the default value.
+        Returns:
+            - Series: A pandas Series filled with the default value, matching the length of the source data.
+        """
         logger.info(f"Assigning default value for {target_column}")
         default_value = transformation["value"]
         return pd.Series(default_value, index=self.data.index)

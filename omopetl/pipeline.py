@@ -7,6 +7,14 @@ from omopetl.logger import log_info, log_warning, log_error
 def extract_and_combine_data(config, source_tables, project_path, source_schema):
     """
     Extract data from multiple source tables and combine them.
+
+    Parameters:
+        - config: The ETL configuration.
+        - source_tables: List of source tables to extract data from.
+        - project_path: The project folder path.
+        - source_schema: The source schema definition for validation.
+    Returns:
+        - DataFrame: Combined data from all source tables.
     """
     combined_data = pd.DataFrame()
     source_dir = os.path.join(project_path, config['etl']['source']['directory'])
@@ -36,6 +44,12 @@ def extract_and_combine_data(config, source_tables, project_path, source_schema)
 def load_data(config, data, target_table, project_path):
     """
     Load data into the target, resolving paths relative to the project path.
+
+    Parameters:
+        - config: The ETL configuration.
+        - data: Transformed DataFrame.
+        - target_table: Name of the target table.
+        - project_path: The project folder path.
     """
     target_type = config['etl']['target']['type']
     target_dir = os.path.join(project_path, config['etl']['target']['directory'])
@@ -55,6 +69,13 @@ def load_data(config, data, target_table, project_path):
 def validate_schema(data, schema, table_name):
     """
     Validate a DataFrame against the schema.
+
+    Parameters:
+        - data: pd.DataFrame to validate.
+        - schema: Dictionary of the schema definition.
+        - table_name: Name of the table to validate.
+    Raises:
+        - ValueError: If the schema validation fails.
     """
     expected_columns = schema.get(table_name, {}).get("columns", {})
     actual_columns = data.columns
@@ -74,13 +95,24 @@ def validate_schema(data, schema, table_name):
 def validate_data(data, validation_rules, table_name):
     """
     Validate data against rules from validation.yaml.
+
+    Parameters:
+        - data: DataFrame to validate.
+        - validation_rules: Validation rules for the table.
+        - table_name: Name of the table being validated.
+    Raises:
+        - ValueError: If any validation rule is violated.
     """
-    pass  # Add your validation logic here
+    pass 
 
 
 def run_etl(project_path, dry=False):
     """
     Main ETL pipeline.
+
+    Parameters:
+        - project_path: Path to the project folder.
+        - dry: If True, run the ETL without saving the output (dry run).
     """
     log_info(f"Starting ETL process for project: {project_path}")
     
