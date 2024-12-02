@@ -30,12 +30,6 @@ class Transformer:
             target_column = mapping["target_column"]
             transformation = mapping.get("transformation")
 
-            if 'transform' in mapping and mapping['transform'] == 'generate_person_id':
-                transformed_data[target_column] = self.data[source_column].apply(generate_person_id)
-            
-            else:
-                # If no transformation, just copy the column
-                transformed_data[target_column] = self.data[source_column]
 
             # Handle direct column mapping
             if not transformation:
@@ -54,8 +48,6 @@ class Transformer:
                 if not source_columns:
                     raise KeyError("source_columns is required for concatenate transformation.")
                 transformed_column = method(source_columns, target_column, transformation)
-            elif transform_type == 'coalesce' and source_columns:
-                transformed_data[target_column] = self.data[source_columns].apply(lambda row: coalesce(*row), axis=1)
             else:
                 # Pass source_column for other transformations
                 transformed_column = method(source_column, target_column, transformation)
@@ -86,11 +78,6 @@ class Transformer:
         """Normalize date values to a specific format."""
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
-
-    def transform_generate_id(self, source_column, target_column, transformation):
-        """Generate a universal unique identifier for each row in the source column."""
-        self.data[target_column] = [uuid.uuid4() for _ in range(len(self.data[source_column]))]
-        return self.data[target_column]
     
     def transform_filter(self, source_column, target_column, transformation):
         """
