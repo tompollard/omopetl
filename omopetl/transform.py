@@ -21,7 +21,7 @@ class Transformer:
         Returns:
         - DataFrame: Transformed data with only the specified columns.
         """
-        transformed_data = pd.DataFrame()  # Start with an empty DataFrame
+        transformed_data = pd.DataFrame()
 
         for mapping in column_mappings:
             source_column = mapping.get("source_column")
@@ -54,7 +54,19 @@ class Transformer:
             if target_column and transformed_column is not None:
                 transformed_data[target_column] = transformed_column
 
+        # Validate relationships
+        breakpoint()
+        self._validate_relationships(transformed_data)
+
         return transformed_data
+
+    def _validate_relationships(self, transformed_data):
+        """
+        Validate source and target rows.
+        """
+        # Check alignment of rows against original data
+        if len(self.data) != len(transformed_data):
+            raise ValueError("Row count mismatch after transformations. Relationships may be broken.")
 
     # Transformation methods
     def transform_map(self, source_column, target_column, transformation):
@@ -71,26 +83,6 @@ class Transformer:
         """Normalize date values to a specific format."""
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
-
-    def transform_filter(self, source_column, target_column, transformation):
-        """
-        Filter rows based on a condition.
-
-        Parameters:
-        - source_column: Not applicable for filtering.
-        - target_column: Not applicable for filtering.
-        - transformation: Transformation details including condition.
-
-        Returns:
-        - None: The filtering operation modifies self.data in place.
-        """
-        condition = transformation["condition"]
-
-        # Apply the condition to filter rows in the DataFrame
-        self.data = self.data.query(condition).copy()
-
-        # No return; filtering modifies self.data directly
-        return None
 
     def transform_aggregate(self, source_column, target_column, transformation):
         """Aggregate values based on a group_by condition."""
