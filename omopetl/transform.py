@@ -1,4 +1,5 @@
 import pandas as pd
+import uuid
 
 
 class Transformer:
@@ -72,6 +73,10 @@ class Transformer:
         """Map values in the source column to new values."""
         value_map = transformation["values"]
         return self.data[source_column].map(value_map).astype("Int64")
+    
+    def transform_generate_id(self, source_column, target_column, transformation):
+        """Generate a universal unique identifier for each row in the source column."""
+        return [str(uuid.uuid4()) for _ in range(len(self.data))]
 
     def transform_lookup(self, source_column, target_column, transformation):
         """Perform a lookup transformation using a vocabulary."""
