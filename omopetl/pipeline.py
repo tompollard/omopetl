@@ -116,21 +116,29 @@ def run_etl(project_path, dry=False):
     source_schema = load_yaml(source_schema_path)
     target_schema = load_yaml(target_schema_path)
 
-    for table_config in etl_config['etl']['mappings']:
-        # Support multiple source tables
-        source_tables = table_config['source_tables']
-        target_table = table_config['target_table']
-        column_mappings = mappings[table_config['column_mappings']]
+    for mapping_name in etl_config['etl']['mappings']:
 
-        print(f"Processing tables: {', '.join(source_tables)} -> {target_table}")
+        mapping_config = mappings[mapping_name]
+        source_table = mapping_config['source_table']
+        target_table = mapping_config['target_table']
+        transformations = mapping_config['transformations']
 
-        # Extract and combine data
-        data = extract_and_combine_data(etl_config, source_tables,
-                                        project_path, source_schema)
+        print(f"Mapping {source_table} -> {target_table}")
 
-        # Transform
+        # Extract source data
+        source_dir = os.path.join(project_path, etl_config['etl']['source']['directory'])
+        source_file = os.path.join(source_dir, f"{source_table}.csv")
+        if not os.path.exists(source_file):
+            raise FileNotFoundError(f"Source file not found: {source_file}")
+
+        data = pd.read_csv(source_file)
+
+        # Validate source data schema
+        validate_schema(data, source_schema, source_table)
+
+        # Apply transformations
         transformer = Transformer(data)
-        transformed_data = transformer.apply_transformations(column_mappings)
+        transformed_data = transformer.apply_transformations(transformations, project_path)
 
         # Validate transformed data against target schema
         validate_schema(transformed_data, target_schema, target_table)

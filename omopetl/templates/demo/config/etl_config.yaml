@@ -10,39 +10,4 @@ etl:
     schema_file: ./config/target_schema.yaml
 
   mappings:
-    - source_tables: 
-        - patients
-      target_table: person
-      column_mappings: person_mapping
-
-    - source_tables:
-        - admissions
-        - transfers
-      target_table: visit_occurrence
-      column_mappings: visit_occurrence_mapping
-
-    - source_tables: 
-        - icustays
-      target_table: visit_detail
-      column_mappings: visit_detail_mapping
-
-    - source_tables: 
-        - patients
-      target_table: death
-      column_mappings: death_mapping
-
-    - source_tables:
-        - diagnoses_icd
-      target_table: condition_occurrence
-      column_mappings: condition_occurrence_mapping
-
-    - source_tables:
-        - procedures_icd
-      target_table: procedure_occurrence
-      column_mappings: procedure_occurrence_mapping
-
-    - source_tables:
-        - labevents
-        - chartevents
-      target_table: measurement
-      column_mappings: measurement_mapping
+    - person_mapping
