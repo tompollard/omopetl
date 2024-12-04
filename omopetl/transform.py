@@ -1,5 +1,5 @@
 import os
-
+import uuid
 import pandas as pd
 
 
@@ -194,6 +194,10 @@ class Transformer:
             if f"{part}_of_birth" in transformation["target_columns"]:
                 self.data[f"{part}_of_birth"] = pd.to_datetime(self.data[source_column]).dt.__getattribute__(part)
         return self.data
+    
+    def transform_generate_id(self, source_column, target_column, transformation):
+        """Generate a universal unique identifier for each row in the source column."""
+        return [str(uuid.uuid4()) for _ in range(len(self.data))]
 
     # Helper method
     def perform_lookup(self, vocabulary, code):

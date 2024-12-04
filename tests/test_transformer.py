@@ -169,3 +169,17 @@ def test_derive(transformer, project_path):
     ]
     transformed_data = transformer.apply_transformations(transformations, project_path)
     assert "derived_column" in transformed_data.columns
+
+
+def test_generate_id(transformer, project_path):
+    transformations = [
+        {
+            "target_column": "person_id",
+            "transformation": {
+                "type": "generate_id"
+            },
+        }
+    ]
+    transformed_data = transformer.apply_transformations(transformations, project_path)
+    assert transformed_data is not None
+    assert len(transformed_data) == 3
