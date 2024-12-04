@@ -5,6 +5,8 @@ person:
       primary_key: true
     gender_concept_id:
       type: Integer
+    ethnicity:
+      type: String
 visit_occurrence:
   columns:
     visit_occurrence_id:

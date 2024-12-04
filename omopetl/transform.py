@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 
 
@@ -11,30 +13,72 @@ class Transformer:
         """
         self.data = data
 
-    def apply_transformations(self, column_mappings):
+    def apply_transformations(self, transformations, project_path):
         """
         Apply transformations based on column mappings.
 
         Parameters:
-        - column_mappings: List of mappings with transformation details.
+        - transformations: List of mappings with transformation details.
+        - project_path: Path to the project directory.
 
         Returns:
         - DataFrame: Transformed data with only the specified columns.
         """
         transformed_data = pd.DataFrame()
 
-        for mapping in column_mappings:
+        for mapping in transformations:
             source_column = mapping.get("source_column")
-            source_columns = mapping.get("source_columns")
             target_column = mapping["target_column"]
             transformation = mapping.get("transformation")
 
-            # Handle direct column mapping
+            # Handle linked table transformation
+            if "linked_table" in mapping:
+                linked_table_name = mapping["linked_table"]
+                link_column = mapping["link_column"]
+
+                # Load the linked table
+                linked_table_path = os.path.join(project_path, "data", "source", f"{linked_table_name}.csv")
+                if not os.path.exists(linked_table_path):
+                    raise FileNotFoundError(f"Linked table not found: {linked_table_path}")
+
+                linked_table = pd.read_csv(linked_table_path)
+
+                # Handle aggregation if specified
+                if transformation and transformation["type"] == "aggregate":
+                    method = transformation.get("method", "first")
+                    if method == "most_frequent":
+                        aggregated_data = (
+                            linked_table.groupby(link_column)[source_column]
+                            .agg(lambda x: x.value_counts().idxmax())
+                            .reset_index()
+                        )
+                    elif method == "first":
+                        aggregated_data = linked_table.groupby(link_column).first().reset_index()
+                    elif method == "last":
+                        aggregated_data = linked_table.groupby(link_column).last().reset_index()
+                    else:
+                        raise ValueError(f"Unknown aggregation method: {method}")
+
+                    # Merge aggregated data with the base table
+                    self.data = self.data.merge(
+                        aggregated_data,
+                        how="left",
+                        left_on=link_column,
+                        right_on=link_column,
+                        suffixes=("", "")
+                    )
+
+                # Add the aggregated column to the target column
+                transformed_data[target_column] = self.data[source_column]
+                continue
+
+            # Handle direct column mapping without transformation
             if not transformation:
                 if source_column and target_column:
                     transformed_data[target_column] = self.data[source_column]
                 continue
 
+            # Handle transformations
             transform_type = transformation["type"]
             method = getattr(self, f"transform_{transform_type}", None)
 
@@ -42,15 +86,13 @@ class Transformer:
                 raise ValueError(f"Unsupported transformation type: {transform_type}")
 
             if transform_type == "concatenate":
-                # Pass source_columns for concatenate transformation
+                source_columns = mapping.get("source_columns")
                 if not source_columns:
                     raise KeyError("source_columns is required for concatenate transformation.")
                 transformed_column = method(source_columns, target_column, transformation)
             else:
-                # Pass source_column for other transformations
                 transformed_column = method(source_column, target_column, transformation)
 
-            # Add the transformed column to the transformed DataFrame
             if target_column and transformed_column is not None:
                 transformed_data[target_column] = transformed_column
 
@@ -71,7 +113,7 @@ class Transformer:
     def transform_map(self, source_column, target_column, transformation):
         """Map values in the source column to new values."""
         value_map = transformation["values"]
-        return self.data[source_column].map(value_map).astype("Int64")
+        return self.data[source_column].map(value_map)
 
     def transform_lookup(self, source_column, target_column, transformation):
         """Perform a lookup transformation using a vocabulary."""

@@ -1,15 +1,11 @@
 # OMOPETL
 
-Package for creating OMOP ETLs.
-
-## Usage
-
 The `omopetl` package has two core tools:
 
 1. `startproject`: Create an ETL project that contains configuration files for mapping between two data structures, and
 2. `run`: Run the ETL project on source data to create a set of data in the target format.
 
-### 1. Initializing a transformation project with `startproject`
+## 1. Initializing a transformation project with `startproject`
 
 When a user runs `omopetl startproject myproject`, the following folder structure is created:
 
@@ -27,7 +23,7 @@ myproject/
 
 After initialising the project, it is necessary to configure the transformation rules by updating the files in the `config` folder.
 
-### 2. Running a transformation with `run`
+## 2. Running a transformation with `run`
 
 Once your project is configured, you can run transform the data in your source folder (`./myproject/data/source/*`) with the following command:
 
@@ -37,7 +33,7 @@ omopetl run myproject --dry
 
 The `--dry` argument does a dry run only, meaning the code is run but the files are not saved. Remove the `--dry` argument to run the full transformation.
 
-## Demo
+## 3. Demo
 
 For an example project, you can start a new demo project with:
 
@@ -47,9 +43,19 @@ omopetl startdemo mydemo
 
 This mirrors the structure created with `startproject`. The only difference is that `config` folder is configured to transform the data in the `source` folder to OMOP.
 
-## Transformations
+## 4. Transformations
 
 At the core of the `omopetl` project are the transformations. These are a set of rules that allow you to map from the source format to the target format.
+
+**By design, transformations always return a column with the same length as the source data**. This helps to ensure row level integrity of the transformed data. If a transformation alters the length of an array, an error is raised.
+
+Where multiple source tables map to a target table, `omopetl` follows a "link during transformation" approach**. This involves:
+
+- Identifying the primary table with the primary rows for the transformation.
+- Specifying data to fetch from other tables.
+- Defining aggregation rules to handle multiple matches (e.g. first, average, sum, etc).
+
+## 5. Catalogue of transformations
 
 1. Direct Column Mapping: Map a column from the source table directly to a column in the target table without modification.
 
@@ -202,7 +208,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
       condition: "visit_start_datetime >= '2020-01-01'"
 ```
 
-## Configuring your transformation
+## 6. Configuring your project
 
 After creating your new project with `omopetl startproject <PROJECTNAME>`, you will need to configure the transformation. We recommend the following approach:
 
