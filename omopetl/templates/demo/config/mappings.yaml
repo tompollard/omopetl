@@ -2,8 +2,9 @@ person_mapping:
   source_table: patients
   target_table: person
   transformations:
-    - source_column: subject_id
-      target_column: person_id
+    - target_column: person_id
+      transformation:
+        type: generate_id
     - source_column: gender
       target_column: gender_concept_id
       transformation:
