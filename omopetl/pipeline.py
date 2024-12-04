@@ -88,7 +88,7 @@ def run_etl(project_path, dry=False):
         mapping_config = mappings[mapping_name]
         source_table = mapping_config['source_table']
         target_table = mapping_config['target_table']
-        transformations = mapping_config['transformations']
+        transformations = mapping_config['columns']
 
         print(f"Mapping {source_table} -> {target_table}")
 
