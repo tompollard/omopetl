@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 
 
@@ -61,13 +63,13 @@ class Transformer:
                     self.data = self.data.merge(
                         aggregated_data,
                         how="left",
-                        left_on=source_column,
+                        left_on=link_column,
                         right_on=link_column,
-                        suffixes=("", f"_{linked_table_name}")
+                        suffixes=("", "")
                     )
 
                 # Add the aggregated column to the target column
-                transformed_data[target_column] = self.data[f"{source_column}_{linked_table_name}"]
+                transformed_data[target_column] = self.data[source_column]
                 continue
 
             # Handle direct column mapping without transformation

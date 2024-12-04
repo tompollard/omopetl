@@ -4,39 +4,6 @@ from omopetl.transform import Transformer
 from omopetl.utils import load_yaml
 
 
-def extract_and_combine_data(config, source_tables, project_path, source_schema):
-    """
-    Extract data from multiple source tables and combine them.
-
-    Parameters:
-    - config: The ETL configuration.
-    - source_tables: List of source tables to extract data from.
-    - project_path: The project folder path.
-    - source_schema: The source schema definition for validation.
-
-    Returns:
-    - DataFrame: Combined data from all source tables.
-    """
-    combined_data = pd.DataFrame()
-    source_dir = os.path.join(project_path, config['etl']['source']['directory'])
-
-    for source_table in source_tables:
-        file_path = os.path.join(source_dir, f"{source_table}.csv")
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"Source file not found: {file_path}")
-
-        # extract data
-        data = pd.read_csv(file_path)
-
-        # validate schema
-        validate_schema(data, source_schema, source_table)
-
-        # combine data
-        combined_data = pd.concat([combined_data, data], ignore_index=True)
-
-    return combined_data
-
-
 def load_data(config, data, target_table, project_path):
     """
     Load data into the target, resolving paths relative to the project path.
