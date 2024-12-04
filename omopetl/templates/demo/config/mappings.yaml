@@ -11,6 +11,71 @@ person_mapping:
         values:
           M: 8507
           F: 8532
+    - target_column: year_of_birth
+      transformation:
+        type: derive
+        formula: "anchor_year - anchor_age"
+    - target_column: month_of_birth
+      transformation:
+        type: default
+        value: 
+    - target_column: day_of_birth
+      transformation:
+        type: default
+        value: 
+    - target_column: birth_datetime
+      transformation:
+        type: default
+        value: 
+    - target_column: race_concept_id
+      transformation:
+        type: default
+        value: 
+    - target_column: ethnicity_concept_id
+      transformation:
+        type: default
+        value: 
+    - target_column: location_id
+      transformation:
+        type: default
+        value: 
+    - target_column: provider_id
+      transformation:
+        type: default
+        value: 
+    - target_column: care_site_id
+      transformation:
+        type: default
+        value: 
+    - target_column: person_source_value
+      transformation:
+        type: default
+        value: 
+    - source_column: gender
+      target_column: gender_source_value
+      transformation:
+        type: default
+        value: 
+    - target_column: gender_source_concept_id
+      transformation:
+        type: default
+        value: 0
+    - target_column: race_source_value
+      transformation:
+        type: default
+        value: 
+    - target_column: race_source_concept_id
+      transformation:
+        type: default
+        value: 
+    - target_column: ethnicity_source_value
+      transformation:
+        type: default
+        value: 
+    - target_column: ethnicity_source_concept_id
+      transformation:
+        type: default
+        value: 
     - target_column: ethnicity
       linked_table: admissions
       link_column: subject_id
