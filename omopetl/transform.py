@@ -78,7 +78,12 @@ class Transformer:
         - Series: The transformed column data.
         """
         linked_table_name = transformation["linked_table"]
+        if not linked_table_name:
+            raise KeyError("'linked_table' is required for a 'link' transformation.")
+
         link_column = transformation["link_column"]
+        if not link_column:
+            raise KeyError("'link_column' is required for a 'link' transformation.")
 
         # Override the source_column using the version specified in the transform.
         source_column = transformation["source_column"]
