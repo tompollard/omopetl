@@ -30,13 +30,6 @@ class Transformer:
         for column in columns:
             target_column = column["target_column"]
             transformation = column.get("transformation")
-
-            if not transformation:
-                # Direct column mapping without transformation
-                source_column = column.get("source_column")
-                transformed_data[target_column] = self.data[source_column]
-                continue
-
             transform_type = transformation["type"]
 
             if transform_type == "link":
@@ -108,6 +101,11 @@ class Transformer:
         """Map values in the source column to new values."""
         value_map = transformation["values"]
         return self.data[source_column].map(value_map)
+
+    # Transformation methods
+    def transform_copy(self, source_column, target_column, transformation):
+        """Copy values from the source column."""
+        return self.data[source_column]
 
     def transform_lookup(self, source_column, target_column, transformation):
         """Perform a lookup transformation using a vocabulary."""
@@ -188,7 +186,7 @@ class Transformer:
             if f"{part}_of_birth" in transformation["target_columns"]:
                 self.data[f"{part}_of_birth"] = pd.to_datetime(self.data[source_column]).dt.__getattribute__(part)
         return self.data
-    
+
     def transform_generate_id(self, source_column, target_column, transformation):
         """Generate a universal unique identifier for each row in the source column."""
         return [str(uuid.uuid4()) for _ in range(len(self.data))]
