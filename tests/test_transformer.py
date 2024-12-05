@@ -31,7 +31,13 @@ def transformer(sample_data):
 
 def test_direct_mapping(transformer):
     columns = [
-        {"source_column": "gender", "target_column": "gender_target"}
+        {
+            "source_column": "gender",
+            "target_column": "gender_target",
+            "transformation": {
+                "type": "copy",
+            },
+        }
     ]
     transformed_data = transformer.apply_transformations(columns)
     assert "gender_target" in transformed_data.columns
