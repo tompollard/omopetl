@@ -30,17 +30,35 @@ class Transformer:
 
         for column in columns:
             target_column = column["target_column"]
-            transformation = column.get("transformation")
-            transform_type = transformation["type"]
+            transformations = column.get("transformations", [column.get("transformation")])
 
-            # Load the transformation method
-            method = getattr(self, f"transform_{transform_type}", None)
-            if method is None:
-                raise ValueError(f"Unsupported transformation type: {transform_type}")
+            if not transformations or not isinstance(transformations, list):
+                raise ValueError(f"Invalid or missing transformations for column '{target_column}'")
 
-            # Call the transformation method
-            source_column = column.get("source_column")
-            transformed_data[target_column] = method(source_column, target_column, transformation)
+            # Fetch source columns from the transformation section
+            source_columns = transformations[0].get("source_columns") or [transformations[0].get("source_column")]
+
+            # Handle the initial data for the transformation
+            # For a link transformation, initial data is not from self.data
+            if transformations[0]["type"] == "link":
+                current_data = None
+            else:
+                current_data = self.data[source_columns] if source_columns[0] else None
+
+            # Chain the transformations
+            for transformation in transformations:
+                transform_type = transformation["type"]
+
+                # Load the transformation method
+                method = getattr(self, f"transform_{transform_type}", None)
+                if method is None:
+                    raise ValueError(f"Unsupported transformation type: {transform_type}")
+
+                # Apply the transformation
+                current_data = method(current_data, target_column, transformation)
+
+            # Store the final transformed column
+            transformed_data[target_column] = current_data
 
         # Validate relationships
         self._validate_relationships(transformed_data)
@@ -56,17 +74,19 @@ class Transformer:
             raise ValueError("Row count mismatch after transformations. Relationships may be broken.")
 
     # Transformation methods
-    def transform_map(self, source_column, target_column, transformation):
+    def transform_map(self, current_data, target_column, transformation):
         """Map values in the source column to new values."""
+        source_column = transformation.get("source_column")
         value_map = transformation["values"]
-        return self.data[source_column].map(value_map)
+        return current_data[source_column].map(value_map)
 
     # Transformation methods
-    def transform_copy(self, source_column, target_column, transformation):
+    def transform_copy(self, current_data, target_column, transformation):
         """Copy values from the source column."""
-        return self.data[source_column]
+        source_column = transformation["source_column"]
+        return current_data[source_column]
 
-    def transform_link(self, source_column, target_column, transformation):
+    def transform_link(self, current_data, target_column, transformation):
         """
         Handle linked table transformation with optional aggregation.
 
@@ -79,9 +99,13 @@ class Transformer:
         - Series: The transformed column data.
         """
         linked_table_name = transformation["linked_table"]
-        link_column = transformation["link_column"]
+        if not linked_table_name:
+            raise KeyError("'linked_table' is required for a 'link' transformation.")
 
-        # Override the source_column using the version specified in the transform.
+        link_column = transformation["link_column"]
+        if not link_column:
+            raise KeyError("'link_column' is required for a 'link' transformation.")
+
         source_column = transformation["source_column"]
 
         # Load the linked table
@@ -122,13 +146,15 @@ class Transformer:
         # Return the linked column data
         return self.data[source_column]
 
-    def transform_lookup(self, source_column, target_column, transformation):
+    def transform_lookup(self, current_data, target_column, transformation):
         """Perform a lookup transformation using a vocabulary."""
+        source_column = transformation.get("source_column")
         vocabulary = transformation["vocabulary"]
-        return self.data[source_column].apply(lambda x: self.perform_lookup(vocabulary, x)).astype("Int64")
+        return current_data[source_column].apply(lambda x: self.perform_lookup(vocabulary, x)).astype("Int64")
 
-    def transform_normalize_date(self, source_column, target_column, transformation):
+    def transform_normalize_date(self, current_data, target_column, transformation):
         """Normalize date values to a specific format."""
+        source_column = transformation.get("source_column")
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
 
@@ -150,22 +176,7 @@ class Transformer:
                 target = source_column2
         return target
 
-    def transform_aggregate(self, source_column, target_column, transformation):
-        """Aggregate values based on a group_by condition."""
-        group_by = transformation["group_by"]
-        method = transformation["method"]
-
-        # Perform aggregation
-        aggregated = self.data.groupby(group_by).agg({source_column: method}).reset_index()
-        aggregated.rename(columns={source_column: target_column}, inplace=True)
-
-        # Merge the aggregated results back into the main DataFrame
-        self.data = pd.merge(self.data, aggregated, on=group_by, how="left")
-
-        # Return the target column to allow integration in the pipeline
-        return self.data[target_column]
-
-    def transform_concatenate(self, source_columns, target_column, transformation):
+    def transform_concatenate(self, current_data, target_column, transformation):
         """
         Concatenate multiple columns into a single column.
 
@@ -177,12 +188,13 @@ class Transformer:
         Returns:
         - Series: Concatenated column as a pandas Series.
         """
+        source_columns = transformation.get("source_columns")
         if not source_columns:
             raise KeyError("source_columns is required for concatenate transformation.")
         separator = transformation.get("separator", "-")
-        return self.data[source_columns].astype(str).agg(separator.join, axis=1)
+        return current_data[source_columns].astype(str).agg(separator.join, axis=1)
 
-    def transform_default(self, source_column, target_column, transformation):
+    def transform_default(self, current_data, target_column, transformation):
         """
         Assign a default value.
 
@@ -197,30 +209,38 @@ class Transformer:
         default_value = transformation["value"]
         return pd.Series(default_value, index=self.data.index)
 
-    def transform_conditional_map(self, source_column, target_column, transformation):
-        """Apply conditional mappings."""
+    def transform_conditional_map(self, current_data, target_column, transformation):
+        """
+        Apply conditional mappings to the source column, with optional default value.
+
+        Parameters:
+        - current_data: Current data being processed.
+        - target_column: The target column name (not used here).
+        - transformation: Dictionary containing transformation details, including conditions.
+
+        Returns:
+        - Series: The column with conditionally mapped values.
+        """
         conditions = transformation["conditions"]
-        result_column = pd.Series(index=self.data.index, dtype="Int64")
+        # Optional default value
+        default_value = transformation.get("default", None)
+        result_column = pd.Series(default_value, index=self.data.index, dtype="Int64")
+
         for condition in conditions:
             condition_str = condition["condition"]
             value = condition["value"]
-            result_column[self.data.eval(condition_str)] = value
+            # Apply the condition and assign the value
+            mask = current_data.eval(condition_str)
+            result_column[mask] = value
+
         return result_column
 
-    def transform_derive(self, source_column, target_column, transformation):
+    def transform_derive(self, current_data, target_column, transformation):
         """Calculate derived values using a formula."""
         formula = transformation["formula"]
-        return self.data.eval(formula)
+        return current_data.eval(formula)
 
-    def transform_split_date(self, source_column, target_column, transformation):
-        """Split date values into year, month, and day."""
-        date_parts = ["year", "month", "day"]
-        for part in date_parts:
-            if f"{part}_of_birth" in transformation["target_columns"]:
-                self.data[f"{part}_of_birth"] = pd.to_datetime(self.data[source_column]).dt.__getattribute__(part)
-        return self.data
-
-    def transform_generate_id(self, source_column, target_column, transformation):
+    def transform_generate_id(self, current_data, target_column, transformation):
         """Generate a universal unique identifier for each row in the source column."""
         return [str(uuid.uuid4()) for _ in range(len(self.data))]
 

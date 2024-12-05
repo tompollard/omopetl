@@ -5,16 +5,19 @@ person_mapping:
     - target_column: person_id
       transformation:
         type: generate_id
-    - source_column: gender
-      target_column: gender_concept_id
+    - target_column: gender_concept_id
       transformation:
         type: map
+        source_column: gender
         values:
           M: 8507
           F: 8532
     - target_column: year_of_birth
       transformation:
         type: derive
+        source_columns:
+          - anchor_year
+          - anchor_age
         formula: "anchor_year - anchor_age"
     - target_column: month_of_birth
       transformation:
@@ -52,8 +55,7 @@ person_mapping:
       transformation:
         type: default
         value: 
-    - source_column: gender
-      target_column: gender_source_value
+    - target_column: gender_source_value
       transformation:
         type: default
         value: 
