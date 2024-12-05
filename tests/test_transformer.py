@@ -18,27 +18,27 @@ def sample_data():
 
 
 @pytest.fixture
-def transformer(sample_data):
-    """Fixture to initialize the Transformer with sample data."""
-    return Transformer(sample_data)
-
-
-@pytest.fixture
 def project_path(tmp_path):
     # Create a temporary project path for testing
     return tmp_path
 
 
-def test_direct_mapping(transformer, project_path):
+@pytest.fixture
+def transformer(sample_data):
+    """Fixture to initialize the Transformer with sample data."""
+    return Transformer(sample_data, project_path)
+
+
+def test_direct_mapping(transformer):
     columns = [
         {"source_column": "gender", "target_column": "gender_target"}
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "gender_target" in transformed_data.columns
     assert transformed_data["gender_target"].equals(transformer.data["gender"])
 
 
-def test_value_mapping(transformer, project_path):
+def test_value_mapping(transformer):
     columns = [
         {
             "source_column": "gender",
@@ -49,13 +49,13 @@ def test_value_mapping(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "gender_concept_id" in transformed_data.columns
     expected = transformer.data["gender"].map({"M": 8507, "F": 8532})
     assert transformed_data["gender_concept_id"].equals(expected)
 
 
-def test_lookup(transformer, project_path):
+def test_lookup(transformer):
     columns = [
         {
             "source_column": "icd_code",
@@ -66,11 +66,11 @@ def test_lookup(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "condition_concept_id" in transformed_data.columns
 
 
-def test_normalize_date(transformer, project_path):
+def test_normalize_date(transformer):
     column_mappings = [
         {
             "source_column": "dob",
@@ -87,11 +87,11 @@ def test_normalize_date(transformer, project_path):
         "dob": ["1980-01-01", "1990-05-20", "2000-07-15"]
     })
 
-    transformed_data = transformer.apply_transformations(column_mappings, project_path)
+    transformed_data = transformer.apply_transformations(column_mappings)
     assert transformed_data["birth_datetime"].tolist() == ["1980-01-01", "1990-05-20", "2000-07-15"]
 
 
-def test_aggregate(transformer, project_path):
+def test_aggregate(transformer):
     columns = [
         {
             "source_column": "value",
@@ -103,11 +103,11 @@ def test_aggregate(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "aggregated_value" in transformed_data.columns
 
 
-def test_concatenate(transformer, project_path):
+def test_concatenate(transformer):
     columns = [
         {
             "source_columns": ["subject_id", "gender"],
@@ -118,13 +118,13 @@ def test_concatenate(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "subject_gender_id" in transformed_data.columns
     expected = transformer.data[["subject_id", "gender"]].astype(str).agg("-".join, axis=1)
     assert transformed_data["subject_gender_id"].equals(expected)
 
 
-def test_default(transformer, project_path):
+def test_default(transformer):
     columns = [
         {
             "target_column": "default_value_column",
@@ -134,12 +134,12 @@ def test_default(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "default_value_column" in transformed_data.columns
     assert (transformed_data["default_value_column"] == 42).all()
 
 
-def test_conditional_map(transformer, project_path):
+def test_conditional_map(transformer):
     columns = [
         {
             "source_column": "gender",
@@ -153,11 +153,11 @@ def test_conditional_map(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "conditional_gender_id" in transformed_data.columns
 
 
-def test_derive(transformer, project_path):
+def test_derive(transformer):
     columns = [
         {
             "target_column": "derived_column",
@@ -167,11 +167,11 @@ def test_derive(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert "derived_column" in transformed_data.columns
 
 
-def test_generate_id(transformer, project_path):
+def test_generate_id(transformer):
     columns = [
         {
             "target_column": "person_id",
@@ -180,6 +180,6 @@ def test_generate_id(transformer, project_path):
             },
         }
     ]
-    transformed_data = transformer.apply_transformations(columns, project_path)
+    transformed_data = transformer.apply_transformations(columns)
     assert transformed_data is not None
     assert len(transformed_data) == 3

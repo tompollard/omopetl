@@ -104,8 +104,8 @@ def run_etl(project_path, dry=False):
         validate_schema(data, source_schema, source_table)
 
         # Apply transformations
-        transformer = Transformer(data)
-        transformed_data = transformer.apply_transformations(transformations, project_path)
+        transformer = Transformer(data, project_path)
+        transformed_data = transformer.apply_transformations(transformations)
 
         # Validate transformed data against target schema
         validate_schema(transformed_data, target_schema, target_table)

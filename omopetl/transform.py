@@ -4,22 +4,23 @@ import pandas as pd
 
 
 class Transformer:
-    def __init__(self, data):
+    def __init__(self, data, project_path):
         """
-        Initialize the Transformer with source data.
+        Initialize the Transformer with source data and project path.
 
         Parameters:
         - data: DataFrame containing the source data.
+        - project_path: Path to the project directory.
         """
         self.data = data
+        self.project_path = project_path
 
-    def apply_transformations(self, transformations, project_path):
+    def apply_transformations(self, transformations):
         """
         Apply transformations based on column mappings.
 
         Parameters:
         - transformations: List of mappings with transformation details.
-        - project_path: Path to the project directory.
 
         Returns:
         - DataFrame: Transformed data with only the specified columns.
@@ -37,7 +38,7 @@ class Transformer:
                 link_column = mapping["link_column"]
 
                 # Load the linked table
-                linked_table_path = os.path.join(project_path, "data", "source", f"{linked_table_name}.csv")
+                linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_table_name}.csv")
                 if not os.path.exists(linked_table_path):
                     raise FileNotFoundError(f"Linked table not found: {linked_table_path}")
 
