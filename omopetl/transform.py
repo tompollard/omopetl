@@ -32,56 +32,14 @@ class Transformer:
             transformation = column.get("transformation")
             transform_type = transformation["type"]
 
-            if transform_type == "link":
-                # Handle linked table transformation with optional aggregation
-                linked_table_name = transformation["linked_table"]
-                link_column = transformation["link_column"]
-                source_column = transformation["source_column"]
+            # Load the transformation method
+            method = getattr(self, f"transform_{transform_type}", None)
+            if method is None:
+                raise ValueError(f"Unsupported transformation type: {transform_type}")
 
-                # Load the linked table
-                linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_table_name}.csv")
-                if not os.path.exists(linked_table_path):
-                    raise FileNotFoundError(f"Linked table not found: {linked_table_path}")
-
-                linked_table = pd.read_csv(linked_table_path)
-
-                # Handle aggregation if specified
-                aggregation = transformation.get("aggregation")
-                if aggregation:
-                    method = aggregation.get("method", "first")
-                    if method == "most_frequent":
-                        aggregated_data = (
-                            linked_table.groupby(link_column)[source_column]
-                            .agg(lambda x: x.value_counts().idxmax())
-                            .reset_index()
-                        )
-                    elif method == "first":
-                        aggregated_data = linked_table.groupby(link_column).first().reset_index()
-                    elif method == "last":
-                        aggregated_data = linked_table.groupby(link_column).last().reset_index()
-                    else:
-                        raise ValueError(f"Unknown aggregation method: {method}")
-                else:
-                    aggregated_data = linked_table[[link_column, source_column]]
-
-                # Merge aggregated data with the base table
-                self.data = self.data.merge(
-                    aggregated_data,
-                    how="left",
-                    left_on=link_column,
-                    right_on=link_column,
-                    suffixes=("", "")
-                )
-
-                # Add the linked column to the transformed data
-                transformed_data[target_column] = self.data[source_column]
-            else:
-                # Handle other transformation types
-                method = getattr(self, f"transform_{transform_type}", None)
-                if method is None:
-                    raise ValueError(f"Unsupported transformation type: {transform_type}")
-                source_column = column.get("source_column")
-                transformed_data[target_column] = method(source_column, target_column, transformation)
+            # Call the transformation method
+            source_column = column.get("source_column")
+            transformed_data[target_column] = method(source_column, target_column, transformation)
 
         # Validate relationships
         self._validate_relationships(transformed_data)
@@ -105,6 +63,62 @@ class Transformer:
     # Transformation methods
     def transform_copy(self, source_column, target_column, transformation):
         """Copy values from the source column."""
+        return self.data[source_column]
+
+    def transform_link(self, source_column, target_column, transformation):
+        """
+        Handle linked table transformation with optional aggregation.
+
+        Parameters:
+        - source_column: The column in the linked table to use.
+        - target_column: *Not used*. Overwritten by the column specified in the transform.
+        - transformation: Dictionary containing transformation details.
+
+        Returns:
+        - Series: The transformed column data.
+        """
+        linked_table_name = transformation["linked_table"]
+        link_column = transformation["link_column"]
+
+        # Override the source_column using the version specified in the transform.
+        source_column = transformation["source_column"]
+
+        # Load the linked table
+        linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_table_name}.csv")
+        if not os.path.exists(linked_table_path):
+            raise FileNotFoundError(f"Linked table not found: {linked_table_path}")
+
+        linked_table = pd.read_csv(linked_table_path)
+
+        # Handle aggregation if specified
+        aggregation = transformation.get("aggregation")
+        if aggregation:
+            method = aggregation.get("method", "first")
+            if method == "most_frequent":
+                aggregated_data = (
+                    linked_table.groupby(link_column)[source_column]
+                    .agg(lambda x: x.value_counts().idxmax())
+                    .reset_index()
+                )
+            elif method == "first":
+                aggregated_data = linked_table.groupby(link_column).first().reset_index()
+            elif method == "last":
+                aggregated_data = linked_table.groupby(link_column).last().reset_index()
+            else:
+                raise ValueError(f"Unknown aggregation method: {method}")
+        else:
+            aggregated_data = linked_table[[link_column, source_column]]
+
+        # Merge aggregated data with the base table
+        self.data = self.data.merge(
+            aggregated_data,
+            how="left",
+            left_on=link_column,
+            right_on=link_column,
+            suffixes=("", "")
+        )
+
+        # Return the linked column data
         return self.data[source_column]
 
     def transform_lookup(self, source_column, target_column, transformation):
