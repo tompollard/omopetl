@@ -1,6 +1,7 @@
 import os
 import uuid
 import pandas as pd
+from datetime import datetime
 
 
 class Transformer:
@@ -130,6 +131,24 @@ class Transformer:
         """Normalize date values to a specific format."""
         date_format = transformation.get("format", "%Y-%m-%d")
         return pd.to_datetime(self.data[source_column], errors="coerce").dt.strftime(date_format)
+
+    def transform_compare_deathtime(self, source_column, target_column, transformation):
+        """Verify if deathtime is before or equal to dischtime to set death_date and death_datetime"""
+        source_column1 = transformation["source_column_1"]
+        source_column2 = transformation["source_column_2"]
+        source_column1 = pd.to_datetime(self.data[source_column1], format="%Y-%m-%d %H:%M:%S")
+        source_column2 = pd.to_datetime(self.data[source_column2], format="%Y-%m-%d %H:%M:%S")
+        if source_column1 is not None and source_column1.tolist() <= source_column2.tolist():
+            if target_column == "death_date":
+                target = source_column1.dt.date
+            else :
+                target = source_column1
+        else:
+            if target_column == "death_date":
+                target = source_column2.dt.date
+            else :
+                target = source_column2
+        return target
 
     def transform_aggregate(self, source_column, target_column, transformation):
         """Aggregate values based on a group_by condition."""

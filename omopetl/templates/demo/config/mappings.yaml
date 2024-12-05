@@ -85,3 +85,53 @@ person_mapping:
         source_column: race
         aggregation:
           method: most_frequent
+
+death_mapping:
+  source_table: admissions
+  target_table: death
+  columns:
+    - target_column: person_id
+      transformation:
+        type: generate_id
+    - target_column: death_date
+      transformation:
+        type: compare_deathtime
+        source_column_1: deathtime
+        source_column_2: dischtime
+    - target_column: death_datetime
+      transformation:
+        type: compare_deathtime
+        source_column_1: deathtime
+        source_column_2: dischtime
+    - target_column: death_type_concept_id
+      transformation:
+        type: default
+        value: 32817
+    - target_column: cause_concept_id
+      transformation:
+        type: default
+        value:
+    - target_column: cause_source_value
+      transformation:
+        type: default
+        value:
+    - target_column: cause_source_concept_id
+      transformation:
+        type: default
+        value:
+    - target_column: unit_id
+      transformation:
+        type: default
+        value:
+    - target_column: load_table_id
+      transformation:
+        type: default
+        value:
+    - target_column: load_row_id
+      transformation:
+        type: default
+        value:
+    - target_column: trace_id
+      transformation:
+        type: default
+        value: 
