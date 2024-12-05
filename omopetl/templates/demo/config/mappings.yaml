@@ -76,11 +76,12 @@ person_mapping:
     - target_column: ethnicity_source_concept_id
       transformation:
         type: default
-        value: 
+        value:
     - target_column: ethnicity
-      linked_table: admissions
-      link_column: subject_id
-      source_column: race
       transformation:
-        type: aggregate
-        method: most_frequent
+        type: link
+        linked_table: admissions
+        link_column: subject_id
+        source_column: race
+        aggregation:
+          method: most_frequent

@@ -28,14 +28,22 @@ class Transformer:
         transformed_data = pd.DataFrame()
 
         for column in columns:
-            source_column = column.get("source_column")
             target_column = column["target_column"]
             transformation = column.get("transformation")
 
-            # Handle linked table transformation
-            if "linked_table" in column:
-                linked_table_name = column["linked_table"]
-                link_column = column["link_column"]
+            if not transformation:
+                # Direct column mapping without transformation
+                source_column = column.get("source_column")
+                transformed_data[target_column] = self.data[source_column]
+                continue
+
+            transform_type = transformation["type"]
+
+            if transform_type == "link":
+                # Handle linked table transformation with optional aggregation
+                linked_table_name = transformation["linked_table"]
+                link_column = transformation["link_column"]
+                source_column = transformation["source_column"]
 
                 # Load the linked table
                 linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_table_name}.csv")
@@ -45,8 +53,9 @@ class Transformer:
                 linked_table = pd.read_csv(linked_table_path)
 
                 # Handle aggregation if specified
-                if transformation and transformation["type"] == "aggregate":
-                    method = transformation.get("method", "first")
+                aggregation = transformation.get("aggregation")
+                if aggregation:
+                    method = aggregation.get("method", "first")
                     if method == "most_frequent":
                         aggregated_data = (
                             linked_table.groupby(link_column)[source_column]
@@ -59,43 +68,27 @@ class Transformer:
                         aggregated_data = linked_table.groupby(link_column).last().reset_index()
                     else:
                         raise ValueError(f"Unknown aggregation method: {method}")
+                else:
+                    aggregated_data = linked_table[[link_column, source_column]]
 
-                    # Merge aggregated data with the base table
-                    self.data = self.data.merge(
-                        aggregated_data,
-                        how="left",
-                        left_on=link_column,
-                        right_on=link_column,
-                        suffixes=("", "")
-                    )
+                # Merge aggregated data with the base table
+                self.data = self.data.merge(
+                    aggregated_data,
+                    how="left",
+                    left_on=link_column,
+                    right_on=link_column,
+                    suffixes=("", "")
+                )
 
-                # Add the aggregated column to the target column
+                # Add the linked column to the transformed data
                 transformed_data[target_column] = self.data[source_column]
-                continue
-
-            # Handle direct column mapping without transformation
-            if not transformation:
-                if source_column and target_column:
-                    transformed_data[target_column] = self.data[source_column]
-                continue
-
-            # Handle transformations
-            transform_type = transformation["type"]
-            method = getattr(self, f"transform_{transform_type}", None)
-
-            if method is None:
-                raise ValueError(f"Unsupported transformation type: {transform_type}")
-
-            if transform_type == "concatenate":
-                source_columns = column.get("source_columns")
-                if not source_columns:
-                    raise KeyError("source_columns is required for concatenate transformation.")
-                transformed_column = method(source_columns, target_column, transformation)
             else:
-                transformed_column = method(source_column, target_column, transformation)
-
-            if target_column and transformed_column is not None:
-                transformed_data[target_column] = transformed_column
+                # Handle other transformation types
+                method = getattr(self, f"transform_{transform_type}", None)
+                if method is None:
+                    raise ValueError(f"Unsupported transformation type: {transform_type}")
+                source_column = column.get("source_column")
+                transformed_data[target_column] = method(source_column, target_column, transformation)
 
         # Validate relationships
         self._validate_relationships(transformed_data)
