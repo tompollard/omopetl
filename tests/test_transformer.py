@@ -110,7 +110,7 @@ def test_aggregate(transformer):
 def test_concatenate(transformer):
     columns = [
         {
-            "source_columns": ["subject_id", "gender"],
+            "source_column": ["subject_id", "gender"],
             "target_column": "subject_gender_id",
             "transformation": {
                 "type": "concatenate",
