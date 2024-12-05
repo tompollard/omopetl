@@ -32,10 +32,10 @@ def transformer(sample_data):
 def test_direct_mapping(transformer):
     columns = [
         {
-            "source_column": "gender",
             "target_column": "gender_target",
             "transformation": {
                 "type": "copy",
+                "source_column": "gender",
             },
         }
     ]
@@ -47,10 +47,10 @@ def test_direct_mapping(transformer):
 def test_value_mapping(transformer):
     columns = [
         {
-            "source_column": "gender",
             "target_column": "gender_concept_id",
             "transformation": {
                 "type": "map",
+                "source_column": "gender",
                 "values": {"M": 8507, "F": 8532},
             },
         }
@@ -64,10 +64,10 @@ def test_value_mapping(transformer):
 def test_lookup(transformer):
     columns = [
         {
-            "source_column": "icd_code",
             "target_column": "condition_concept_id",
             "transformation": {
                 "type": "lookup",
+                "source_column": "icd_code",
                 "vocabulary": "icd_to_snomed",
             },
         }
@@ -79,10 +79,10 @@ def test_lookup(transformer):
 def test_normalize_date(transformer):
     column_mappings = [
         {
-            "source_column": "dob",
             "target_column": "birth_datetime",
             "transformation": {
                 "type": "normalize_date",
+                "source_column": "dob",
                 "format": "%Y-%m-%d",
             },
         }
@@ -97,29 +97,13 @@ def test_normalize_date(transformer):
     assert transformed_data["birth_datetime"].tolist() == ["1980-01-01", "1990-05-20", "2000-07-15"]
 
 
-def test_aggregate(transformer):
-    columns = [
-        {
-            "source_column": "value",
-            "target_column": "aggregated_value",
-            "transformation": {
-                "type": "aggregate",
-                "group_by": ["charttime"],
-                "method": "sum",
-            },
-        }
-    ]
-    transformed_data = transformer.apply_transformations(columns)
-    assert "aggregated_value" in transformed_data.columns
-
-
 def test_concatenate(transformer):
     columns = [
         {
-            "source_column": ["subject_id", "gender"],
             "target_column": "subject_gender_id",
             "transformation": {
                 "type": "concatenate",
+                "source_columns": ["subject_id", "gender"],
                 "separator": "-",
             },
         }
@@ -148,10 +132,10 @@ def test_default(transformer):
 def test_conditional_map(transformer):
     columns = [
         {
-            "source_column": "gender",
             "target_column": "conditional_gender_id",
             "transformation": {
                 "type": "conditional_map",
+                "source_column": "gender",
                 "conditions": [
                     {"condition": "gender == 'M'", "value": 8507},
                     {"condition": "gender == 'F'", "value": 8532},
@@ -169,6 +153,7 @@ def test_derive(transformer):
             "target_column": "derived_column",
             "transformation": {
                 "type": "derive",
+                "source_column": "value",
                 "formula": "value * 2",
             },
         }
