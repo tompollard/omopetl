@@ -15,27 +15,27 @@ class Transformer:
         self.data = data
         self.project_path = project_path
 
-    def apply_transformations(self, transformations):
+    def apply_transformations(self, columns):
         """
         Apply transformations based on column mappings.
 
         Parameters:
-        - transformations: List of mappings with transformation details.
+        - columns: List of mappings with transformation details.
 
         Returns:
         - DataFrame: Transformed data with only the specified columns.
         """
         transformed_data = pd.DataFrame()
 
-        for mapping in transformations:
-            source_column = mapping.get("source_column")
-            target_column = mapping["target_column"]
-            transformation = mapping.get("transformation")
+        for column in columns:
+            source_column = column.get("source_column")
+            target_column = column["target_column"]
+            transformation = column.get("transformation")
 
             # Handle linked table transformation
-            if "linked_table" in mapping:
-                linked_table_name = mapping["linked_table"]
-                link_column = mapping["link_column"]
+            if "linked_table" in column:
+                linked_table_name = column["linked_table"]
+                link_column = column["link_column"]
 
                 # Load the linked table
                 linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_table_name}.csv")
@@ -87,7 +87,7 @@ class Transformer:
                 raise ValueError(f"Unsupported transformation type: {transform_type}")
 
             if transform_type == "concatenate":
-                source_columns = mapping.get("source_columns")
+                source_columns = column.get("source_columns")
                 if not source_columns:
                     raise KeyError("source_columns is required for concatenate transformation.")
                 transformed_column = method(source_columns, target_column, transformation)
