@@ -62,8 +62,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Mapping subject_id in patients to person_id in PERSON.
 
 ```
-- source_column: subject_id
-  target_column: person_id
+- target_column: person_id
+  transformation:
+    type: copy
+    source_column: subject_id
 ```
 
 2. Value Mapping: Transform specific values in a column to standardized values, such as OMOP concept IDs.
@@ -71,10 +73,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Mapping gender values M and F in patients to OMOP concept IDs 8507 (male) and 8532 (female).
 
 ```
-- source_column: gender
-  target_column: gender_concept_id
+- target_column: gender_concept_id
   transformation:
     type: map
+    source_column: gender
     values:
       M: 8507
       F: 8532
@@ -85,10 +87,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Mapping ICD codes in diagnoses_icd to OMOP standard concept IDs.
 
 ```
-- source_column: icd_code
-  target_column: condition_concept_id
+- target_column: condition_concept_id
   transformation:
     type: lookup
+    source_column: icd_code
     vocabulary: icd_to_snomed
 ```
 
@@ -97,10 +99,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Extracting year_of_birth from the dob column in patients.
 
 ```
-- source_column: dob
-  target_column: birth_datetime
+- target_column: birth_datetime
   transformation:
     type: normalize_date
+    source_column: dob
     format: "%Y-%m-%d"
 ```
 
@@ -109,10 +111,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Aggregating multiple labevents rows for the same patient and time window into a single measurement.
 
 ```
-- source_column: value
-  target_column: aggregated_value
+- target_column: aggregated_value
   transformation:
     type: aggregate
+    source_column: value
     method: sum
     group_by: [subject_id, charttime]
 ```
@@ -122,10 +124,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Concatenating subject_id and stay_id to form visit_detail_id.
 
 ```
-- source_columns: [subject_id, stay_id]
-  target_column: visit_detail_id
+- target_column: visit_detail_id
   transformation:
     type: concatenate
+    source_columns: [subject_id, stay_id]
     separator: "-"
 ```
 
@@ -145,10 +147,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Combining admissions and transfers into VISIT_OCCURRENCE.
 
 ```
-- source_columns: [admissions.hadm_id, transfers.hadm_id]
-  target_column: visit_occurrence_id
+- target_column: visit_occurrence_id
   transformation:
     type: merge
+    source_columns: [admissions.hadm_id, transfers.hadm_id]
     merge_key: hadm_id
 ```
 
@@ -157,10 +159,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Assigning different visit_concept_id values based on admission_type.
 
 ```
-- source_column: admission_type
-  target_column: visit_concept_id
+- target_column: visit_concept_id
   transformation:
     type: conditional_map
+    source_column: admission_type
     conditions:
       - condition: "admission_type == 'EMERGENCY'"
         value: 9203
@@ -173,10 +175,10 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Calculating length_of_stay as the difference between dischtime and admittime.
 
 ```
-- source_columns: [admittime, dischtime]
-  target_column: length_of_stay
+- target_column: length_of_stay
   transformation:
     type: derive
+    source_columns: [admittime, dischtime]
     formula: "dischtime - admittime"
 ```
 
@@ -185,12 +187,12 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Splitting dob into year_of_birth, month_of_birth, and day_of_birth.
 
 ```
-- source_column: dob
-  target_columns:
+- target_columns:
     - year_of_birth
     - month_of_birth
     - day_of_birth
   transformation:
+    source_column: dob
     type: split_date
 ```
 
@@ -199,12 +201,13 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     Example: Normalize a date and then filter rows based on the normalized value.
 
 ```
-- source_column: admittime
-  target_column: visit_start_datetime
+- target_column: visit_start_datetime
   transformations:
     - type: normalize_date
+      source_column: admittime
       format: "%Y-%m-%d"
     - type: filter
+      source_column: admittime
       condition: "visit_start_datetime >= '2020-01-01'"
 ```
 
@@ -284,42 +287,45 @@ etl:
     directory: ./data/target
     schema_file: ./config/target_schema.yaml
 
+# list of mappings to apply from mappings.yaml
   mappings:
-    - source_tables:                           # list of tables used for creating the target table
-        - patients
-      target_table: person                     # target table
-      column_mappings: person_mapping          # refers to a ruleset in mappings.yaml
-
-    - source_tables:
-        - admissions
-        - transfers
-      target_table: visit_occurrence
-      column_mappings: visit_occurrence_mapping
+    person_mapping
+    visit_occurrence_mapping
 ```
 
 4. Add your transformations to `mappings.yaml`:
 
 ```
 person_mapping:
-  - source_column: subject_id
-    target_column: person_id
-  - source_column: gender
-    target_column: gender_concept_id
+  - target_column: person_id
+    transformation:
+      type: copy
+      source_column: subject_id
+  - target_column: gender_concept_id
     transformation:
       type: map
+      source_column: gender
       values:
         M: 8507
         F: 8532
 
 visit_occurrence_mapping:
-  - source_column: hadm_id
-    target_column: visit_occurrence_id
-  - source_column: subject_id
-    target_column: person_id
-  - source_column: admittime
-    target_column: visit_start_datetime
-  - source_column: dischtime
-    target_column: visit_end_datetime
+  - target_column: visit_occurrence_id
+    transformation:
+      type: copy
+      source_column: hadm_id
+  - target_column: person_id
+    transformation:
+      type: copy
+      source_column: subject_id
+  - target_column: visit_start_datetime
+    transformation:
+      type: copy
+      source_column: admittime
+  - target_column: visit_end_datetime
+    transformation:
+      type: copy
+      source_column: dischtime
 ```
 
 We suggest starting out with the simple transformations first. For example, try creating a first version of your transformation using only direct mappings.
