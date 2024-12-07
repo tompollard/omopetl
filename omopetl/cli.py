@@ -125,20 +125,22 @@ def inferschema(csv_directory, output_file):
 @cli.command()
 @click.argument("project_path")
 @click.option("--dry", is_flag=True, help="Run the ETL without saving the results (dry run).")
-def run(project_path, dry):
+@click.option("--casual", is_flag=True, help="Relax validation rules and warnings.")
+def run(project_path, dry, casual):
     """
     Run the ETL process for the specified project.
 
     Parameters:
     - project_path: Path to the project folder containing configurations and data.
     - --dry: If provided, runs the ETL without saving the output.
+    - --casual: If provided, relaxes validation rules and prints warnings instead of raising errors.
     """
     project_path = os.path.abspath(project_path)
     if not os.path.exists(project_path):
         raise click.ClickException(f"Project path '{project_path}' does not exist.")
 
     # Execute the ETL pipeline
-    run_etl(project_path, dry=dry)
+    run_etl(project_path, dry=dry, casual=casual)
     if dry:
         print("ETL executed in dry run mode. No data was saved.")
     else:

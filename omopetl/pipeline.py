@@ -64,15 +64,17 @@ def validate_data(data, validation_rules, table_name):
     pass
 
 
-def run_etl(project_path, dry=False):
+def run_etl(project_path, dry=False, casual=False):
     """
     Main ETL pipeline.
 
     Parameters:
     - project_path: Path to the project folder.
     - dry: If True, run the ETL without saving the output (dry run).
+    - casual: If True, relax validation rules and warnings.
     """
     # Load configurations
+    strict = not casual
     config_path = os.path.join(project_path, "config", "etl_config.yaml")
     mappings_path = os.path.join(project_path, "config", "mappings.yaml")
     source_schema_path = os.path.join(project_path, "config", "source_schema.yaml")
@@ -101,14 +103,16 @@ def run_etl(project_path, dry=False):
         data = pd.read_csv(source_file)
 
         # Validate source data schema
-        validate_schema(data, source_schema, source_table)
+        if strict:
+            validate_schema(data, source_schema, source_table)
 
         # Apply transformations
-        transformer = Transformer(data, project_path)
-        transformed_data = transformer.apply_transformations(transformations)
+        transformer = Transformer(data, project_path, source_schema, target_schema, target_table)
+        transformed_data = transformer.apply_transformations(transformations, strict)
 
         # Validate transformed data against target schema
-        validate_schema(transformed_data, target_schema, target_table)
+        if strict:
+            validate_schema(transformed_data, target_schema, target_table)
 
         # Load
         if not dry:

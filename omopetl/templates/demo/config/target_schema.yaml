@@ -1,77 +1,42 @@
 person:
   columns:
     person_id:
-      type: Integer
+      type: String
       primary_key: true
     gender_concept_id:
       type: Integer
+    year_of_birth:
+      type: Integer
+    month_of_birth:
+      type: Integer
+    day_of_birth:
+      type: Integer
+    birth_datetime:
+      type: DateTime
+    race_concept_id:
+      type: Integer
+    ethnicity_concept_id:
+      type: Integer
+    location_id:
+      type: Integer
+    provider_id:
+      type: Integer
+    care_site_id:
+      type: Integer
+    person_source_value:
+      type: String
+    gender_source_value:
+      type: String
+    gender_source_concept_id:
+      type: Integer
+    race_source_value:
+      type: String
+    race_source_concept_id:
+      type: Integer
+    ethnicity_source_value:
+      type: String
+    ethnicity_source_concept_id:
+      type: Integer
     ethnicity:
       type: String
-visit_occurrence:
-  columns:
-    visit_occurrence_id:
-      type: Integer
-      primary_key: true
-    person_id:
-      type: Integer
-    visit_concept_id:
-      type: Integer
-    visit_start_datetime:
-      type: DateTime
-    visit_end_datetime:
-      type: DateTime
-visit_detail:
-  columns:
-    visit_detail_id:
-      type: Integer
-    person_id:
-      type: Integer
-    visit_occurrence_id:
-      type: Integer
-    visit_detail_start_datetime:
-      type: DateTime
-    visit_detail_end_datetime:
-      type: DateTime
-death:
-  columns:
-    person_id:
-      type: Integer
-      primary_key: true
-    death_datetime:
-      type: DateTime
-condition_occurrence:
-  columns:
-    condition_source_value:
-      type: String
-    person_id:
-      type: Integer
-    visit_occurrence_id:
-      type: Integer
-    condition_start_datetime:
-      type: DateTime
-    condition_concept_id:
-      type: Integer
-procedure_occurrence:
-  columns:
-    procedure_source_value:
-      type: String
-    person_id:
-      type: Integer
-    visit_occurrence_id:
-      type: Integer
-    procedure_concept_id:
-      type: Integer
-measurement:
-  columns:
-    measurement_source_value:
-      type: String
-    person_id:
-      type: Integer
-    visit_occurrence_id:
-      type: Integer
-    measurement_datetime:
-      type: DateTime
-    value_as_number:
-      type: Float
-    value_as_concept_id:
-      type: Integer
+
