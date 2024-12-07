@@ -1,3 +1,4 @@
+from datetime import date
 import pytest
 import pandas as pd
 from omopetl.transform import Transformer
@@ -7,7 +8,7 @@ from omopetl.transform import Transformer
 def sample_data():
     """Fixture to provide sample input data."""
     return pd.DataFrame({
-        "gender": ["M", "F", None],
+        "gender": ["M", "F", "None"],
         "dob": ["1980-01-01", "1990-05-20", "2000-07-15"],
         "icd_code": ["I10", "E11.9", "J45"],
         "admittime": ["2023-01-01 12:00:00", "2023-01-02 14:00:00", "2023-01-03 16:00:00"],
@@ -18,15 +19,53 @@ def sample_data():
 
 
 @pytest.fixture
+def source_schema():
+    """Fixture to provide a mock source schema."""
+    return {
+        "patients": {
+            "columns": {
+                "gender": {"type": "string"},
+                "dob": {"type": "date"},
+                "icd_code": {"type": "string"},
+                "admittime": {"type": "datetime"},
+                "value": {"type": "float"},
+                "subject_id": {"type": "integer"},
+                "charttime": {"type": "date"},
+            }
+        }
+    }
+
+
+@pytest.fixture
+def target_schema():
+    """Fixture to provide a mock target schema."""
+    return {
+        "person": {
+            "columns": {
+                "gender_target": {"type": "string"},
+                "gender_concept_id": {"type": "integer"},
+                "birth_datetime": {"type": "date"},
+                "subject_gender_id": {"type": "string"},
+                "default_value_column": {"type": "integer"},
+                "conditional_gender_id": {"type": "integer"},
+                "derived_column": {"type": "float"},
+                "person_id": {"type": "string"},
+                "condition_concept_id": {"type": "string"},
+            }
+        }
+    }
+
+
+@pytest.fixture
 def project_path(tmp_path):
     # Create a temporary project path for testing
     return tmp_path
 
 
 @pytest.fixture
-def transformer(sample_data):
+def transformer(sample_data, project_path, source_schema, target_schema):
     """Fixture to initialize the Transformer with sample data."""
-    return Transformer(sample_data, project_path)
+    return Transformer(sample_data, project_path, source_schema, target_schema, "person")
 
 
 def test_direct_mapping(transformer):
@@ -57,7 +96,7 @@ def test_value_mapping(transformer):
     ]
     transformed_data = transformer.apply_transformations(columns)
     assert "gender_concept_id" in transformed_data.columns
-    expected = transformer.data["gender"].map({"M": 8507, "F": 8532})
+    expected = pd.Series([8507, 8532, pd.NA], dtype="Int64", name="gender_concept_id")
     assert transformed_data["gender_concept_id"].equals(expected)
 
 
@@ -94,7 +133,8 @@ def test_normalize_date(transformer):
     })
 
     transformed_data = transformer.apply_transformations(column_mappings)
-    assert transformed_data["birth_datetime"].tolist() == ["1980-01-01", "1990-05-20", "2000-07-15"]
+    expected_dates = [date(1980, 1, 1), date(1990, 5, 20), date(2000, 7, 15)]
+    assert transformed_data["birth_datetime"].tolist() == expected_dates
 
 
 def test_concatenate(transformer):
