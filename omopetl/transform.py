@@ -1,21 +1,57 @@
 import os
 import uuid
+import warnings
+
 import pandas as pd
 
 
 class Transformer:
-    def __init__(self, data, project_path):
+    def __init__(self, data, project_path, source_schema, target_schema, table_name):
         """
-        Initialize the Transformer with source data and project path.
+        Initialize the Transformer with source data, project path, and schema paths.
 
         Parameters:
         - data: DataFrame containing the source data.
         - project_path: Path to the project directory.
+        - source_schema_path: Path to the source schema YAML file.
+        - target_schema_path: Path to the target schema YAML file.
+        - table_name: Name of the target table.
         """
         self.data = data
         self.project_path = project_path
+        self.source_schema = source_schema
+        self.target_schema = target_schema
+        self.table_name = table_name
 
-    def apply_transformations(self, columns):
+    def _get_column_type(self, table_name, column_name, schema, strict):
+        """
+        Retrieve the data type for a column from the schema.
+
+        Parameters:
+        - table_name: Name of the table in the schema.
+        - column_name: Name of the column whose type is to be retrieved.
+        - schema: Schema dictionary to search.
+        - strict: If True, raise errors on schema issues.
+
+        Returns:
+        - str: The data type of the column.
+
+        Raises:
+        - KeyError: If the table or column is not found in the schema.
+        """
+        table = schema.get(table_name, {})
+        columns = table.get("columns", {})
+        column = columns.get(column_name)
+
+        if not column:
+            if strict:
+                raise KeyError(f"Data type for '{column_name}' not found in '{table_name}' schema.")
+            else:
+                return None
+
+        return column["type"]
+
+    def apply_transformations(self, columns, strict=True):
         """
         Apply transformations based on column mappings.
 
@@ -56,6 +92,13 @@ class Transformer:
                 # Apply the transformation
                 current_data = method(current_data, target_column, transformation)
 
+            # Get target data type from the target schema
+            target_type = self._get_column_type(self.table_name, target_column, self.target_schema, strict)
+
+            # Cast the transformed data to the target type
+            if strict:
+                current_data = self.cast_to_type(current_data, target_type)
+
             # Store the final transformed column
             transformed_data[target_column] = current_data
 
@@ -63,6 +106,27 @@ class Transformer:
         self._validate_relationships(transformed_data)
 
         return transformed_data
+
+    def cast_to_type(self, series, data_type):
+        """Cast a pandas Series to the specified data type."""
+        try:
+            normalized_type = data_type.lower()
+            if normalized_type == "string":
+                return series.astype(str)
+            elif normalized_type == "integer":
+                return series.astype("Int64")
+            elif normalized_type == "float":
+                return series.astype(float)
+            elif normalized_type == "boolean":
+                return series.astype(bool)
+            elif normalized_type == "date":
+                return pd.to_datetime(series, errors="coerce").dt.date
+            elif normalized_type == "datetime":
+                return pd.to_datetime(series, errors="coerce")
+            else:
+                raise ValueError(f"Unsupported data type: {normalized_type}")
+        except Exception as e:
+            raise ValueError(f"Error casting to {normalized_type}: {e}")
 
     def _validate_relationships(self, transformed_data):
         """
@@ -97,8 +161,8 @@ class Transformer:
         Returns:
         - Series: The transformed column data.
         """
-        linked_table_name = transformation["linked_table"]
-        if not linked_table_name:
+        linked_target_table_name = transformation["linked_table"]
+        if not linked_target_table_name:
             raise KeyError("'linked_table' is required for a 'link' transformation.")
 
         link_column = transformation["link_column"]
@@ -108,7 +172,7 @@ class Transformer:
         source_column = transformation["source_column"]
 
         # Load the linked table
-        linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_table_name}.csv")
+        linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_target_table_name}.csv")
         if not os.path.exists(linked_table_path):
             raise FileNotFoundError(f"Linked table not found: {linked_table_path}")
 
@@ -223,7 +287,7 @@ class Transformer:
 
     def transform_generate_id(self, current_data, target_column, transformation):
         """Generate a universal unique identifier for each row in the source column."""
-        return [str(uuid.uuid4()) for _ in range(len(self.data))]
+        return pd.Series([str(uuid.uuid4()) for _ in range(len(self.data))])
 
     # Helper method
     def perform_lookup(self, vocabulary, code):

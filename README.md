@@ -243,6 +243,15 @@ admissions:
 
 This file is primarily used for validating your transform (for example, making sure that relationships are maintained between variables).
 
+**Data types should be specified in the schema files**. Supported types are currently:
+
+- `string`
+- `integer`
+- `float`
+- `boolean`
+- `date`
+- `datetime`
+
 You can use `omopetl inferschema <PATH_TO_DATA>` to create a draft schema based on a set of CSV files. Careful though, the `primary_key` fields are likely to be incorrect, so review is needed.
 
 2. Update `target_schema.yaml` to match your list of target tables, e.g.:
