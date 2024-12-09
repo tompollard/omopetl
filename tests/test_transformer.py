@@ -5,6 +5,27 @@ from omopetl.transform import Transformer
 
 
 @pytest.fixture
+def mock_transformer():
+    """Fixture to initialize the Transformer with mock data and schemas."""
+    data = pd.DataFrame({
+        "icd_code": ["I10", "E11.9", "UNKNOWN"]
+    })
+    project_path = "/mock_project"
+    source_schema = {"patients": {"columns": {"icd_code": {"type": "string"}}}}
+    target_schema = {"person": {"columns": {"condition_concept_id": {"type": "integer"}}}}
+    transformer = Transformer(data, project_path, source_schema, target_schema, "person")
+
+    # Mock the lookup cache
+    transformer.lookup_cache = {
+        "icd_to_snomed": pd.DataFrame({
+            "icd_code": ["I10", "E11.9", "J45"],
+            "snomed_code": [316866, 201826, 134567],
+        })
+    }
+    return transformer
+
+
+@pytest.fixture
 def sample_data():
     """Fixture to provide sample input data."""
     return pd.DataFrame({
@@ -50,7 +71,7 @@ def target_schema():
                 "conditional_gender_id": {"type": "integer"},
                 "derived_column": {"type": "float"},
                 "person_id": {"type": "string"},
-                "condition_concept_id": {"type": "string"},
+                "condition_concept_id": {"type": "integer"},
             }
         }
     }
@@ -98,21 +119,6 @@ def test_value_mapping(transformer):
     assert "gender_concept_id" in transformed_data.columns
     expected = pd.Series([8507, 8532, pd.NA], dtype="Int64", name="gender_concept_id")
     assert transformed_data["gender_concept_id"].equals(expected)
-
-
-def test_lookup(transformer):
-    columns = [
-        {
-            "target_column": "condition_concept_id",
-            "transformation": {
-                "type": "lookup",
-                "source_column": "icd_code",
-                "vocabulary": "icd_to_snomed",
-            },
-        }
-    ]
-    transformed_data = transformer.apply_transformations(columns)
-    assert "condition_concept_id" in transformed_data.columns
 
 
 def test_normalize_date(transformer):
@@ -214,3 +220,44 @@ def test_generate_id(transformer):
     transformed_data = transformer.apply_transformations(columns)
     assert transformed_data is not None
     assert len(transformed_data) == 3
+
+
+def test_lookup(mock_transformer):
+    columns = [
+        {
+            "target_column": "condition_concept_id",
+            "transformation": {
+                "type": "lookup",
+                "source_column": "icd_code",
+                "vocabulary": "icd_to_snomed",
+                "source_lookup_column": "icd_code",
+                "target_lookup_column": "snomed_code",
+                "default_value": 0,
+            },
+        }
+    ]
+
+    # Expected Data
+    expected = pd.Series([316866, 201826, 0], name="condition_concept_id", dtype="Int64")
+
+    # Perform the transformation
+    transformed_data = mock_transformer.apply_transformations(columns)
+
+    # Assertions
+    assert "condition_concept_id" in transformed_data.columns
+    assert transformed_data["condition_concept_id"].equals(expected)
+
+
+def test_output_type_validation(transformer):
+    columns = [
+        {
+            "target_column": "derived_column",
+            "transformation": {
+                "type": "derive",
+                "source_column": "value",
+                "formula": "value * 2",
+            },
+        }
+    ]
+    transformed_data = transformer.apply_transformations(columns)
+    assert transformed_data["derived_column"].dtype == "float64"
