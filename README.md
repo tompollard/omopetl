@@ -17,6 +17,7 @@ myproject/
 │   ├── source_schema.yaml   # Source schema
 │   ├── target_schema.yaml   # Target schema (OMOP)
 ├── data/
+│   ├── lookups/             # Lookup tables
 │   ├── source/              # Input CSV files
 │   ├── target/              # Output CSV files (OMOP)
 ```
@@ -49,7 +50,7 @@ At the core of the `omopetl` project are the transformations. These are a set of
 
 **By design, transformations always return a column with the same length as the source data**. This helps to ensure row level integrity of the transformed data. If a transformation alters the length of an array, an error is raised.
 
-Where multiple source tables map to a target table, `omopetl` follows a "link during transformation" approach**. This involves:
+Where multiple source tables map to a target table, **`omopetl` follows a "link during transformation" approach**. This involves:
 
 - Identifying the primary table with the primary rows for the transformation.
 - Specifying data to fetch from other tables.
@@ -92,6 +93,8 @@ Where multiple source tables map to a target table, `omopetl` follows a "link du
     type: lookup
     source_column: icd_code
     vocabulary: icd_to_snomed
+    source_lookup_column: icd_code
+    target_lookup_column: snomed_code
 ```
 
 4. Date Normalization: Format or extract parts of dates (e.g., year, month, day) from source columns.

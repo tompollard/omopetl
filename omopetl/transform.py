@@ -22,6 +22,7 @@ class Transformer:
         self.source_schema = source_schema
         self.target_schema = target_schema
         self.table_name = table_name
+        self.lookup_cache = {}
 
     def _get_column_type(self, table_name, column_name, schema, strict):
         """
@@ -50,6 +51,34 @@ class Transformer:
                 return None
 
         return column["type"]
+
+    def _load_lookup_table(self, lookup_name, file_extension="csv"):
+        """
+        Load a lookup table from the lookups directory.
+
+        Parameters:
+        - lookup_name: The name of the lookup file (without extension).
+        - file_extension: File extension (default is "csv").
+
+        Returns:
+        - pd.DataFrame: The loaded lookup table.
+        """
+        if lookup_name in self.lookup_cache:
+            return self.lookup_cache[lookup_name]
+
+        lookup_path = os.path.join(self.project_path, "data", "lookups", f"{lookup_name}.{file_extension}")
+        if not os.path.exists(lookup_path):
+            raise FileNotFoundError(f"Lookup table '{lookup_name}' not found at '{lookup_path}'.")
+
+        if file_extension == "csv":
+            lookup_table = pd.read_csv(lookup_path)
+        elif file_extension == "parquet":
+            lookup_table = pd.read_parquet(lookup_path)
+        else:
+            raise ValueError(f"Unsupported file extension: {file_extension}")
+
+        self.lookup_cache[lookup_name] = lookup_table
+        return lookup_table
 
     def apply_transformations(self, columns, strict=True):
         """
@@ -143,7 +172,6 @@ class Transformer:
         value_map = transformation["values"]
         return current_data[source_column].map(value_map)
 
-    # Transformation methods
     def transform_copy(self, current_data, target_column, transformation):
         """Copy values from the source column."""
         source_column = transformation["source_column"]
@@ -210,10 +238,46 @@ class Transformer:
         return self.data[source_column]
 
     def transform_lookup(self, current_data, target_column, transformation):
-        """Perform a lookup transformation using a vocabulary."""
-        source_column = transformation.get("source_column")
-        vocabulary = transformation["vocabulary"]
-        return current_data[source_column].apply(lambda x: self.perform_lookup(vocabulary, x)).astype("Int64")
+        """
+        Perform a lookup transformation using a lookup table.
+
+        Parameters:
+        - current_data: Current DataFrame or Series being transformed.
+        - target_column: The target column name for the result.
+        - transformation: Transformation details including lookup table and columns.
+
+        Returns:
+        - pd.Series: The result of the lookup transformation.
+        """
+        source_column = transformation["source_column"]
+        lookup_name = transformation["vocabulary"]
+        source_lookup_column = transformation.get("source_lookup_column")
+        target_lookup_column = transformation.get("target_lookup_column")
+        default_value = transformation.get("default_value", None)
+
+        # Load the lookup table
+        lookup_table = self._load_lookup_table(lookup_name)
+
+        # Validate lookup table structure
+        if source_lookup_column not in lookup_table.columns or target_lookup_column not in lookup_table.columns:
+            raise KeyError(
+                f"Lookup table '{lookup_name}' is missing required columns: "
+                f"'{source_lookup_column}' or '{target_lookup_column}'."
+            )
+
+        # Perform the lookup
+        lookup_dict = lookup_table.set_index(source_lookup_column)[target_lookup_column].to_dict()
+        result = current_data[source_column].map(lookup_dict)
+
+        # Handle unmapped values
+        if default_value is not None:
+            result = result.fillna(default_value)
+
+        # Cast to the expected target type
+        # target_type = self._get_column_type(self.table_name, target_column, self.target_schema, strict=True)
+        # result = self.cast_to_type(result, target_type)
+
+        return result
 
     def transform_normalize_date(self, current_data, target_column, transformation):
         """Normalize date values to a specific format."""
