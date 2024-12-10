@@ -11,3 +11,4 @@ etl:
 
   mappings:
     - person_mapping
+    - death_mapping
