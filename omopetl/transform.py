@@ -199,6 +199,9 @@ class Transformer:
 
         source_column = transformation["source_column"]
 
+        # Optional ordering for aggregation
+        order_by = transformation.get("order_by")
+
         # Attempt to load the linked table from source directory
         linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_target_table_name}.csv")
         if not os.path.exists(linked_table_path):
@@ -214,6 +217,11 @@ class Transformer:
         aggregation = transformation.get("aggregation")
         if aggregation:
             method = aggregation.get("method", "first")
+
+            # Apply ordering if specified
+            if order_by:
+                linked_table = linked_table.sort_values(order_by)
+
             if method == "most_frequent":
                 aggregated_data = (
                     linked_table.groupby(link_column)[source_column]

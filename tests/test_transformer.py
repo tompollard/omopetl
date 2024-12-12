@@ -72,6 +72,7 @@ def target_schema():
                 "derived_column": {"type": "float"},
                 "person_id": {"type": "string"},
                 "condition_concept_id": {"type": "integer"},
+                "visit_start_time": {"type": "date"},
             }
         }
     }
@@ -261,3 +262,41 @@ def test_output_type_validation(transformer):
     ]
     transformed_data = transformer.apply_transformations(columns)
     assert transformed_data["derived_column"].dtype == "float64"
+
+
+def test_transform_link_without_order(transformer, project_path):
+    # Mock data in the main table
+    transformer.data = pd.DataFrame({
+        "person_id": [1, 2, 3]
+    })
+
+    # Mock linked table data
+    linked_table_data = pd.DataFrame({
+        "person_id": [1, 1, 2, 3, 3],
+        "visit_time": ["2023-01-02", "2023-01-01", "2023-01-01", "2023-01-03", "2023-01-04"]
+    })
+
+    # Save the linked table to the project directory
+    linked_table_path = project_path / "data" / "source" / "visits.csv"
+    linked_table_path.parent.mkdir(parents=True, exist_ok=True)
+    linked_table_data.to_csv(linked_table_path, index=False)
+
+    # Define the transformation
+    columns = [
+        {
+            "target_column": "visit_start_time",
+            "transformation": {
+                "type": "link",
+                "linked_table": "visits",
+                "link_column": "person_id",
+                "source_column": "visit_time",
+                "aggregation": {"method": "first"}
+            }
+        }
+    ]
+
+    transformed_data = transformer.apply_transformations(columns)
+    expected = pd.DataFrame({"visit_start_time": [date(2023, 1, 2),
+                                                  date(2023, 1, 1),
+                                                  date(2023, 1, 3)]})
+    pd.testing.assert_frame_equal(transformed_data, expected)
