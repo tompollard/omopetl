@@ -199,10 +199,14 @@ class Transformer:
 
         source_column = transformation["source_column"]
 
-        # Load the linked table
+        # Attempt to load the linked table from source directory
         linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_target_table_name}.csv")
         if not os.path.exists(linked_table_path):
-            raise FileNotFoundError(f"Linked table not found: {linked_table_path}")
+            # Fallback to the target directory if the table is not found in the source directory
+            linked_table_path = os.path.join(self.project_path, "data", "target", f"{linked_target_table_name}.csv")
+            if not os.path.exists(linked_table_path):
+                msg = f"Linked table '{linked_target_table_name}' not found in 'source' or 'target' directories."
+                raise FileNotFoundError(msg)
 
         linked_table = pd.read_csv(linked_table_path)
 
