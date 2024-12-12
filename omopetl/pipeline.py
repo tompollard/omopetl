@@ -77,13 +77,13 @@ def run_etl(project_path, dry=False, casual=False):
     strict = not casual
     config_path = os.path.join(project_path, "config", "etl_config.yaml")
     mappings_path = os.path.join(project_path, "config", "mappings.yaml")
-    source_schema_path = os.path.join(project_path, "config", "source_schema.yaml")
-    target_schema_path = os.path.join(project_path, "config", "target_schema.yaml")
+    source_dir = os.path.join(project_path, "data", "source")
+    target_dir = os.path.join(project_path, "data", "target")
 
     etl_config = load_yaml(config_path)
     mappings = load_yaml(mappings_path)
-    source_schema = load_yaml(source_schema_path)
-    target_schema = load_yaml(target_schema_path)
+    source_schema = load_yaml(os.path.join(project_path, "config", "source_schema.yaml"))
+    target_schema = load_yaml(os.path.join(project_path, "config", "target_schema.yaml"))
 
     for mapping_name in etl_config['etl']['mappings']:
 
@@ -94,13 +94,15 @@ def run_etl(project_path, dry=False, casual=False):
 
         print(f"Mapping {source_table} -> {target_table}")
 
-        # Extract source data
-        source_dir = os.path.join(project_path, etl_config['etl']['source']['directory'])
-        source_file = os.path.join(source_dir, f"{source_table}.csv")
-        if not os.path.exists(source_file):
-            raise FileNotFoundError(f"Source file not found: {source_file}")
-
-        data = pd.read_csv(source_file)
+        # Load source or target table
+        # TODO: add flag to skip validation of staging tables
+        if os.path.exists(os.path.join(source_dir, f"{source_table}.csv")):
+            data = pd.read_csv(os.path.join(source_dir, f"{source_table}.csv"))
+        elif os.path.exists(os.path.join(target_dir, f"{source_table}.csv")):
+            data = pd.read_csv(os.path.join(target_dir, f"{source_table}.csv"))
+        else:
+            msg = f"Table '{source_table}' not found in source or target folders."
+            raise FileNotFoundError(msg)
 
         # Validate source data schema
         if strict:
@@ -110,7 +112,7 @@ def run_etl(project_path, dry=False, casual=False):
         transformer = Transformer(data, project_path, source_schema, target_schema, target_table)
         transformed_data = transformer.apply_transformations(transformations, strict)
 
-        # Validate transformed data against target schema
+        # Validate and save transformed data
         if strict:
             validate_schema(transformed_data, target_schema, target_table)
 
