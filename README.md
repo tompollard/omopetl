@@ -71,7 +71,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
 
 2. Value Mapping: Transform specific values in a column to standardized values, such as OMOP concept IDs.
 
-    Example: Mapping gender values M and F in patients to OMOP concept IDs 8507 (male) and 8532 (female).
+    Example: Mapping gender values `M` and `F` in patients to OMOP concept IDs `8507` (male) and `8532` (female).
 
 ```
 - target_column: gender_concept_id
@@ -83,9 +83,9 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
       F: 8532
 ```
 
-3. Lookups: Map source codes (e.g., ICD-9/ICD-10 codes) to OMOP concept IDs using a vocabulary or lookup table.
+3. Lookups: Maps source codes (e.g., ICD-10 codes) to standard concept IDs using a lookup table.
 
-    Example: Mapping ICD codes in diagnoses_icd to OMOP standard concept IDs.
+    Example: Mapping ICD codes to SNOMED concept IDs.
 
 ```
 - target_column: condition_concept_id
@@ -95,36 +95,41 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     vocabulary: icd_to_snomed
     source_lookup_column: icd_code
     target_lookup_column: snomed_code
+    default_value: 0
 ```
 
 4. Date Normalization: Format or extract parts of dates (e.g., year, month, day) from source columns.
 
-    Example: Extracting year_of_birth from the dob column in patients.
+    Example: Extracting the date in `YYYY-MM-DD` format from admittime.
 
 ```
-- target_column: birth_datetime
+- target_column: visit_start_datetime
   transformation:
     type: normalize_date
-    source_column: dob
+    source_column: admittime
     format: "%Y-%m-%d"
 ```
 
-5. Aggregation: Combine multiple rows or columns to calculate summary values (e.g., min, max, sum).
+5. Aggregation: Combines multiple rows or columns into summary values (e.g., `first`, `last`, `sum`) with optional ordering.
 
-    Example: Aggregating multiple labevents rows for the same patient and time window into a single measurement.
+    Example:  Retrieving the earliest `visit_start_time` for a patient using `subject_id`
 
 ```
-- target_column: aggregated_value
+- target_column: visit_start_time
   transformation:
-    type: aggregate
-    source_column: value
-    method: sum
-    group_by: [subject_id, charttime]
+    type: link
+    linked_table: visits
+    link_column: subject_id
+    source_column: visit_start_time
+    aggregation:
+      method: first
+    order_by:
+      - visit_start_time
 ```
 
 6. Concatenation: Concatenate multiple columns into a single column, often used for generating unique identifiers.
 
-    Example: Concatenating subject_id and stay_id to form visit_detail_id.
+    Example: Concatenating `subject_id` and `stay_id` to form visit_detail_id.
 
 ```
 - target_column: visit_detail_id
@@ -136,7 +141,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
 
 7. Default Values: Assign a default value to a column when the source column is missing or null.
 
-    Example: Assigning a default concept ID for missing admission_type.
+    Example: Assigning a default concept ID to `visit_concept_id` when missing.
 
 ```
 - target_column: visit_concept_id
@@ -145,16 +150,19 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     value: 44818518
 ```
 
-8. Multi-Table Merging: Combine data from multiple source tables into a single target table.
+8. Multi-Table References: Allows referencing tables in the data/target directory if they were created in previous steps.
 
-    Example: Combining admissions and transfers into VISIT_OCCURRENCE.
+    Example: Using the `person` table to link `patient_id`s in a subsequent mapping.
 
 ```
-- target_column: visit_occurrence_id
+- target_column: patient_id
   transformation:
-    type: merge
-    source_columns: [admissions.hadm_id, transfers.hadm_id]
-    merge_key: hadm_id
+    type: link
+    linked_table: person
+    link_column: subject_id
+    source_column: patient_id
+    aggregation:
+      method: first
 ```
 
 9. Conditional Transformations: Apply transformations based on conditions in the source data.
@@ -175,7 +183,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
 
 10. Derived Columns: Calculate new columns from existing data (e.g., differences between dates).
 
-    Example: Calculating length_of_stay as the difference between dischtime and admittime.
+    Example: Calculating `length_of_stay` as the difference between dischtime and admittime.
 
 ```
 - target_column: length_of_stay
@@ -185,18 +193,18 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     formula: "dischtime - admittime"
 ```
 
-11. Splitting Columns: Split a single source column into multiple target columns.
+11. Multi-Step Transformations: Applies a sequence of transformations to a single column.
 
-    Example: Splitting dob into year_of_birth, month_of_birth, and day_of_birth.
+    Example: Normalize admittime and filter rows based on the normalized value.
 
 ```
-- target_columns:
-    - year_of_birth
-    - month_of_birth
-    - day_of_birth
-  transformation:
-    source_column: dob
-    type: split_date
+- target_column: visit_start_datetime
+  transformations:
+    - type: normalize_date
+      source_column: admittime
+      format: "%Y-%m-%d"
+    - type: filter
+      condition: "visit_start_datetime >= '2020-01-01'"
 ```
 
 12. Multi-Step Transformations: Apply a sequence of transformations to a single column.
