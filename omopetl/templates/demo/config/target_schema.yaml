@@ -1,3 +1,11 @@
+staging_person_lookup:
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    person_id:
+      type: String
+
 person:
   columns:
     person_id:
