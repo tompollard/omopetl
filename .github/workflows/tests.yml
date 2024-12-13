@@ -39,4 +39,4 @@ jobs:
         omopetl startdemo DEMO
 
         # Run the ETL in dry mode
-        omopetl run DEMO --dry
+        omopetl run DEMO
