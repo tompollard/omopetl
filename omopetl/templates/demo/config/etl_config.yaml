@@ -10,4 +10,5 @@ etl:
     schema_file: ./config/target_schema.yaml
 
   mappings:
+    - staging_person_lookup
     - person_mapping

@@ -1,17 +1,35 @@
+staging_person_lookup:
+  source_table: patients
+  target_table: staging_person_lookup
+  columns:
+    - target_column: person_id
+      transformation:
+        type: generate_id
+    - target_column: subject_id
+      transformation:
+        type: copy
+        source_column: subject_id
+
 person_mapping:
   source_table: patients
   target_table: person
   columns:
     - target_column: person_id
       transformation:
-        type: generate_id
+        type: link
+        linked_table: staging_person_lookup
+        link_column: subject_id
+        source_column: person_id
     - target_column: gender_concept_id
       transformation:
-        type: map
+        type: conditional_map
         source_column: gender
-        values:
-          M: 8507
-          F: 8532
+        conditions:
+          - condition: "gender == 'F'"
+            value: 8532  # FEMALE
+          - condition: "gender == 'M'"
+            value: 8507  # MALE
+        default: 0
     - target_column: year_of_birth
       transformation:
         type: derive
@@ -26,11 +44,11 @@ person_mapping:
     - target_column: day_of_birth
       transformation:
         type: default
-        value: 
+        value: null
     - target_column: birth_datetime
       transformation:
         type: default
-        value: 
+        value: null
     - target_column: race_concept_id
       transformation:
         type: default
@@ -42,23 +60,23 @@ person_mapping:
     - target_column: location_id
       transformation:
         type: default
-        value: 
+        value: null
     - target_column: provider_id
       transformation:
         type: default
-        value: 
+        value: null
     - target_column: care_site_id
       transformation:
         type: default
-        value: 
+        value: null
     - target_column: person_source_value
       transformation:
-        type: default
-        value: 
+        type: copy
+        source_column: subject_id
     - target_column: gender_source_value
       transformation:
-        type: default
-        value: 
+        type: copy
+        source_column: gender
     - target_column: gender_source_concept_id
       transformation:
         type: default
