@@ -46,7 +46,7 @@ This mirrors the structure created with `startproject`. The only difference is t
 
 ## 4. Transformations
 
-At the core of the `omopetl` project are the transformations. These are a set of rules that allow you to map from the source format to the target format.
+At the core of the `omopetl` project are the transformations. These are a set of rules that allow you to map from the source format to the target format. They are defined in `mappings.yaml`.
 
 **By design, transformations always return a column with the same length as the source data**. This helps to ensure row level integrity of the transformed data. If a transformation alters the length of an array, an error is raised.
 
@@ -222,7 +222,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
       condition: "visit_start_datetime >= '2020-01-01'"
 ```
 
-## 6. Configuring your project
+## 7. Configuring your project
 
 After creating your new project with `omopetl startproject <PROJECTNAME>`, you will need to configure the transformation. We recommend the following approach:
 
@@ -293,7 +293,9 @@ visit_occurrence:
 
 This file is primarily used for validating your transform (for example, making sure that relationships are maintained between variables).
 
-**If you are creating staging tables as part of your ETL, it is important that they are also described in the target schema!**
+Staging tables are intermediate tables created during the transformation process and stored in the target directory. These tables can be referenced as source tables in subsequent transformations.
+
+**If you are creating staging tables as part of your ETL, it is important that they are also described in the target schema, or else validation checks against the target schema will fail!**
 
 3. Add details of your source tables and column mapping rules to `etl_config.yaml`:
 
@@ -354,7 +356,7 @@ visit_occurrence_mapping:
 
 We suggest starting out with the simple transformations first. For example, try creating a first version of your transformation using only direct mappings.
 
-5. Add custom validation rules to `validation.yaml`. For example, if dates of birth should be within the range of `1900-01-01` and `2023-12-31`, you might choose to add the following rule:
+6. Add custom validation rules to `validation.yaml`. For example, if dates of birth should be within the range of `1900-01-01` and `2023-12-31`, you might choose to add the following rule:
 
 ```
 validation:
