@@ -293,6 +293,8 @@ visit_occurrence:
 
 This file is primarily used for validating your transform (for example, making sure that relationships are maintained between variables).
 
+**If you are creating staging tables as part of your ETL, it is important that they are also described in the target schema!**
+
 3. Add details of your source tables and column mapping rules to `etl_config.yaml`:
 
 ```
@@ -312,6 +314,8 @@ etl:
     person_mapping
     visit_occurrence_mapping
 ```
+
+**Don't forget to include your list of mappings in this file, including any mappings that create staging tables.**
 
 4. Add your transformations to `mappings.yaml`:
 
