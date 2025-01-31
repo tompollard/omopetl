@@ -1,0 +1,51 @@
+domain_id,domain_name,domain_concept_id,load_table_id,load_row_id
+Device/Drug,Device/Drug,50,domain,0
+Meas Value,Measurement Value,24,domain,0
+Sponsor,Sponsor - institution or individual financing healthcare transactions,32476,domain,0
+Relationship,Relationship,31,domain,0
+Metadata,Metadata,7,domain,0
+Regimen,Treatment Regimen,32687,domain,0
+Measurement,Measurement,21,domain,0
+Language,Language,33068,domain,0
+Visit,Visit,8,domain,0
+Condition/Obs,Condition/Observation,48,domain,0
+Measurement/Obs,Measurement/Observation,44,domain,0
+Procedure,Procedure,10,domain,0
+Plan Stop Reason,Plan Stop Reason - Reason for termination of the Health Plan,32478,domain,0
+Meas Value Operator,Measurement Value Operator,23,domain,0
+Condition,Condition,19,domain,0
+Device,Device,17,domain,0
+Observation,Observation,27,domain,0
+Device/Obs,Device/Observation,45,domain,0
+Condition/Procedure,Condition/Procedure,49,domain,0
+Drug/Measurement,Drug/Measurement,51,domain,0
+Gender,Gender,2,domain,0
+Spec Disease Status,Specimen Disease Status,39,domain,0
+Meas/Procedure,Measurement/Procedure,43,domain,0
+Specimen,Specimen,36,domain,0
+Device/Procedure,Device/Procedure,41,domain,0
+Drug/Procedure,Drug/Procedure,54,domain,0
+Condition/Device,Condition/Device,235,domain,0
+Revenue Code,Revenue Code,35,domain,0
+Note,Note,5085,domain,0
+Race,Race,3,domain,0
+Provider,Provider Specialty,33,domain,0
+Episode,Episode,32527,domain,0
+Spec Anatomic Site,Specimen Anatomic Site,38,domain,0
+Condition/Meas,Condition/Measurement,47,domain,0
+Modifier,Modifier,12,domain,0
+Plan,"Health Plan - contract to administer healthcare transactions by the payer, facilitated by the sponsor",32475,domain,0
+Cost,Cost,581456,domain,0
+Drug/Obs,Drug/Observation,52,domain,0
+Place of Service,Place of Service,32,domain,0
+Ethnicity,Ethnicity,4,domain,0
+Payer,Payer - institution administering healthcare transactions,32477,domain,0
+Geography,Geographical object,32558,domain,0
+Type Concept,Type Concept,58,domain,0
+Drug,Drug,13,domain,0
+Condition/Drug,Condition/Drug,53,domain,0
+Condition Status,OMOP Condition Status,32889,domain,0
+Currency,Currency,34,domain,0
+Obs/Procedure,Observation/Procedure,42,domain,0
+Unit,Unit,16,domain,0
+Route,Route Of Administration,15,domain,0

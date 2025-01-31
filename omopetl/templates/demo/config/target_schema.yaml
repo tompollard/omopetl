@@ -6,6 +6,15 @@ staging_person_lookup:
     person_id:
       type: String
 
+tmp_subject_race:
+  table_name: tmp_subject_race
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    race:
+      type: String
+
 person:
   columns:
     person_id:

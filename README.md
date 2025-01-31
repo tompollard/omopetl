@@ -193,19 +193,35 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     formula: "dischtime - admittime"
 ```
 
-11. Multi-Step Transformations: Applies a sequence of transformations to a single column.
+11. Aggregation: Aggregates a column based on an aggregation method (e.g. `first`, `last`, `sum`) and `group_by` and `order_by` columns.
 
-    Example: Normalize admittime and filter rows based on the normalized value.
+    Example: Select the earliest race entry by `subject_id`.
 
 ```
-- target_column: visit_start_datetime
-  transformations:
-    - type: normalize_date
-      source_column: admittime
-      format: "%Y-%m-%d"
-    - type: filter
-      condition: "visit_start_datetime >= '2020-01-01'"
+- tmp_subject_race:
+    source_table: admissions
+    target_table: tmp_subject_race
+    columns:
+      - target_column: subject_id
+        transformation:
+          type: copy
+          source_column: subject_id
+      - target_column: race
+        transformation:
+          type: aggregate
+          source_columns:
+            - subject_id
+            - admittime
+            - race
+          group_by:
+            - subject_id
+          order_by: admittime
+          aggregation: first
 ```
+    Explanation:
+    - Groups by `subject_id`
+    - Orders by `admittime`
+    - Selects the first recorded race by subject.
 
 12. Multi-Step Transformations: Apply a sequence of transformations to a single column.
 

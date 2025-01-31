@@ -1,0 +1,418 @@
+concept_class_id,concept_class_name,concept_class_concept_id,load_table_id,load_row_id
+CDM,CDM,32522,concept_class,0
+CDT,CDT,581440,concept_class,0
+SPL,SPL,44819276,concept_class,0
+SUS,SUS,32464,concept_class,0
+Drug,Drug,44819251,concept_class,0
+Full,Full,32039,concept_class,0
+Misc,Misc,45905719,concept_class,0
+Race,Race,44819030,concept_class,0
+Read,Read,44819273,concept_class,0
+Test,Test,45905711,concept_class,0
+Unit,Unit,44819072,concept_class,0
+Event,Event,44819056,concept_class,0
+Route,Route,32638,concept_class,0
+State,State,45905724,concept_class,0
+Topic,Topic,581407,concept_class,0
+Value,Value,32968,concept_class,0
+Cohort,Cohort,44819246,concept_class,0
+Detail,Detail,581455,concept_class,0
+Device,Device,44819094,concept_class,0
+Domain,Domain,44819025,concept_class,0
+Gender,Gender,44819086,concept_class,0
+LabSet,LabSet,45905716,concept_class,0
+MedSet,MedSet,45905717,concept_class,0
+Module,Module,581408,concept_class,0
+Multum,Multum,44819268,concept_class,0
+Anatomy,Anatomy,45905714,concept_class,0
+Answer,Answers,45754682,concept_class,0
+Context,Context,32641,concept_class,0
+ConvSet,ConvSet,45905718,concept_class,0
+Finding,Finding,45905713,concept_class,0
+Program,Program,45905725,concept_class,0
+Regimen,Regimen,32639,concept_class,0
+Summary,Summary,581454,concept_class,0
+Survey,Surveys,45754681,concept_class,0
+Symptom,Symptom,44819184,concept_class,0
+Variant,Variant,32926,concept_class,0
+Category,Category,32966,concept_class,0
+Currency,Currency,44819049,concept_class,0
+Hispanic,Hispanic,44819085,concept_class,0
+Language,Language,33070,concept_class,0
+Metadata,Metadata,32674,concept_class,0
+Modality,Modality,32690,concept_class,0
+Multilex,Multilex,44819267,concept_class,0
+Organism,Organism,44819043,concept_class,0
+Question,Question,45905715,concept_class,0
+Specimen,Specimen,44819055,concept_class,0
+VA Class,VA Class,44819277,concept_class,0
+Variable,Variable,32967,concept_class,0
+Workflow,Workflow,45905723,concept_class,0
+Attribute,Attribute,44819070,concept_class,0
+CAP Value,CAP Value,32772,concept_class,0
+Component,Component,32637,concept_class,0
+Condition,Condition,44819048,concept_class,0
+Cost Type,Cost Type,5030,concept_class,0
+Diagnosis,Diagnosis,45905712,concept_class,0
+Dose Form,Dose Form,44819066,concept_class,0
+Drug Type,Drug Type,44819252,concept_class,0
+Drug form,Drug form,45905734,concept_class,0
+Ethnicity,Ethnicity,44819035,concept_class,0
+Frequency,Frequency,45905730,concept_class,0
+GCN_SEQNO,GCN_SEQNO,44819254,concept_class,0
+Gemscript,Gemscript,44819253,concept_class,0
+Indicator,Indicator,45905727,concept_class,0
+KCD7 code,KCD7 code,32694,concept_class,0
+Neoplasm,Neoplasms,44819168,concept_class,0
+Note Type,Note Type,44819061,concept_class,0
+Procedure,Procedure,44819080,concept_class,0
+Specialty,Specialty,44819016,concept_class,0
+Substance,Substance,44819050,concept_class,0
+Treatment,Treatment,32525,concept_class,0
+Undefined,Undefined,44819044,concept_class,0
+Brand Name,Brand Name,44819065,concept_class,0
+CAP Header,CAP Header,32774,concept_class,0
+Death Type,Death Type,44819000,concept_class,0
+Drug Class,Drug Class,44818993,concept_class,0
+ICD10 code,ICD10 code,44819258,concept_class,0
+ISBT Class,ISBT Class,581444,concept_class,0
+Indication,Indication,44819262,concept_class,0
+Ingredient,Ingredient,44818981,concept_class,0
+LOINC Time,LOINC Time,32720,concept_class,0
+Misc Order,Misc Order,45905722,concept_class,0
+Visit,OMOP Visit,44819023,concept_class,0
+VA Product,VA Product,44819278,concept_class,0
+Visit Type,Visit Type,44819039,concept_class,0
+CVX,CVX vaccine,581401,concept_class,0
+Custom Unit,Custom Unit,44819074,concept_class,0
+DNA Variant,DNA Variant,32924,concept_class,0
+Device Type,Device Type,44819027,concept_class,0
+Disposition,Disposition,32538,concept_class,0
+Drug Cohort,Drug Cohort,44819024,concept_class,0
+HCPCS Class,HCPCS Class,45754688,concept_class,0
+ICD9CM code,ICD9CM code,44819259,concept_class,0
+LOINC Class,LOINC Class,45754677,concept_class,0
+LOINC Group,LOINC Group,32484,concept_class,0
+LOINC Scale,LOINC Scale,32719,concept_class,0
+Measurement,Measurement,44819071,concept_class,0
+Observation,Observation,44819093,concept_class,0
+RNA Variant,RNA Variant,32923,concept_class,0
+AJCC Chapter,AJCC Chapter,32950,concept_class,0
+BioCondition,BioCondition,32689,concept_class,0
+Biobank Flag,Biobank Flag,44819019,concept_class,0
+CAP Protocol,CAP Protocol,32775,concept_class,0
+CAP Variable,CAP Variable,32773,concept_class,0
+Drug Product,Drug Product,44819040,concept_class,0
+Episode Type,Episode Type,32543,concept_class,0
+Clinical Pack,Generic Pack,44818992,concept_class,0
+ISBT Product,ISBT Product,581443,concept_class,0
+LOINC Method,LOINC Method,32721,concept_class,0
+LOINC System,LOINC System,32717,concept_class,0
+NAACCR Value,NAACCR Value,32653,concept_class,0
+PPI Modifier,PPI Modifier,581409,concept_class,0
+Regimen type,Regimen type,32636,concept_class,0
+Revenue Code,Revenue Code,44819075,concept_class,0
+Type Concept,Type Concept,581453,concept_class,0
+Vital Source,Vital Source,45754803,concept_class,0
+AJCC Category,AJCC Category,32951,concept_class,0
+ATC 1st,ATC 1st Level,44819281,concept_class,0
+ATC 2nd,ATC 2nd Level,44819283,concept_class,0
+ATC 3rd,ATC 3rd Level,44819280,concept_class,0
+ATC 4th,ATC 4th Level,44819285,concept_class,0
+ATC 5th,ATC 5th Level,44819284,concept_class,0
+CDT Hierarchy,CDT Hierarchy,581439,concept_class,0
+CPT4 Modifier,CPT4 Modifier,45754685,concept_class,0
+HES Specialty,HES Specialty,44819257,concept_class,0
+ICD10 Chapter,ICD10 Chapter,32742,concept_class,0
+ICD10PCS,ICD10PCS Code,260,concept_class,0
+ICD9CM E code,ICD9CM E code,44819260,concept_class,0
+ICD9CM V code,ICD9CM V code,44819261,concept_class,0
+ISBT Category,ISBT Category,581449,concept_class,0
+ISBT Modifier,ISBT Modifier,581445,concept_class,0
+NAACCR Schema,NAACCR Schema,32654,concept_class,0
+NFC,New Form Code,253,concept_class,0
+Provider,OMOP Provider,32575,concept_class,0
+Regimen Class,Regimen Class,32794,concept_class,0
+Standard Unit,Standard Unit,44819073,concept_class,0
+Vaccine Group,Vaccine Group,33094,concept_class,0
+Body Structure,Body Structure,44818996,concept_class,0
+CPT4 Hierarchy,CPT4 Hierarchy,45754686,concept_class,0
+Canonical,Canonical Unit,44819053,concept_class,0
+Canonical Unit,Canonical Unit,44819282,concept_class,0
+Clinical Observation,Clinical Class,45754679,concept_class,0
+Condition Type,Condition Type,44819248,concept_class,0
+Diagnosis Type,Diagnosis Type,45754801,concept_class,0
+Disease Extent,Disease Extent,32524,concept_class,0
+Encounter Type,Encounter Type,44819084,concept_class,0
+Frequency code,Frequency code,32038,concept_class,0
+HCPCS Modifier,HCPCS Modifier,45754687,concept_class,0
+ICDO Condition,ICDO Condition,581435,concept_class,0
+ICDO Histology,ICDO Histology,581434,concept_class,0
+LOINC Property,LOINC Property,32722,concept_class,0
+Link Assertion,Link Assertion,45754798,concept_class,0
+Medical supply,Medical supply,45905735,concept_class,0
+Table,OMOP CDM Table,32486,concept_class,0
+Patient Status,Patient Status,44819079,concept_class,0
+Physical Force,Physical Force,44819052,concept_class,0
+PT,Preferred Term,44819017,concept_class,0
+Procedure Drug,Procedure Drug,44819095,concept_class,0
+Procedure Type,Procedure Type,44819272,concept_class,0
+Quality Metric,Quality Metric,44819092,concept_class,0
+Social Context,Social Context,44819022,concept_class,0
+Form,dm+d Dose Form,5006,concept_class,0
+Branded Pack,Brand Name Pack,44818982,concept_class,0
+Component Class,Component Class,32640,concept_class,0
+Disease Dynamic,Disease Dynamic,32938,concept_class,0
+Dose Form Group,Dose Form Group,5023,concept_class,0
+Episode of Care,Episode of Care,32526,concept_class,0
+HLT,High Level Term,44819018,concept_class,0
+ICD10 Hierarchy,ICD10 Hierarchy,45754906,concept_class,0
+ICD10 Histology,ICD10 Histology,32741,concept_class,0
+ICDO Topography,ICDO Topography,581433,concept_class,0
+ISBT Attrib cat,ISBT Attrib cat,581448,concept_class,0
+LOINC Component,LOINC Component,32718,concept_class,0
+LOINC Hierarchy,LOINC Hierarchy,44819264,concept_class,0
+Linkage Concept,Linkage Concept,45754797,concept_class,0
+MEDRT Extension,MEDRT Extension,32536,concept_class,0
+Model Comp,Model Component,44819058,concept_class,0
+NAACCR Variable,NAACCR Variable,32655,concept_class,0
+Vocabulary,OMOP Vocabulary,44819279,concept_class,0
+Physical Object,Physical Object,44819009,concept_class,0
+Proc Group,Procedure Group,32958,concept_class,0
+Protein Variant,Protein Variant,32927,concept_class,0
+Qualifier Value,Qualifier Value,44819021,concept_class,0
+Question source,Question source,32805,concept_class,0
+Record Artifact,Record Artifact,44818999,concept_class,0
+Special Concept,Special Concept,44819046,concept_class,0
+Symptom/Finding,Symptom/Finding,45905721,concept_class,0
+9-digit NDC,9-digit NDC code,44819244,concept_class,0
+Admitting Source,Admitting Source,44819002,concept_class,0
+Branded Drug Box,Branded Drug Box,202,concept_class,0
+Branded Pack Box,Branded Pack Box,5044,concept_class,0
+Clinical Finding,Clinical Finding,44818997,concept_class,0
+Condition Cohort,Condition Cohort,44819034,concept_class,0
+Discharge Status,Discharge Status,44819083,concept_class,0
+Drug Interaction,Drug Interaction,44819069,concept_class,0
+Enrollment Basis,Enrollment Basis,44819038,concept_class,0
+ICD10 SubChapter,ICD10 SubChapter,32743,concept_class,0
+ICD9Proc Chapter,ICD9Proc Chapter,32746,concept_class,0
+Inactive Concept,Inactive Concept,45754796,concept_class,0
+Lab Test,Laboratory Class,45754678,concept_class,0
+Marketed Product,Marketed Product,250,concept_class,0
+Meas Type,Measurement Type,44819001,concept_class,0
+NAACCR Procedure,NAACCR Procedure,32652,concept_class,0
+Observation Type,Observation Type,44819076,concept_class,0
+Pharmacokinetics,Pharmacokinetics,44818984,concept_class,0
+Place of Service,Place Of Service,44818985,concept_class,0
+Units of Measure,Units of Measure,45905732,concept_class,0
+11-digit NDC,11-digit NDC code,44819243,concept_class,0
+Clinical Drug Box,Clinical Drug Box,203,concept_class,0
+Clinical Pack Box,Clinical Pack Box,5043,concept_class,0
+Genetic Variation,Genetic Variation,32925,concept_class,0
+ISBT Attrib group,ISBT Attrib group,581447,concept_class,0
+ISBT Attrib value,ISBT Attrib value,581446,concept_class,0
+Linkage Assertion,Linkage Assertion,45754822,concept_class,0
+LLT,Lowest Level Term,44819081,concept_class,0
+Meas Class,Measurement Class,44819059,concept_class,0
+Namespace Concept,Namespace Concept,44819057,concept_class,0
+Relationship,OMOP Relationship,44819274,concept_class,0
+Observable Entity,Observable Entity,44819029,concept_class,0
+Permissible Range,Permissible Range,32663,concept_class,0
+Therapeutic Class,Therapeutic Class,44818995,concept_class,0
+Typ bill 3 digits,Typ bill 3 digits,32040,concept_class,0
+6-dig billing code,6-dig billing code,32745,concept_class,0
+AU Qualifier,AU Qualifier (AMT),5035,concept_class,0
+AU Substance,AU Substance (AMT),5034,concept_class,0
+Chart Availability,Chart Availability,44818991,concept_class,0
+Chemical Structure,Chemical Structure,44819068,concept_class,0
+Claims Attachment,Claims Attachments,45754680,concept_class,0
+Metastasis,Distant metastases,32937,concept_class,0
+Drug Exposure Type,Drug Exposure Type,44819078,concept_class,0
+Concept Class,OMOP Concept Class,44819247,concept_class,0
+Specimen Type,OMOP Specimen Type,581377,concept_class,0
+Physiologic Effect,Physiologic Effect,44819067,concept_class,0
+Precise Ingredient,Precise Ingredient,5022,concept_class,0
+Staging / Scales,Staging And Scales,44819010,concept_class,0
+SOC,System Organ Class,44819037,concept_class,0
+UB04 Pt dis status,UB04 Pt dis status,32043,concept_class,0
+Biological Function,Biological Function,44819047,concept_class,0
+Diagnosis Code Type,Diagnosis Code Type,45754800,concept_class,0
+Diagnostic Category,Diagnostic Category,44819077,concept_class,0
+Doc Kind,LOINC Document Kind,32452,concept_class,0
+Doc Role,LOINC Document Role,32451,concept_class,0
+LOINC Document Type,LOINC Document Type,581372,concept_class,0
+Mechanism of Action,Mechanism of Action,44819005,concept_class,0
+Pharmacologic Class,Pharmacologic Class,44819006,concept_class,0
+Procedure Code Type,Procedure Code Type,45754802,concept_class,0
+Proc Hierarchy,Procedure Hierarchy,32737,concept_class,0
+Trade Product,Trade Product (AMT),5040,concept_class,0
+UB04 Pri Typ of Adm,UB04 Pri Typ of Adm,32042,concept_class,0
+3-dig billing code,3-digit billing code,45754868,concept_class,0
+4-dig billing code,4-digit billing code,45754869,concept_class,0
+5-dig billing code,5-digit billing code,45754870,concept_class,0
+Concept Relationship,Concept Relationship,44819026,concept_class,0
+Multiple Ingredients,Multiple Ingredients,33001,concept_class,0
+Navi Concept,Navigational Concept,45754795,concept_class,0
+Field,OMOP CDM Table Field,32487,concept_class,0
+UB04 Point of Origin,UB04 Point of Origin,32041,concept_class,0
+Aggregate Meas,Aggregate Measurement,45905726,concept_class,0
+Discharge Dispo,Discharge Disposition,44819003,concept_class,0
+DRG,Disease-related Group,44819250,concept_class,0
+HLGT,High Level Group Term,44818990,concept_class,0
+Nodes,Lymph node metastases,32932,concept_class,0
+Condition Status,OMOP Condition Status,32888,concept_class,0
+Branded Drug,Semantic Branded Drug,44819063,concept_class,0
+Suppl Concept,Supplementary Concept,46233639,concept_class,0
+3-dig billing E code,3-digit billing E code,46233669,concept_class,0
+3-dig billing V code,3-digit billing V code,45754873,concept_class,0
+4-dig billing E code,4-digit billing E code,45754871,concept_class,0
+4-dig billing V code,4-digit billing V code,45754874,concept_class,0
+5-dig billing E code,5-digit billing E code,45754872,concept_class,0
+5-dig billing V code,5-digit billing V code,45754875,concept_class,0
+Admin Concept,Administrative Concept,44818986,concept_class,0
+Note Kind,Kind of Note Attribute,5048,concept_class,0
+Doc Setting,LOINC Document Setting,32453,concept_class,0
+Clinical Drug,Semantic Clinical Drug,44819028,concept_class,0
+Blood Pressure Pos,Blood Pressure Position,45754804,concept_class,0
+Medicinal Product,Medicinal Product (AMT),5038,concept_class,0
+Morph Abnormality,Morphologic Abnormality,44819008,concept_class,0
+NAACCR Proc Schema,NAACCR Procedure Schema,32651,concept_class,0
+Obs Period Type,Observation Period Type,44819062,concept_class,0
+Quant Branded Drug,Quantified Branded Drug,45754863,concept_class,0
+2-dig nonbill code,2-digit non-billing code,45754881,concept_class,0
+2nd level,2nd administrative level,32566,concept_class,0
+3-char billing code,3-character billing code,46233663,concept_class,0
+3-dig nonbill code,3-digit non-billing code,45754876,concept_class,0
+3rd level,3rd administrative level,32560,concept_class,0
+4-char billing code,4-character billing code,46233664,concept_class,0
+4-dig nonbill code,4-digit non-billing code,45754877,concept_class,0
+4th level,4th administrative level,32568,concept_class,0
+5-char billing code,5-character billing code,46233665,concept_class,0
+5th level,5th administrative level,32564,concept_class,0
+6-char billing code,6-character billing code,46233666,concept_class,0
+6th level,6th administrative level,32565,concept_class,0
+7-char billing code,7-character billing code,46233667,concept_class,0
+7th level,7th administrative level,32569,concept_class,0
+8th level,8th administrative level,32561,concept_class,0
+9th level,9th administrative level,32563,concept_class,0
+AMP,Actual Medicinal Product,5002,concept_class,0
+Life circumstance,Animal life circumstance,32550,concept_class,0
+Vaccine,Human drug class Vaccine,45754855,concept_class,0
+ICD9CM non-bill code,ICD9CM non-billable code,45754823,concept_class,0
+Physician Specialty,OMOP Physician Specialty,32576,concept_class,0
+Quant Clinical Drug,Quantified Clinical Drug,45754862,concept_class,0
+Trade Product Pack,Trade Product Pack (AMT),5039,concept_class,0
+Dimension,Tumor size and dimension,32935,concept_class,0
+10th level,10th administrative level,32559,concept_class,0
+11th level,11th administrative level,32567,concept_class,0
+12th level,12th administrative level,32562,concept_class,0
+Condition Occur Type,Condition Occurrence Type,44819012,concept_class,0
+MDC,Major Diagnostic Category,44819265,concept_class,0
+Food,Non-human drug class Food,46274137,concept_class,0
+Procedure Occur Type,Procedure Occurrence Type,44819013,concept_class,0
+SMQ,Standardized Meddra Query,44819060,concept_class,0
+VMP,Virtual Medicinal Product,5004,concept_class,0
+3-dig nonbill E code,3-digit non-billing E code,45754879,concept_class,0
+3-dig nonbill V code,3-digit non-billing V code,45754878,concept_class,0
+4-dig nonbill E code,4-digit non-billing E code,45754880,concept_class,0
+4-dig nonbill V code,4-digit non-billing V code,45756722,concept_class,0
+Special Code,Codes for special purposes,44819236,concept_class,0
+DRG Type,Disease Related Group Type,45754799,concept_class,0
+GPI,Generic Product Identifier,44819255,concept_class,0
+ICD10PCS Hierarchy,ICD10PCS Hierarchical Code,259,concept_class,0
+ICD9Proc non-bill,ICD9Proc non-billable code,45754824,concept_class,0
+Main Heading,Main Heading or Descriptor,46233638,concept_class,0
+Branded Drug Form,Semantic Branded Drug Form,44819041,concept_class,0
+VTM,Virtual Therapeutic Moiety,5007,concept_class,0
+Pharma Preparation,Pharmaceutical Preparations,44818983,concept_class,0
+Quant Branded Box,Quantified Branded Drug Box,200,concept_class,0
+Radiology,Radiology/Imaging Procedure,45905729,concept_class,0
+Branded Dose Group,Semantic Branded Dose Group,5025,concept_class,0
+Clinical Drug Form,Semantic Clinical Drug Form,44819020,concept_class,0
+3-char nonbill code,3-character non-billing code,46233658,concept_class,0
+4-char nonbill code,4-character non-billing code,46233659,concept_class,0
+5-char nonbill code,5-character non-billing code,46233660,concept_class,0
+6-char nonbill code,6-character non-billing code,46233661,concept_class,0
+7-char nonbill code,7-character non-billing code,46233662,concept_class,0
+External Cause,External causes of morbidity,44819186,concept_class,0
+Med Product Pack,Medicinal Product Pack (AMT),5037,concept_class,0
+Quant Clinical Box,Quantified Clinical Drug Box,201,concept_class,0
+Clinical Dose Group,Semantic Clinical Dose Group,5024,concept_class,0
+Chem Subgroup,4th Level - Chemical Subgroup,44819090,concept_class,0
+AMPP,Actual Medicinal Product Pack,5003,concept_class,0
+Monitoring,Health Care Monitoring Topics,45905728,concept_class,0
+Cosmetic,Non-human drug class Cosmetic,46274139,concept_class,0
+Chem Substance,5th Level - Chemical Substance,44819091,concept_class,0
+Eye Disease,Diseases of the eye and adnexa,44819173,concept_class,0
+Nervous Disease,Diseases of the nervous system,44819172,concept_class,0
+Provider Specialty,Health Care Provider Specialty,44819014,concept_class,0
+Doc Type of Service,LOINC Document Type of Service,32450,concept_class,0
+Staging/Grading,Official Grade or Stage System,32933,concept_class,0
+VMPP,Virtual Medicinal Product Pack,5005,concept_class,0
+OTC Drug,Human drug class Human OTC Drug,45754858,concept_class,0
+Ind / CI,Indication or Contra-Indication,44819042,concept_class,0
+Supplement,Non-human drug class Supplement,46274138,concept_class,0
+Note Provider Role,Provider Role of Note Attribute,5052,concept_class,0
+Branded Drug Comp,Semantic Branded Drug Component,44819004,concept_class,0
+Context-dependent,Situation with explicit context,44819051,concept_class,0
+Trade Product Unit,Trade Product Unit of Use (AMT),5041,concept_class,0
+Therap Subgroup,2nd Level - Therapeutic Subgroup,44819088,concept_class,0
+Digestive Disease,Diseases of the digestive system,44819177,concept_class,0
+Animal Drug,Non-human drug class Animal Drug,46277305,concept_class,0
+Clinical Drug Comp,Semantic Clinical Drug Component,44819064,concept_class,0
+Anatom Main Group,1st Level - Anatomical Main Group,44819087,concept_class,0
+APC,Ambulatory Patient Classification,44819245,concept_class,0
+Cellular Therapy,Human drug class Cellular Therapy,45754861,concept_class,0
+Disinfectant,Non-human drug class Disinfectant,240,concept_class,0
+OXMIS,Oxford Medical Information System,44819271,concept_class,0
+Pharma/Biol Product,Pharmaceutical / Biologic Product,44819007,concept_class,0
+Circulatory Disease,Diseases of the circulatory system,44819175,concept_class,0
+Respiratory Disease,Diseases of the respiratory system,44819176,concept_class,0
+Plasma Derivative,Human drug class Plasma Derivative,45754859,concept_class,0
+Supplier,"Supplier: Manufacturer, Wholesaler",244,concept_class,0
+US Census Region,United States Census Bureau Region,32571,concept_class,0
+ETC,Enhanced Therapeutic Classification,44819082,concept_class,0
+Med Product Unit,Medicinal Product Unit of Use (AMT),5036,concept_class,0
+Pharma Subgroup,3rd Level - Pharmacological Subgroup,44819089,concept_class,0
+Containered Pack,Containered Trade Product Pack (AMT),5042,concept_class,0
+Genitourinary Dis,Diseases of the genitourinary system,44819180,concept_class,0
+Location,Environment or Geographical Location,44819011,concept_class,0
+Doc Subject Matter,LOINC Document Subject Matter Domain,32449,concept_class,0
+Note Domain,Note Subject Matter Domain Attribute,5051,concept_class,0
+US Census Division,United States Census Bureau Division,32572,concept_class,0
+Topography,Cancer topography and anatomical site,32930,concept_class,0
+Imaging Material,Non-human drug class Imaging Material,241,concept_class,0
+Histopattern,Histological patterns of cancer tissue,32936,concept_class,0
+Ear Disease,Diseases of the ear and mastoid process,44819174,concept_class,0
+MS-DRG,Medicare Severity Disease-related Group,45757047,concept_class,0
+Note Setting,Point of Care Setting of Note Attribute,5050,concept_class,0
+CPT4,Current Procedural Terminology version 4,44819249,concept_class,0
+Prescription Drug,Human drug class Human Prescription Drug,45754857,concept_class,0
+Standard Allergenic,Human drug class Standardized Allergenic,45754856,concept_class,0
+Pregnancy,"Pregnancy, childbirth and the puerperium",44819181,concept_class,0
+Infectious Disease,Certain infectious and parasitic diseases,44819188,concept_class,0
+Gemscript THIN,Encrypted Gemscript for the THIN database,5000,concept_class,0
+HCPCS,Healthcare Common Procedure Coding System,44819256,concept_class,0
+NUCC,National Uniform Claim Committee Specialty,44819269,concept_class,0
+Skin Disease,Diseases of the skin and subcutaneous tissue,44819178,concept_class,0
+Non-Stand Allergenic,Human drug class Non-Standardized Allergenic,45754860,concept_class,0
+MedDRA,Medical Dictionary for Regulatory Activities,44819266,concept_class,0
+Endocrine Disease,"Endocrine, nutritional and metabolic diseases",44819170,concept_class,0
+ATC,Anatomical Therapeutic Chemical Classification,44819054,concept_class,0
+LOINC,Logical Observation Identifiers Names and Codes,44819263,concept_class,0
+Note Service Type,Service or activity resulting in Note Attribute,5049,concept_class,0
+Mental Disease,"Mental, Behavioral and Neurodevelopmental disorders",44819171,concept_class,0
+Precoordinated pair,Precoordinated (Question-Answer/Variable-Value) pair ,32969,concept_class,0
+Perinatal Disease,Certain conditions originating in the perinatal period,44819182,concept_class,0
+Margin,Tumor resection margins and involvement by cancer cells,32931,concept_class,0
+Payer,Payer - institution administering healthcare transactions,32479,concept_class,0
+Soft Tissue Disease,Diseases of the musculoskeletal system and connective tissue,44819179,concept_class,0
+Plan Stop Reason,Plan Stop Reason - Reason for termination of the Health Plan,32481,concept_class,0
+Extension/Invasion,Local cancer growth and invasion into adjacent tissue and organs,32934,concept_class,0
+Benefit,Benefit - healthcare items or services covered under a Health Plan,32482,concept_class,0
+Health Service,Factors influencing health status and contact with health services,44819187,concept_class,0
+Injury,"Injury, poisoning and certain other consequences of external causes",44819185,concept_class,0
+Congenital Disease,"Congenital malformations, deformations and chromosomal abnormalities",44819183,concept_class,0
+Sponsor,Sponsor - institution or individual financing healthcare transactions,32480,concept_class,0
+Metal level,Metal level: ratio of split of the healthcare transaction costs between Health Plan and patient,32483,concept_class,0
+Blood/Immune Disease,Diseases of the blood and blood-forming organs and certain disorders involving the immune mechanism,44819169,concept_class,0

@@ -249,6 +249,66 @@ class Transformer:
         # Return the linked column data
         return self.data[source_column]
 
+    def transform_aggregate(self, current_data, target_column, transformation):
+        """
+        Perform an aggregation on the specified source columns.
+
+        Parameters:
+        - current_data: DataFrame with the source data.
+        - target_column: The column in the target table to store the aggregated result.
+        - transformation: Dictionary containing transformation details.
+
+        Returns:
+        - Series: The aggregated column data.
+        """
+        source_columns = transformation.get("source_columns")
+        if not source_columns:
+            raise ValueError(f"'source_columns' must be specified for aggregation in '{target_column}'.")
+
+        group_by = transformation.get("group_by")
+        if not group_by:
+            raise ValueError(f"'group_by' must be specified for aggregation in '{target_column}'.")
+
+        # Ensure `group_by` is a list
+        if isinstance(group_by, str):
+            group_by = [group_by]
+
+        order_by = transformation.get("order_by", None)
+        aggregation = transformation.get("aggregation", "first")
+
+        # Ensure all required columns exist
+        missing_columns = [col for col in source_columns if col not in current_data.columns]
+        if missing_columns:
+            raise KeyError(f"Columns {missing_columns} not found in source data.")
+
+        # Apply order_by only to the subset of data being aggregated
+        if order_by:
+            aggregated_data = current_data.sort_values(order_by).groupby(group_by)
+        else:
+            aggregated_data = current_data.groupby(group_by)
+
+        # Perform aggregation
+        if aggregation == "first":
+            aggregated_data = aggregated_data.first().reset_index()
+        elif aggregation == "last":
+            aggregated_data = aggregated_data.last().reset_index()
+        elif aggregation == "most_frequent":
+            aggregated_data = (
+                aggregated_data.agg(lambda x: x.value_counts().idxmax()).reset_index()
+            )
+        else:
+            raise ValueError(f"Unsupported aggregation method: {aggregation}")
+
+        # Merge aggregated results back into current_data
+        merge_columns = list(set(group_by + [target_column]))
+
+        current_data = current_data.merge(aggregated_data[merge_columns],
+                                          on=group_by,
+                                          how="left",
+                                          suffixes=("", "_agg"))
+
+        return current_data[f"{target_column}_agg"].rename(target_column)
+
     def transform_lookup(self, current_data, target_column, transformation):
         """
         Perform a lookup transformation using a lookup table.

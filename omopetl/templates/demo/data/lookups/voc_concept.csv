@@ -1,0 +1,501 @@
+concept_id,concept_name,domain_id,vocabulary_id,concept_class_id,standard_concept,concept_code,valid_start_date,valid_end_date,invalid_reason,load_table_id,load_row_id
+3028006,Deprecated Brachiocephalic artery - bilateral Fluoroscopic angiogram Angioplasty W contrast IA,Procedure,LOINC,Clinical Observation,,26367-3,26/08/2010,27/08/2010,D,concept,7.62481E+18
+1383085,alcohol 68mL/100mL TOPICAL GEL [anti-bacterial hand fruit squeeze],Drug,NDC,11-digit NDC,,62670647900,21/06/2023,21/12/2023,D,concept,-3.5019E+18
+40218365,"Administration of medication, intramuscularly, epidurally, or subcutaneously, in the home setting, including all nursing care, equipment, and supplies; per diem (Deprecated)",Procedure,HCPCS,HCPCS,,S9543,01/01/2000,31/03/2002,,concept,-5.19432E+18
+40054232,Iodine 0.009 MG/MG Topical Gel [Iodosorb],Drug,RxNorm,Branded Drug,,284585,01/01/1970,25/02/2007,D,concept,-2.91237E+18
+2617722,Patient not documented to have received macular exam with documentation of presence or absence of macular thickening or hemorrhage and no documentation of level of macular degeneration severity (Deprecated),Observation,HCPCS,HCPCS,S,G8314,01/01/1970,11/11/2014,,concept,3.37227E+18
+2617811,Abi measured and documented (Deprecated),Observation,HCPCS,HCPCS,,G8407,01/01/1970,11/11/2014,,concept,4.65385E+18
+2718917,"Vincristine sulfate, 5 mg (Deprecated)",Drug,HCPCS,HCPCS,,J9380,01/01/1970,11/11/2014,,concept,-3.00447E+18
+2617712,Clinician documented that patient was not an eligible candidate for a specific target intraocular pressure range goal (Deprecated),Observation,HCPCS,HCPCS,S,G8304,01/01/1970,11/11/2014,,concept,2.61308E+18
+2617519,Clinician documented that heart failure patient was not an eligible candidate for either angiotensin-converting enzyme inhibitor or angiotensin-receptor blocker (ace-i or arb) therapy measure (Deprecated),Observation,HCPCS,HCPCS,S,G8029,01/01/1970,11/11/2014,,concept,2.74632E+18
+2617499,Acute myocardial infarction: patient documented to have received beta-blocker at arrival (Deprecated),Observation,HCPCS,HCPCS,S,G8009,01/01/1970,11/11/2014,,concept,5.90823E+17
+2617641,Patient not documented to have received t-pa or not documented to have been considered a candidate for t-pa administration (Deprecated),Observation,HCPCS,HCPCS,S,G8231,01/01/1970,11/11/2014,,concept,2.41329E+18
+2617788,"For patients with er or pr positive, stage ic-iii breast cancer, clinician documented or prescribed that the patient is receiving tamoxifen or aromatase inhibitor (Deprecated)",Observation,HCPCS,HCPCS,S,G8381,01/01/1970,11/11/2014,,concept,5.15878E+18
+2617829,"Incomplete or no provider documentation that patient's current medications with dosages (includes prescription, over-the-counter, herbals, vitamin/mineral/dietary [nutritional] supplements) were assessed (Deprecated)",Observation,HCPCS,HCPCS,S,G8429,01/01/1970,11/11/2014,,concept,9.71007E+16
+2718398,"Injection, gamma globulin, intramuscular, 6 cc (Deprecated)",Drug,HCPCS,HCPCS,,J1510,01/01/1970,11/11/2014,,concept,4.34994E+18
+2617704,Copd patient not documented to have inhaled bronchodilator therapy prescribed (Deprecated),Observation,HCPCS,HCPCS,S,G8296,01/01/1970,11/11/2014,,concept,-6.34357E+18
+2718858,"Dacarbazine, 200 mg (Deprecated)",Drug,HCPCS,HCPCS,,J9140,01/01/1970,11/11/2014,,concept,5.10497E+18
+2718911,"Injection, topotecan, 4 mg (Deprecated)",Drug,HCPCS,HCPCS,,J9350,01/01/1970,11/11/2014,,concept,-6.81694E+18
+2617918,Clinician documented that patient was not eligible for clinical stage prior to surgery for lung cancer and esophageal cancer resection measure (Deprecated),Observation,HCPCS,HCPCS,S,G8519,01/01/1970,11/11/2014,,concept,-6.31057E+17
+45754692,Hospital visit - subsequent,Observation,HCPCS,HCPCS Class,,M2B,01/01/1970,11/11/2014,D,concept,-7.70587E+18
+45754787,Chemotherapy,Drug,HCPCS,HCPCS Class,,O1D,01/01/1970,11/11/2014,D,concept,-3.71853E+18
+45754758,Echography/ultrasonography - abdomen/pelvis,Procedure,HCPCS,HCPCS Class,,I3B,01/01/1970,11/11/2014,D,concept,3.61351E+18
+45754706,Major procedure - turp,Procedure,HCPCS,HCPCS Class,,P1D,01/01/1970,11/11/2014,D,concept,6.14559E+18
+45754694,Emergency room visit,Observation,HCPCS,HCPCS Class,,M3,01/01/1970,11/11/2014,D,concept,-7.36045E+18
+45754712,"Major Procedure, cardiovascular-Thromboendarterectomy",Procedure,HCPCS,HCPCS Class,,P2C,01/01/1970,11/11/2014,D,concept,6.22472E+18
+45747501,"homosalate, octisalate, and zinc oxide KIT",Drug,NDC,11-digit NDC,,62032068702,01/09/2019,03/03/2021,D,concept,-8.9864E+17
+42844033,"carduus marianus, chelidonium majus, cina, sabadilla, spigelia anthelmia, teucrium marum, terebinthi... 3[hp_X]/mL / 5[hp_X]/mL / 6[hp_X]/mL / 30[hp_C]/mL ORAL LIQUID",Drug,NDC,11-digit NDC,,63972001701,29/12/2017,10/04/2023,D,concept,6.2302E+18
+36184182,"ENVIROCLENZ - berberis vulgaris, carduus marianus, chelidonium majus, glycyrrhiza glabra, lappa major, rhamnus frangula, stillingia sylvatica, taraxacum officinale, trifolium pratense, germanium sesquioxide, phytolacca decandra, benzinum, chlorinum, aceto",Drug,NDC,11-digit NDC,,43742128301,31/07/2018,03/09/2024,D,concept,5.33208E+18
+40104755,Amiodarone 100 MG Oral Tablet [Pacerone],Drug,RxNorm,Branded Drug,,540543,11/09/2005,04/04/2009,U,concept,5.76099E+18
+40049001,Imipramine 10 MG Oral Tablet [Tofranil],Drug,RxNorm,Branded Drug,,104812,01/01/1970,04/04/2009,U,concept,3.72138E+18
+40049025,Imipramine 50 MG Enteric Coated Tablet,Drug,RxNorm,Clinical Drug,,310981,01/01/1970,04/04/2009,U,concept,5.10157E+18
+40038888,Epirubicin 1 MG/ML Irrigation Solution,Drug,RxNorm,Clinical Drug,,153365,01/01/1970,04/04/2009,U,concept,6.75459E+18
+40111279,"Diphtheria Toxoid 30 UNT/ML / Pertussis, acellular 0.046 MG/ML / Tetanus Toxoid 10 UNT/ML Injectable Suspension",Drug,RxNorm,Clinical Drug,,562816,11/09/2005,04/04/2009,U,concept,6.92756E+18
+40133189,Amiodarone 300 MG Oral Tablet,Drug,RxNorm,Clinical Drug,,636351,09/07/2006,04/04/2009,U,concept,6.7742E+18
+40115567,Imipramine 75 MG [Tofranil-PM],Drug,RxNorm,Branded Drug Comp,,567741,11/09/2005,04/04/2009,U,concept,8.62952E+18
+40115561,Imipramine 125 MG [Tofranil-PM],Drug,RxNorm,Branded Drug Comp,,567744,11/09/2005,04/04/2009,U,concept,5.67197E+18
+40116894,Mefenamic Acid 10 MG/ML [Ponstan],Drug,RxNorm,Branded Drug Comp,,564230,11/09/2005,04/04/2009,U,concept,-1.12088E+17
+40119525,Phentermine 30 MG [T-Diet],Drug,RxNorm,Branded Drug Comp,,568216,11/09/2005,04/04/2009,U,concept,3.20093E+18
+40119518,Phentermine 30 MG [Oby-Cap],Drug,RxNorm,Branded Drug Comp,,568213,11/09/2005,04/04/2009,U,concept,-9.13938E+18
+40789025,Saint Louis encephalitis virus IgG and IgM | Bld-Ser-Plas,Measurement,LOINC,LOINC Hierarchy,,LP132630-7,01/01/1970,18/06/2013,D,concept,7.02259E+17
+43055798,Microscopic method | Urine,Measurement,LOINC,LOINC Hierarchy,,LP157525-9,28/12/2012,18/06/2013,D,concept,-9.2828E+16
+45071021,carprofen 25 MG Chewable Tablet [Rovera] ## rxnsat,Drug,NDC,11-digit NDC,,54771151003,01/02/2014,01/03/2014,D,concept,6.70561E+18
+45248210,Chlorpheniramine 4 MG / Phenylephrine 20 MG / phenyltoloxamine 40 MG Extended Release Tablet [West-Decon M],Drug,NDC,11-digit NDC,,00143197901,01/06/2007,01/03/2014,D,concept,-2.02E+18
+45108267,Digoxin 0.125 MG Oral Tablet [Digitek],Drug,NDC,11-digit NDC,,62794014501,01/06/2007,01/03/2014,D,concept,-4.87208E+18
+45210525,Ethanol 0.68 ML/ML Topical Gel,Drug,NDC,11-digit NDC,,62670367301,01/03/2012,01/03/2014,D,concept,2.93461E+18
+45205061,Benzalkonium Chloride 1 MG/ML Topical Foam,Drug,NDC,11-digit NDC,,49765020050,01/12/2010,01/03/2014,D,concept,5.5982E+18
+45113058,anagrelide 1 MG Oral Capsule,Drug,NDC,11-digit NDC,,00378686905,01/06/2007,01/03/2014,D,concept,-2.96219E+18
+45247393,Paroxetine 12.5 MG Extended Release Tablet [Paxil],Drug,NDC,11-digit NDC,,00029320613,01/01/2009,01/03/2014,D,concept,-4.95889E+18
+44940420,Benzoyl Peroxide 30 MG/ML Medicated Pad [Triaz],Drug,NDC,11-digit NDC,,99207022130,01/09/2010,01/03/2014,D,concept,-5.83931E+18
+45381230,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62670360303,01/12/2010,01/03/2014,D,concept,-6.94624E+18
+45309954,Warfarin Sodium 2.5 MG Oral Tablet [Coumadin],Drug,NDC,11-digit NDC,,54868215400,01/08/2009,01/03/2014,D,concept,7.22609E+18
+45281140,Zidovudine 300 MG Oral Tablet,Drug,NDC,11-digit NDC,,76365030006,01/01/2013,01/03/2014,D,concept,-8.05349E+18
+45142630,Dexchlorpheniramine maleate 2 MG Oral Tablet [Rescon-MX Reformulated Feb 2013],Drug,NDC,11-digit NDC,,64543009220,01/03/2013,01/03/2014,D,concept,-2.99761E+18
+45111050,Levetiracetam 750 MG Oral Tablet,Drug,NDC,11-digit NDC,,00054015223,01/03/2009,01/03/2014,D,concept,-7.20596E+17
+45005865,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62670403803,01/08/2011,01/03/2014,D,concept,5.79803E+18
+44989198,24 HR Ascorbic Acid 320 MG / Folic Acid 1 MG / Iron Carbonyl 100 MG / Vitamin B 12 0.025 MG Extended Release Capsule [Icar-C Plus SR],Drug,NDC,11-digit NDC,,63717011201,01/07/2011,01/03/2014,D,concept,-2.29476E+18
+45079601,Ibuprofen 200 MG Oral Tablet [Advil],Drug,NDC,11-digit NDC,,00573016045,01/06/2007,01/03/2014,D,concept,-8.92814E+18
+44987878,24 HR Hydromorphone Hydrochloride 24 MG Extended Release Capsule [Palladone],Drug,NDC,11-digit NDC,,59011031420,01/03/2010,01/03/2014,D,concept,5.46469E+18
+45125083,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62670424203,01/05/2012,01/03/2014,D,concept,8.30547E+18
+45006749,Trimipramine 25 MG Oral Capsule [Surmontil],Drug,NDC,11-digit NDC,,65473071801,01/06/2007,01/03/2014,D,concept,5.00233E+18
+45247345,Fluorouracil 10 MG/ML Topical Solution [Fluoroplex],Drug,NDC,11-digit NDC,,00023081030,01/06/2007,01/03/2014,D,concept,-1.80213E+18
+45060827,Cefaclor 25 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,00172477222,01/06/2007,01/03/2014,D,concept,2.63713E+18
+45129728,Ciprofloxacin 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,00378132305,01/10/2008,01/03/2014,D,concept,-5.44672E+18
+45094623,trandolapril 4 MG Oral Tablet,Drug,NDC,11-digit NDC,,00143912701,01/10/2007,01/03/2014,D,concept,-2.15935E+18
+45080185,Ondansetron 24 MG Oral Tablet,Drug,NDC,11-digit NDC,,00781187913,01/10/2009,01/03/2014,D,concept,-8.7719E+18
+45343507,Povidone-Iodine 100 MG/ML Topical Solution ## rxnsat,Drug,NDC,11-digit NDC,,54365014301,01/01/2014,01/03/2014,D,concept,8.80295E+17
+45027824,Doxycycline 150 MG Oral Capsule,Drug,NDC,11-digit NDC,,00378547505,01/07/2012,01/03/2014,D,concept,-7.32206E+18
+45094196,10 ML Sodium Bicarbonate 0.893 MEQ/ML Prefilled Syringe,Drug,NDC,11-digit NDC,,00074490034,01/06/2010,01/03/2014,D,concept,9.21151E+18
+45232412,24 HR Nifedipine 60 MG Extended Release Tablet,Drug,NDC,11-digit NDC,,00378036093,01/01/2011,01/03/2014,D,concept,-4.11769E+18
+44975593,Prochlorperazine 5 MG Oral Tablet,Drug,NDC,11-digit NDC,,00182821089,01/06/2007,01/03/2014,D,concept,-3.72144E+18
+45077756,Miconazole Nitrate 0.02 MG/MG Topical Gel [Zeasorb-AF],Drug,NDC,11-digit NDC,,00145150508,01/08/2010,01/03/2014,D,concept,5.48918E+16
+44923538,Metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet [Avandamet 2/500],Drug,NDC,11-digit NDC,,00007316718,01/10/2009,01/03/2014,D,concept,-5.2301E+18
+45202578,Yohimbe Preparation 5.4 MG Oral Tablet,Drug,NDC,11-digit NDC,,20254001701,01/06/2007,01/03/2014,D,concept,-5.91973E+18
+45054018,Methylphenidate Hydrochloride 5 MG Oral Tablet [Ritalin],Drug,NDC,11-digit NDC,,54868170600,01/03/2011,01/03/2014,D,concept,6.32852E+18
+45261889,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62670392303,01/06/2011,01/03/2014,D,concept,-5.97602E+18
+45195601,Benzoyl Peroxide 90 MG/ML Medicated Liquid Soap [Triaz],Drug,NDC,11-digit NDC,,99207020812,01/05/2011,01/03/2014,D,concept,3.93317E+18
+44955022,Tretinoin 0.5 MG/ML Topical Cream [Tretin X],Drug,NDC,11-digit NDC,,63094037703,01/10/2009,01/03/2014,D,concept,5.96749E+18
+45128657,Ranitidine 150 MG Oral Tablet [Zantac 150],Drug,NDC,11-digit NDC,,00173034417,01/01/2009,01/03/2014,D,concept,-6.78506E+18
+45060203,1 ML Hydromorphone Hydrochloride 1 MG/ML Prefilled Syringe,Drug,NDC,11-digit NDC,,00074128301,01/03/2010,01/03/2014,D,concept,8.40385E+18
+45344116,Hydrochlorothiazide 12.5 MG / Losartan Potassium 100 MG Oral Tablet [Hyzaar 100/12.5],Drug,NDC,11-digit NDC,,54868570500,01/06/2010,01/03/2014,D,concept,-9.17263E+18
+44921229,Tretinoin 0.5 MG/ML Topical Cream [Tretin X],Drug,NDC,11-digit NDC,,63094037702,01/10/2009,01/03/2014,D,concept,-2.74063E+18
+45037115,24 HR Amphetamine aspartate 1.25 MG / Amphetamine Sulfate 1.25 MG / Dextroamphetamine saccharate 1.25 MG / Dextroamphetamine Sulfate 1.25 MG Extended Release Capsule [Adderall],Drug,NDC,11-digit NDC,,54868500701,01/10/2009,01/03/2014,D,concept,3.53868E+18
+44953828,"Antihemophilic Factor, Human Recombinant 500 UNT/ML Injectable Solution [ReFacto]",Drug,NDC,11-digit NDC,,58394001104,01/03/2013,01/03/2014,D,concept,6.83126E+18
+45011113,Brompheniramine Maleate 0.2 MG/ML / Pseudoephedrine Hydrochloride 3 MG/ML Oral Solution [Bromaline Reformulated Jun 2008],Drug,NDC,11-digit NDC,,00536088085,01/08/2011,01/03/2014,D,concept,1.77388E+17
+45179230,Cimetidine 150 MG/ML Injectable Solution,Drug,NDC,11-digit NDC,,00074744401,01/06/2007,01/03/2014,D,concept,4.38073E+18
+45076209,Amlodipine 2.5 MG Oral Tablet,Drug,NDC,11-digit NDC,,68462021090,01/07/2009,01/03/2014,D,concept,-1.6719E+18
+44872716,20 ML Thiopental 25 MG/ML Prefilled Syringe [Pentothal],Drug,NDC,11-digit NDC,,00074335301,01/08/2009,01/03/2014,D,concept,-7.00703E+18
+44899193,Pramipexole dihydrochloride 0.125 MG Oral Tablet,Drug,NDC,11-digit NDC,,51079057620,01/12/2010,01/03/2014,D,concept,-8.50757E+18
+45244741,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62670368103,01/12/2010,01/03/2014,D,concept,-6.96303E+18
+45189720,Moricizine hydrochloride 300 MG Oral Tablet [Ethmozine],Drug,NDC,11-digit NDC,,54092004852,01/07/2012,01/03/2014,D,concept,2.19781E+18
+45119731,Acetaminophen 32 MG/ML / Chlorpheniramine Maleate 0.2 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,49580242404,01/07/2013,01/03/2014,D,concept,3.89075E+17
+45145028,Metoprolol Tartrate 1 MG/ML Injectable Solution,Drug,NDC,11-digit NDC,,00074177835,01/11/2009,01/03/2014,D,concept,-7.85033E+17
+45193685,carbetapentane 6 MG/ML Oral Suspension [Solotuss],Drug,NDC,11-digit NDC,,63717028004,01/01/2008,01/03/2014,D,concept,-3.11978E+18
+44937426,hydrocortisone acetate 5 MG/ML / Lidocaine Hydrochloride 30 MG/ML Rectal Cream,Drug,NDC,11-digit NDC,,60258004101,01/10/2010,01/03/2014,D,concept,-6.88592E+18
+44940988,Miconazole 0.02 MG/MG Topical Powder [Desenex Jock Itch],Drug,NDC,11-digit NDC,,00067095830,01/08/2010,01/03/2014,D,concept,2.03067E+18
+44922132,Ciprofloxacin 500 MG Oral Tablet [Cipro],Drug,NDC,11-digit NDC,,66267005814,01/06/2007,01/03/2014,D,concept,4.73409E+18
+45210524,Ethanol 0.68 ML/ML Topical Gel,Drug,NDC,11-digit NDC,,62670367001,01/03/2012,01/03/2014,D,concept,-5.00591E+18
+44971854,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62670426503,01/05/2012,01/03/2014,D,concept,7.34851E+18
+45244669,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,62257001424,01/07/2013,01/03/2014,D,concept,9.05442E+18
+45074403,Clobetasol Propionate 0.5 MG/ML Medicated Shampoo [Clobex],Drug,NDC,11-digit NDC,,63094384704,01/10/2009,01/03/2014,D,concept,4.93064E+17
+45026382,Brompheniramine 1.6 MG/ML / Pseudoephedrine 18 MG/ML Extended Release Suspension [Lodrane D],Drug,NDC,11-digit NDC,,00095900816,01/06/2007,01/03/2014,D,concept,1.87149E+18
+44934300,Benzalkonium Chloride 1 MG/ML Medicated Pad,Drug,NDC,11-digit NDC,,53102000001,01/11/2012,01/03/2014,D,concept,-5.78222E+18
+44957144,Cycloserine 250 MG Oral Capsule [Seromycin],Drug,NDC,11-digit NDC,,00002060440,01/06/2007,01/03/2014,D,concept,1.51243E+18
+45358819,Aspirin 81 MG Enteric Coated Tablet [Ecotrin Low Strength Adult],Drug,NDC,11-digit NDC,,49692090375,01/02/2014,01/03/2014,D,concept,4.93713E+18
+45358820,Aspirin 325 MG Enteric Coated Tablet [Ecotrin],Drug,NDC,11-digit NDC,,49692090377,01/07/2007,01/03/2014,D,concept,-3.74953E+17
+44992292,Labetalol hydrochloride 200 MG Oral Tablet,Drug,NDC,11-digit NDC,,00172436500,01/02/2010,01/03/2014,D,concept,-8.52825E+18
+44955750,Trimipramine 50 MG Oral Capsule [Surmontil],Drug,NDC,11-digit NDC,,65473071901,01/06/2007,01/03/2014,D,concept,6.75378E+18
+45360673,Moricizine hydrochloride 300 MG Oral Tablet [Ethmozine],Drug,NDC,11-digit NDC,,54092004801,01/07/2012,01/03/2014,D,concept,-5.80352E+17
+45121996,Warfarin Sodium 2.5 MG Oral Tablet [Coumadin],Drug,NDC,11-digit NDC,,54868215401,01/08/2009,01/03/2014,D,concept,3.861E+18
+45079709,POLYETHYLENE GLYCOL 3350 142 MG/ML Oral Solution [Dulcolax Balance],Drug,NDC,11-digit NDC,,00597001533,01/01/2011,01/03/2014,D,concept,-7.20681E+18
+45122971,zinc pyrithione 5 MG/ML Medicated Shampoo ## rxnsat,Drug,NDC,11-digit NDC,,57337002701,01/12/2013,01/03/2014,D,concept,-4.78096E+18
+45074673,Guaifenesin 400 MG Oral Tablet [XPECT],Drug,NDC,11-digit NDC,,63717025106,01/07/2007,01/03/2014,D,concept,-8.72002E+18
+44898659,Aspirin 500 MG Enteric Coated Tablet [Ecotrin Maximum Strength],Drug,NDC,11-digit NDC,,49692090380,01/11/2011,01/03/2014,D,concept,-4.15284E+18
+45210969,Diphenhydramine Tannate 25 MG Chewable Tablet [Dytan],Drug,NDC,11-digit NDC,,63717057106,01/07/2012,01/03/2014,D,concept,-1.58541E+18
+45260725,Mupirocin 0.02 MG/MG Topical Ointment [Bactroban],Drug,NDC,11-digit NDC,,58016315401,01/06/2007,01/03/2014,D,concept,-2.32493E+18
+44976153,Sodium Fluoride 2.2 MG Chewable Tablet [Fluoritab],Drug,NDC,11-digit NDC,,00288220420,01/04/2011,01/03/2014,D,concept,2.25501E+18
+44937431,Guaifenesin 600 MG / Phenylephrine 10 MG Extended Release Tablet [Pendex],Drug,NDC,11-digit NDC,,60258024201,01/08/2007,01/03/2014,D,concept,-1.47406E+18
+45283654,Acetaminophen 650 MG / propoxyphene napsylate 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,00378015505,01/01/2009,01/03/2014,D,concept,8.79225E+18
+45244076,Chlorpheniramine 1.6 MG/ML / Phenylephrine 2 MG/ML Extended Release Suspension [ChlorTan D],Drug,NDC,11-digit NDC,,60258031516,01/06/2007,01/03/2014,D,concept,-6.76957E+18
+45259418,Phenazopyridine hydrochloride 200 MG Oral Tablet [Pyridium],Drug,NDC,11-digit NDC,,55289068906,01/04/2011,01/03/2014,D,concept,-5.22866E+18
+46217147,Extavia 250microgram powder and solvent for solution for injection vials (Novartis Pharmaceuticals UK Ltd) 15 vial,Drug,SNOMED,Pharma/Biol Product,,27954011000001109,01/01/1970,12/11/2014,U,concept,-2.13574E+18
+44460272,phenol 14 MG/ML Mucosal Spray,Drug,NDC,11-digit NDC,,11673070426,01/09/2017,01/09/2017,D,concept,2.59083E+18
+44461673,Naproxen sodium 550 MG Oral Tablet,Drug,NDC,11-digit NDC,,53002053310,01/09/2017,01/09/2017,D,concept,6.14619E+18
+45304472,RA ACID REDUCER 10 MG TABLET,Drug,NDC,11-digit NDC,,11822453590,01/09/2017,01/09/2017,D,concept,-5.3247E+18
+44461201,Clotrimazole 10 MG/ML Topical Cream,Drug,NDC,11-digit NDC,,49035077671,01/09/2017,01/09/2017,D,concept,-3.71788E+18
+44466194,24 HR Nifedipine 60 MG Extended Release Oral Tablet,Drug,NDC,11-digit NDC,,62451885172,01/09/2017,01/09/2017,D,concept,-5.25882E+18
+44464712,lamotrigine 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,33261064802,01/09/2017,01/09/2017,D,concept,-6.23313E+18
+44464631,Clindamycin 300 MG Oral Capsule,Drug,NDC,11-digit NDC,,00440730528,01/09/2017,01/09/2017,D,concept,-5.14557E+18
+44441199,24 HR Diltiazem Hydrochloride 240 MG Extended Release Oral Capsule [Tiazac],Drug,NDC,11-digit NDC,,67544026430,01/12/2015,01/09/2017,D,concept,-3.73041E+18
+44460208,Metformin hydrochloride 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440673905,01/09/2017,01/09/2017,D,concept,6.74007E+18
+45231606,INSTA-GLUCOSE GEL,Drug,NDC,11-digit NDC,,00187074631,01/09/2017,01/09/2017,D,concept,-2.43487E+17
+44942131,Nitroglycerin 0.4 MG Sublingual Tablet [Nitrostat],Drug,NDC,11-digit NDC,,00247055125,01/08/2007,01/09/2017,D,concept,6.94952E+18
+44464273,12 HR cetirizine hydrochloride 5 MG / Pseudoephedrine Hydrochloride 120 MG Extended Release Oral Tablet,Drug,NDC,11-digit NDC,,50428012020,01/09/2017,01/09/2017,D,concept,-2.12943E+18
+44466334,lamotrigine 5 MG Chewable Tablet,Drug,NDC,11-digit NDC,,00440767310,01/09/2017,01/09/2017,D,concept,5.99263E+18
+45192750,irbesartan 300 MG Oral Tablet,Drug,NDC,11-digit NDC,,60505354909,01/11/2012,01/09/2017,D,concept,-5.99611E+18
+45338557,RA CALAMINE SUSPENSION,Drug,NDC,11-digit NDC,,11822332590,01/09/2017,01/09/2017,D,concept,5.79521E+18
+45278922,POTASSIUM CL ER 10 MEQ TABLET,Drug,NDC,11-digit NDC,,62451780413,01/09/2017,01/09/2017,D,concept,1.49184E+18
+45071867,5 ML Cyclosporine 50 MG/ML Injection,Drug,NDC,11-digit NDC,,55390012210,01/01/2009,01/09/2017,D,concept,-7.26385E+18
+45307979,CVS NICOTINE 2 MG CHEWING GUM,Drug,NDC,11-digit NDC,,50428348681,01/09/2017,01/09/2017,D,concept,5.06743E+18
+44466413,Bisacodyl 5 MG Delayed Release Oral Tablet,Drug,NDC,11-digit NDC,,49035075515,01/09/2017,01/09/2017,D,concept,-3.54772E+18
+44463701,Cyclobenzaprine hydrochloride 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,68788631800,01/09/2017,01/09/2017,D,concept,8.32647E+18
+45256822,CVS COENZYME Q-10 200 MG SFTGL,Drug,NDC,11-digit NDC,,50428710797,01/09/2017,01/09/2017,D,concept,6.81812E+18
+44461146,Ethanol 0.62 ML/ML Topical Solution,Drug,NDC,11-digit NDC,,11822390380,01/09/2017,01/09/2017,D,concept,4.92869E+18
+44979677,2 ML Sodium Hyaluronate 10 MG/ML Prefilled Syringe [Supartz],Drug,NDC,11-digit NDC,,08363776101,01/09/2017,01/09/2017,D,concept,-5.7245E+18
+45107058,Minocycline 100 MG Oral Capsule,Drug,NDC,11-digit NDC,,58118021102,01/09/2013,01/09/2017,D,concept,-1.9603E+18
+44462972,12 HR Dextromethorphan Hydrobromide 30 MG / Guaifenesin 600 MG Extended Release Oral Tablet,Drug,NDC,11-digit NDC,,41163086201,01/09/2017,01/09/2017,D,concept,-2.21465E+18
+44446861,Furosemide 40 MG Oral Tablet [Lasix],Drug,NDC,11-digit NDC,,68788636701,01/09/2017,01/09/2017,D,concept,1.3875E+18
+44463423,Ibuprofen 200 MG Oral Tablet,Drug,NDC,11-digit NDC,,50428037194,01/09/2017,01/09/2017,D,concept,-7.67066E+18
+45865200,Naproxen 100 MG/ML Topical Cream,Drug,NDC,11-digit NDC,,76420094101,01/05/2014,01/09/2017,D,concept,-7.3953E+18
+45171207,CVS ARTHRITIS PAIN ER 650 MG,Drug,NDC,11-digit NDC,,50428193587,01/09/2017,01/09/2017,D,concept,1.919E+18
+45023891,vardenafil 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,65243033404,01/09/2017,01/09/2017,D,concept,1.6724E+18
+44846183,SOBA PAIN REL XS 500 MG TAB,Drug,NDC,11-digit NDC,,41163087778,01/09/2017,01/09/2017,D,concept,2.7174E+18
+44462575,ubiquinol 200 MG Oral Capsule,Drug,NDC,11-digit NDC,,54023142004,01/09/2017,01/09/2017,D,concept,7.59516E+18
+45102746,24 HR Desvenlafaxine 100 MG Extended Release Oral Tablet [Khedezla],Drug,NDC,11-digit NDC,,49884037509,01/09/2013,01/09/2017,D,concept,3.03887E+18
+45150457,RA ALLERGY MED 25 MG TABLET,Drug,NDC,11-digit NDC,,11822002070,01/09/2017,01/09/2017,D,concept,-2.45219E+18
+44466365,24 HR Nicotine 0.875 MG/HR Transdermal System,Drug,NDC,11-digit NDC,,11673029402,01/09/2017,01/09/2017,D,concept,5.60976E+18
+44460246,Rifampin 300 MG Oral Capsule,Drug,NDC,11-digit NDC,,00440831120,01/09/2017,01/09/2017,D,concept,-5.18171E+18
+45304470,RA NICOTINE 2 MG LOZENGE,Drug,NDC,11-digit NDC,,11822422240,01/09/2017,01/09/2017,D,concept,7.375E+18
+44983706,CVS ANTACID ULTRA TAB CHEW,Drug,NDC,11-digit NDC,,50428230995,01/09/2017,01/09/2017,D,concept,-5.78736E+18
+44464637,Fluconazole 200 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440753204,01/09/2017,01/09/2017,D,concept,3.85167E+18
+45133441,RA ACETAMINOPHEN 500 MG CAPLET,Drug,NDC,11-digit NDC,,11822506040,01/09/2017,01/09/2017,D,concept,-4.69536E+18
+45123965,Furosemide 80 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118374109,01/09/2013,01/09/2017,D,concept,3.71617E+18
+44929909,Citric Acid 1000 MG / potassium bicarbonate 344 MG / Sodium Bicarbonate 1050 MG Effervescent Oral Tablet [Alka-Seltzer Gold],Drug,NDC,11-digit NDC,,16500004108,01/08/2015,01/09/2017,D,concept,-2.37197E+18
+44466296,"sennosides, USP 8.6 MG Oral Tablet",Drug,NDC,11-digit NDC,,00363001830,01/09/2017,01/09/2017,D,concept,6.92239E+18
+44465467,Hydroxyzine Hydrochloride 25 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440761715,01/09/2017,01/09/2017,D,concept,6.85944E+16
+44461882,rosiglitazone 8 MG Oral Tablet [Avandia],Drug,NDC,11-digit NDC,,65243019609,01/09/2017,01/09/2017,D,concept,7.98674E+18
+44916022,CVS ARTHRITIS PAIN ER 650 MG,Drug,NDC,11-digit NDC,,50428199239,01/09/2017,01/09/2017,D,concept,3.96723E+18
+44462074,Aspirin 81 MG Delayed Release Oral Tablet,Drug,NDC,11-digit NDC,,49035060013,01/09/2017,01/09/2017,D,concept,2.63816E+18
+44460788,Diazepam 2 MG Oral Tablet,Drug,NDC,11-digit NDC,,52959025915,01/09/2017,01/09/2017,D,concept,5.83806E+18
+44864704,CVS NATURAL VITAMIN E OIL DRPS,Drug,NDC,11-digit NDC,,50428012888,01/09/2017,01/09/2017,D,concept,8.40912E+18
+45102983,Dextromethorphan Hydrobromide 2 MG/ML / Guaifenesin 20 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,50428477060,01/01/2011,01/09/2017,D,concept,3.0555E+18
+44462515,Melatonin 10 MG Oral Capsule,Drug,NDC,11-digit NDC,,50428728624,01/09/2017,01/09/2017,D,concept,-4.45401E+18
+45014279,RA ANTACID XTRA STR CHEW TAB,Drug,NDC,11-digit NDC,,11822372820,01/09/2017,01/09/2017,D,concept,4.74085E+18
+45253241,RA NASAL SPRAY,Drug,NDC,11-digit NDC,,11822317450,01/09/2017,01/09/2017,D,concept,-7.60335E+18
+45078369,Camphor 0.11 MG/MG / Menthol 0.08 MG/MG Topical Ointment [Tiger Balm],Drug,NDC,11-digit NDC,,00247178988,01/07/2011,01/09/2017,D,concept,-9.65322E+17
+45099590,RA COLD AND COUGH DM ELIXIR,Drug,NDC,11-digit NDC,,11822525930,01/09/2017,01/09/2017,D,concept,5.01552E+18
+44464653,24 HR Oxybutynin chloride 10 MG Extended Release Oral Tablet,Drug,NDC,11-digit NDC,,00440800530,01/09/2017,01/09/2017,D,concept,7.5887E+18
+45014312,RA NIGHTTIME COUGH RLF LIQUID,Drug,NDC,11-digit NDC,,11822889120,01/09/2017,01/09/2017,D,concept,-1.68208E+18
+45321478,RA MUCUS RELIEF 400 MG TABLET,Drug,NDC,11-digit NDC,,11822065460,01/09/2017,01/09/2017,D,concept,-6.20445E+18
+45053298,Clobetasol Propionate 0.5 MG/ML Topical Cream,Drug,NDC,11-digit NDC,,53002097866,01/10/2009,01/09/2017,D,concept,-5.20529E+17
+46331807,"AMOXICILLIN AND CLAVULANATE POTASSIUM - amoxicillin and clavulanate potassium powder, for suspension",Drug,NDC,11-digit NDC,,68788997007,01/06/2015,01/09/2017,D,concept,6.22503E+18
+45150489,RA IBUPROFEN 100 MG/5 ML SUSP,Drug,NDC,11-digit NDC,,11822239990,01/09/2017,01/09/2017,D,concept,8.47024E+18
+44462065,Ibuprofen 200 MG Oral Capsule,Drug,NDC,11-digit NDC,,49035012020,01/09/2017,01/09/2017,D,concept,-7.73802E+18
+45000742,CVS PAIN RELIEF 500 MG GELCAP,Drug,NDC,11-digit NDC,,50428318984,01/09/2017,01/09/2017,D,concept,-1.20262E+18
+44461786,{11 (varenicline 0.5 MG Oral Tablet [Chantix]) / 42 (varenicline 1 MG Oral Tablet [Chantix]) } Pack [Chantix First Month of Therapy],Drug,NDC,11-digit NDC,,58118999205,01/09/2017,01/09/2017,D,concept,-2.23981E+18
+44919970,Atovaquone 250 MG / proguanil hydrochloride 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118040401,01/09/2013,01/09/2017,D,concept,-4.43618E+18
+44436464,Megestrol Acetate 40 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,60687025069,01/06/2017,01/09/2017,D,concept,-2.66065E+18
+45321507,RA ASPIRIN TRI-BUFFERED TB,Drug,NDC,11-digit NDC,,11822368020,01/09/2017,01/09/2017,D,concept,-1.0683E+18
+45099565,RA FEVER REDUCER-PAIN REL SUSP,Drug,NDC,11-digit NDC,,11822154540,01/09/2017,01/09/2017,D,concept,-2.14719E+18
+45091863,benztropine mesylate 2 MG Oral Tablet,Drug,NDC,11-digit NDC,,64720014511,01/01/2010,01/09/2017,D,concept,-1.60398E+18
+44966673,CVS LAX DIETARY 500 MG CAPLET,Drug,NDC,11-digit NDC,,50428699073,01/09/2017,01/09/2017,D,concept,6.08105E+18
+44466033,Prednisone 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,53002030914,01/09/2017,01/09/2017,D,concept,-4.44886E+18
+44460319,Levothyroxine Sodium 0.112 MG Oral Tablet,Drug,NDC,11-digit NDC,,33261084560,01/09/2017,01/09/2017,D,concept,-9.19778E+18
+44999306,NON-ASPIRIN CHILDREN'S SUSP,Drug,NDC,11-digit NDC,,41163013026,01/09/2017,01/09/2017,D,concept,3.01443E+18
+45014267,RA CHEST RUB CREAM,Drug,NDC,11-digit NDC,,11822319720,01/09/2017,01/09/2017,D,concept,8.37723E+17
+45188151,CVS SKIN TREATMENT BODY LOTION,Drug,NDC,11-digit NDC,,50428803406,01/09/2017,01/09/2017,D,concept,4.87175E+18
+44896217,Dicyclomine Hydrochloride 10 MG Oral Capsule,Drug,NDC,11-digit NDC,,21695021878,01/02/2011,01/09/2017,D,concept,1.06389E+18
+44460229,Lisinopril 5 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440767485,01/09/2017,01/09/2017,D,concept,7.73654E+18
+44464339,Clindamycin 150 MG Oral Capsule,Drug,NDC,11-digit NDC,,53002023242,01/09/2017,01/09/2017,D,concept,8.26433E+18
+45101716,EQL NICOTINE 4 MG CHEWING GUM,Drug,NDC,11-digit NDC,,41163060162,01/09/2017,01/09/2017,D,concept,-5.74549E+18
+44983734,CVS PURE GLYCERIN 99.5% LIQUID,Drug,NDC,11-digit NDC,,50428483707,01/09/2017,01/09/2017,D,concept,-1.53256E+18
+44466350,Menthol 4 MG Oral Lozenge,Drug,NDC,11-digit NDC,,00501261230,01/09/2017,01/09/2017,D,concept,9.13846E+18
+44940978,Acetaminophen 160 MG / Pseudoephedrine 15 MG Chewable Tablet [Triaminic Softchews Allergy Sinus],Drug,NDC,11-digit NDC,,00067023918,01/06/2007,01/09/2017,D,concept,8.56112E+18
+45225323,deferoxamine mesylate 500 MG Injection,Drug,NDC,11-digit NDC,,55390026310,01/02/2016,01/09/2017,D,concept,4.47867E+18
+45171975,Risperidone 0.25 MG Oral Tablet,Drug,NDC,11-digit NDC,,51991031605,01/09/2012,01/09/2017,D,concept,-4.05209E+17
+44930864,Morphine Sulfate 20 MG Extended Release Oral Capsule [Kadian],Drug,NDC,11-digit NDC,,35356004830,01/02/2010,01/09/2017,D,concept,3.2697E+18
+44463728,dimethicone 20 MG/ML Topical Cream [Mederma PM],Drug,NDC,11-digit NDC,,00259130217,01/09/2017,01/09/2017,D,concept,1.28623E+18
+45034953,CVS MELATONIN 5 MG TABLET,Drug,NDC,11-digit NDC,,50428460938,01/09/2017,01/09/2017,D,concept,-7.61327E+18
+45306601,Brompheniramine Maleate 0.2 MG/ML / Phenylephrine Hydrochloride 0.5 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,41163003426,01/11/2011,01/09/2017,D,concept,8.7048E+18
+44466372,Ascorbic Acid 6 MG / Glucose 4000 MG Chewable Tablet,Drug,NDC,11-digit NDC,,11822350520,01/09/2017,01/09/2017,D,concept,4.7219E+17
+44464412,Carisoprodol 350 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118017406,01/09/2017,01/09/2017,D,concept,1.71998E+18
+44937033,lamotrigine 150 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118413208,01/08/2013,01/09/2017,D,concept,-2.34727E+18
+44466876,Diphenhydramine Hydrochloride 25 MG Oral Capsule,Drug,NDC,11-digit NDC,,50428955519,01/09/2017,01/09/2017,D,concept,-1.78711E+18
+44462624,Carisoprodol 350 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118017409,01/09/2017,01/09/2017,D,concept,-8.26514E+18
+44461625,Ibuprofen 200 MG Oral Tablet,Drug,NDC,11-digit NDC,,50428004814,01/09/2017,01/09/2017,D,concept,-5.46922E+18
+45359166,CVS COENZYME Q10 400 MG SOFTGL,Drug,NDC,11-digit NDC,,50428459957,01/09/2017,01/09/2017,D,concept,-7.16638E+18
+44466078,Diphenhydramine Hydrochloride 50 MG Oral Capsule,Drug,NDC,11-digit NDC,,54348065001,01/09/2017,01/09/2017,D,concept,-1.89094E+18
+45116606,RA SUPER STRENGTH RELIEV TB,Drug,NDC,11-digit NDC,,11822317280,01/09/2017,01/09/2017,D,concept,-6.32393E+18
+46253329,silver sulfadiazine 10 MG/ML Topical Cream,Drug,NDC,11-digit NDC,,61919023725,01/09/2017,01/09/2017,D,concept,-2.40536E+18
+44466980,Amitriptyline Hydrochloride 25 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118211306,01/09/2017,01/09/2017,D,concept,-6.23319E+18
+45103572,Diphenhydramine Hydrochloride 25 MG Oral Capsule,Drug,NDC,11-digit NDC,,51655011354,01/03/2011,01/09/2017,D,concept,6.90206E+18
+44467055,24 HR Nifedipine 30 MG Extended Release Oral Tablet,Drug,NDC,11-digit NDC,,62451884172,01/09/2017,01/09/2017,D,concept,2.27426E+18
+45277856,meloxicam 15 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118012506,01/12/2013,01/09/2017,D,concept,-6.78898E+18
+45058262,Cephalexin 500 MG Oral Capsule [CEPHALEXIM],Drug,NDC,11-digit NDC,,66267055928,01/01/2008,01/09/2017,D,concept,6.08852E+18
+44463426,Vitamin B 12 2.5 MG Chewable Tablet,Drug,NDC,11-digit NDC,,50428041828,01/09/2017,01/09/2017,D,concept,1.3233E+18
+44436048,Acetaminophen 500 MG Oral Tablet [Pharbetol],Drug,NDC,11-digit NDC,,68788640804,01/09/2017,01/09/2017,D,concept,3.18081E+18
+45056012,Warfarin Sodium 5 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118402706,01/09/2017,01/09/2017,D,concept,4.00031E+18
+44462588,Clindamycin 150 MG Oral Capsule,Drug,NDC,11-digit NDC,,54348066028,01/09/2017,01/09/2017,D,concept,1.78391E+18
+44461098,duloxetine 60 MG Delayed Release Oral Capsule,Drug,NDC,11-digit NDC,,00440749260,01/09/2017,01/09/2017,D,concept,7.97507E+18
+44464280,Nicotine 2 MG Oral Lozenge,Drug,NDC,11-digit NDC,,50428032374,01/09/2017,01/09/2017,D,concept,-2.81752E+18
+44463425,Dextromethorphan Hydrobromide 3 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,50428037777,01/09/2017,01/09/2017,D,concept,8.04098E+17
+45103001,CVS LANSOPRAZOLE DR 15 MG CAP,Drug,NDC,11-digit NDC,,50428883055,01/09/2017,01/09/2017,D,concept,4.77992E+18
+45867252,Acetaminophen 2.71 MG/ML / Dextromethorphan Hydrobromide 0.0833 MG/ML / Guaifenesin 1.67 MG/ML / Phenylephrine Hydrochloride 0.0417 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,63824023104,01/09/2017,01/09/2017,D,concept,-9.33409E+17
+45073143,Atenolol 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118062309,01/11/2013,01/09/2017,D,concept,4.01461E+18
+44465268,0.8 ML Sodium Hyaluronate 12 MG/ML Prefilled Syringe [Shellgel],Drug,NDC,11-digit NDC,,61534100002,01/09/2017,01/09/2017,D,concept,-4.66286E+18
+44465233,ropinirole 4 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118025803,01/09/2017,01/09/2017,D,concept,-8.18945E+18
+44933035,CVS NAPROXEN SOD 220 MG CAPLET,Drug,NDC,11-digit NDC,,50428235637,01/09/2017,01/09/2017,D,concept,4.84559E+17
+45116627,RA ALLERGY MEDICATION LIQUID,Drug,NDC,11-digit NDC,,11822527100,01/09/2017,01/09/2017,D,concept,-5.73385E+18
+44461664,84 HR oxybutynin 0.162 MG/HR Transdermal System [Oxytrol],Drug,NDC,11-digit NDC,,52544092077,01/09/2017,01/09/2017,D,concept,-3.51744E+18
+45134799,Morphine Sulfate 30 MG Extended Release Oral Capsule [Kadian],Drug,NDC,11-digit NDC,,35356004960,01/02/2011,01/09/2017,D,concept,4.94818E+18
+44462049,cetirizine hydrochloride 10 MG Chewable Tablet,Drug,NDC,11-digit NDC,,36800097802,01/09/2017,01/09/2017,D,concept,4.65926E+18
+44466039,Clarithromycin 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,53002075614,01/09/2017,01/09/2017,D,concept,2.38685E+18
+45214168,Acyclovir 200 MG Oral Capsule [Zovirax],Drug,NDC,11-digit NDC,,00173099155,01/06/2007,01/09/2017,D,concept,7.44466E+17
+44465987,Diphenhydramine Hydrochloride 2.5 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,50428029730,01/09/2017,01/09/2017,D,concept,7.64891E+18
+45304441,RA NITE TIME COLD-FLU SOFTGEL,Drug,NDC,11-digit NDC,,11822063550,01/09/2017,01/09/2017,D,concept,-7.96026E+18
+44460759,Vitamin B 12 1 MG Oral Tablet,Drug,NDC,11-digit NDC,,50428029936,01/09/2017,01/09/2017,D,concept,1.90378E+18
+44996832,Isopropyl Alcohol 0.62 ML/ML Topical Gel,Drug,NDC,11-digit NDC,,10565001308,01/01/2012,01/09/2017,D,concept,-5.20543E+18
+44465359,Haloperidol 1 MG Oral Tablet,Drug,NDC,11-digit NDC,,63874083010,01/09/2017,01/09/2017,D,concept,1.56734E+18
+44460271,Ascorbic Acid 6 MG / Glucose 4000 MG Chewable Tablet,Drug,NDC,11-digit NDC,,11673054391,01/09/2017,01/09/2017,D,concept,-6.33669E+18
+45355612,RA ETHYL ALCOHOL 70% LIQUID,Drug,NDC,11-digit NDC,,11822313860,01/09/2017,01/09/2017,D,concept,-4.66806E+17
+44460262,Calcium Carbonate 1250 MG / Cholecalciferol 200 UNT Oral Tablet [Os-Cal 500 with D],Drug,NDC,11-digit NDC,,10267155107,01/09/2017,01/09/2017,D,concept,6.48968E+17
+46329843,Labetalol hydrochloride 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,61786039302,01/09/2015,01/09/2017,D,concept,-2.30892E+18
+44461197,Calcium Carbonate 500 MG Chewable Tablet,Drug,NDC,11-digit NDC,,49035021024,01/09/2017,01/09/2017,D,concept,-7.0669E+17
+45287455,"BIOTIN 5,000 MCG CAPSULE",Drug,NDC,11-digit NDC,,11822489730,01/09/2017,01/09/2017,D,concept,-2.03394E+18
+45073135,gabapentin 600 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118020209,01/09/2013,01/09/2017,D,concept,1.68976E+18
+46331392,moxifloxacin 400 MG Oral Tablet,Drug,NDC,11-digit NDC,,61786036002,01/08/2015,01/09/2017,D,concept,6.39841E+18
+45242365,Dexrazoxane 500 MG Injection,Drug,NDC,11-digit NDC,,55390006002,01/03/2016,01/09/2017,D,concept,8.69442E+17
+44460835,Primidone 250 MG Oral Tablet,Drug,NDC,11-digit NDC,,53746054511,01/09/2017,01/09/2017,D,concept,-4.58534E+18
+44466924,Naproxen sodium 550 MG Oral Tablet,Drug,NDC,11-digit NDC,,54348068130,01/09/2017,01/09/2017,D,concept,4.27002E+18
+45236185,RA ALLERGY 25 MG TABLET,Drug,NDC,11-digit NDC,,11822454350,01/09/2017,01/09/2017,D,concept,2.10553E+18
+45184671,RA FIBER CAPSULE,Drug,NDC,11-digit NDC,,11822316510,01/09/2017,01/09/2017,D,concept,1.64502E+18
+44462771,"sennosides, USP 8.6 MG Oral Tablet [Senna Lax]",Drug,NDC,11-digit NDC,,65504019095,01/09/2017,01/09/2017,D,concept,5.72366E+17
+45099591,RA ANTI-ITCH 1% CREAM,Drug,NDC,11-digit NDC,,11822538130,01/09/2017,01/09/2017,D,concept,-7.87767E+18
+44461890,Acetaminophen 32 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,65504028007,01/09/2017,01/09/2017,D,concept,8.63728E+18
+44997173,RA LORATADINE 10 MG ODT,Drug,NDC,11-digit NDC,,11822527120,01/09/2017,01/09/2017,D,concept,-1.51277E+18
+44895408,RA ALOE BURN RELIEF SPRAY,Drug,NDC,11-digit NDC,,11822372300,01/09/2017,01/09/2017,D,concept,-4.00567E+18
+45346007,Amlodipine 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118023909,01/11/2013,01/09/2017,D,concept,6.61537E+18
+44946454,RA NICOTINE 2 MG CHEWING GUM,Drug,NDC,11-digit NDC,,11822635690,01/09/2017,01/09/2017,D,concept,5.52675E+18
+45084667,EQL ECHINACEA 125 MG CAPLET,Drug,NDC,11-digit NDC,,41163042075,01/09/2017,01/09/2017,D,concept,-2.74144E+18
+44466068,dimethicone 15 MG/ML Topical Lotion,Drug,NDC,11-digit NDC,,53329016057,01/09/2017,01/09/2017,D,concept,-3.89663E+18
+44465447,Metformin hydrochloride 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440673992,01/09/2017,01/09/2017,D,concept,3.264E+18
+44461892,Cimetidine 200 MG Oral Tablet,Drug,NDC,11-digit NDC,,65504030903,01/09/2017,01/09/2017,D,concept,-2.8625E+18
+45082592,RA NIGHT COLD-FLU RELIEF SFTGL,Drug,NDC,11-digit NDC,,11822333550,01/09/2017,01/09/2017,D,concept,4.18184E+18
+45123966,24 HR venlafaxine 150 MG Extended Release Oral Capsule,Drug,NDC,11-digit NDC,,58118378009,01/08/2013,01/09/2017,D,concept,2.265E+18
+44465124,Aluminum Hydroxide 40 MG/ML / Magnesium Hydroxide 40 MG/ML / Simethicone 4 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,50428026853,01/09/2017,01/09/2017,D,concept,7.26449E+18
+45300278,Lorazepam 1 MG Oral Tablet [Ativan],Drug,NDC,11-digit NDC,,00247174615,01/08/2007,01/09/2017,D,concept,8.82384E+18
+44461164,Guaifenesin 400 MG Oral Tablet,Drug,NDC,11-digit NDC,,15127015050,01/09/2017,01/09/2017,D,concept,2.20459E+18
+45376038,CVS MEDICATE DISPOSABLE DOUCHE,Drug,NDC,11-digit NDC,,50428455429,01/09/2017,01/09/2017,D,concept,4.25085E+17
+45004719,meloxicam 15 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118012503,01/12/2013,01/09/2017,D,concept,1.15634E+18
+45143437,Metronidazole 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,67544072204,01/05/2008,01/09/2017,D,concept,-1.22636E+18
+44462549,Etodolac 300 MG Oral Capsule,Drug,NDC,11-digit NDC,,53002108703,01/09/2017,01/09/2017,D,concept,-6.75183E+18
+44894951,10 ML Fluorouracil 50 MG/ML Injection,Drug,NDC,11-digit NDC,,10139006310,01/06/2016,01/09/2017,D,concept,4.76922E+18
+44987726,Amitriptyline Hydrochloride 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118221403,01/07/2013,01/09/2017,D,concept,4.52622E+18
+45287433,RA ANTI-TUSSIVE DM SYRUP,Drug,NDC,11-digit NDC,,11822325350,01/09/2017,01/09/2017,D,concept,5.26077E+18
+45099189,ARTHRITIS BC POWDER PACKET,Drug,NDC,11-digit NDC,,10158000810,01/09/2017,01/09/2017,D,concept,8.71818E+18
+44881798,CVS NON-ASPIRIN 500 MG TABLET,Drug,NDC,11-digit NDC,,50428111047,01/09/2017,01/09/2017,D,concept,6.63407E+18
+44463854,Amitriptyline Hydrochloride 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,33261035814,01/09/2017,01/09/2017,D,concept,8.74164E+18
+44980236,RA NATURAL FIBER 100% POWDER,Drug,NDC,11-digit NDC,,11822330970,01/09/2017,01/09/2017,D,concept,-6.75911E+18
+44462926,Ascorbic Acid 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,11822165160,01/09/2017,01/09/2017,D,concept,3.57528E+18
+44460239,Naproxen 500 MG Delayed Release Oral Tablet,Drug,NDC,11-digit NDC,,00440784930,01/09/2017,01/09/2017,D,concept,-8.54131E+18
+44461764,Amitriptyline Hydrochloride 25 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118211403,01/09/2017,01/09/2017,D,concept,-4.64665E+18
+44461009,Hydrochlorothiazide 12.5 MG Oral Capsule,Drug,NDC,11-digit NDC,,67544073932,01/09/2017,01/09/2017,D,concept,-5.10444E+18
+44465501,Ascorbic Acid 250 MG Chewable Tablet,Drug,NDC,11-digit NDC,,11822880340,01/09/2017,01/09/2017,D,concept,-2.2821E+17
+44460169,Acetaminophen 32 MG/ML Oral Suspension [Tylenol],Drug,NDC,11-digit NDC,,00045012260,01/09/2017,01/09/2017,D,concept,-2.36294E+18
+45229255,Metronidazole 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,67544072232,01/08/2007,01/09/2017,D,concept,4.02397E+18
+44929474,RA NICOTINE 21 MG/24HR PATCH,Drug,NDC,11-digit NDC,,11822452590,01/09/2017,01/09/2017,D,concept,-8.51635E+18
+44462989,{1 (9000 MG) (Miconazole Nitrate 20 MG/ML Vaginal Cream) / 3 (Miconazole Nitrate 200 MG Vaginal Suppository) } Pack,Drug,NDC,11-digit NDC,,49035098200,01/09/2017,01/09/2017,D,concept,-2.49677E+18
+44460764,Sodium Bicarbonate 700 MG / Sodium Chloride 2300 MG Powder for Nasal Solution,Drug,NDC,11-digit NDC,,50428040372,01/09/2017,01/09/2017,D,concept,-9.09478E+18
+44465384,Simethicone 125 MG Chewable Tablet,Drug,NDC,11-digit NDC,,68163011118,01/09/2017,01/09/2017,D,concept,-6.50965E+18
+44466991,Betamethasone valerate 1.2 MG/ML Topical Foam,Drug,NDC,11-digit NDC,,58118993505,01/09/2017,01/09/2017,D,concept,-5.47535E+18
+45267323,3 ML caffeine citrate 20 MG/ML Injection,Drug,NDC,11-digit NDC,,00574082381,01/06/2009,01/09/2017,D,concept,8.8219E+18
+45123947,Amlodipine 5 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118023803,01/09/2013,01/09/2017,D,concept,1.19753E+18
+45014240,RA NASAL DECONG PE 10 MG TAB,Drug,NDC,11-digit NDC,,11822041760,01/09/2017,01/09/2017,D,concept,-7.3198E+18
+44464576,Naproxen sodium 550 MG Oral Tablet,Drug,NDC,11-digit NDC,,68788693400,01/09/2017,01/09/2017,D,concept,2.71648E+18
+45184704,RA NAPROXEN SOD 220 MG TABLET,Drug,NDC,11-digit NDC,,11822985210,01/09/2017,01/09/2017,D,concept,-3.28583E+17
+44460802,Hydroxyzine Pamoate 25 MG Oral Capsule,Drug,NDC,11-digit NDC,,53002062115,01/09/2017,01/09/2017,D,concept,-5.95019E+18
+45300349,Acamprosate calcium 333 MG Delayed Release Oral Tablet,Drug,NDC,11-digit NDC,,00258400060,01/09/2013,01/09/2017,D,concept,8.65328E+18
+44460241,"NITROFURANTOIN, MACROCRYSTALS 25 MG / Nitrofurantoin, Monohydrate 75 MG Oral Capsule",Drug,NDC,11-digit NDC,,00440786840,01/09/2017,01/09/2017,D,concept,6.35684E+18
+44463807,Vitamin B 12 2.5 MG Sublingual Tablet,Drug,NDC,11-digit NDC,,00761051612,01/09/2017,01/09/2017,D,concept,-5.59559E+18
+45376039,CVS DIURETIC 50 MG SOFTGEL,Drug,NDC,11-digit NDC,,50428457517,01/09/2017,01/09/2017,D,concept,-3.58235E+18
+44460833,cornstarch 0.6 MG/MG Topical Powder [Soothe & Cool Powder],Drug,NDC,11-digit NDC,,53329000319,01/09/2017,01/09/2017,D,concept,7.77854E+18
+45137754,Risperidone 0.5 MG Oral Tablet,Drug,NDC,11-digit NDC,,51991031710,01/09/2012,01/09/2017,D,concept,-1.41225E+18
+44466993,azelaic acid 0.15 MG/MG Topical Gel [Finacea],Drug,NDC,11-digit NDC,,58118995005,01/09/2017,01/09/2017,D,concept,-9.08134E+18
+45866601,Acetaminophen 325 MG / Hydrocodone Bitartrate 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,68788941303,01/06/2014,01/09/2017,D,concept,-1.60375E+18
+44460757,bismuth subsalicylate 17.5 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,50428029212,01/09/2017,01/09/2017,D,concept,3.49482E+18
+45140898,doxycycline hyclate 100 MG Oral Capsule,Drug,NDC,11-digit NDC,,58118314202,01/06/2015,01/09/2017,D,concept,2.76377E+18
+44929482,RA HYDROCORTISONE 1% CREAM,Drug,NDC,11-digit NDC,,11822512230,01/09/2017,01/09/2017,D,concept,-1.31114E+18
+45355642,RA FOLIC ACID 0.4 MG TABLET,Drug,NDC,11-digit NDC,,11822880780,01/09/2017,01/09/2017,D,concept,-4.11186E+18
+45321520,RA STOOL SOFTENER 100 MG CAP,Drug,NDC,11-digit NDC,,11822512670,01/09/2017,01/09/2017,D,concept,1.29541E+18
+45222557,CVS GLUCOSE 4 GRAM TABLET CHEW,Drug,NDC,11-digit NDC,,50428807879,01/09/2017,01/09/2017,D,concept,5.81965E+18
+45085861,Guaifenesin 20 MG/ML Oral Solution [Guiatuss],Drug,NDC,11-digit NDC,,49999019204,01/07/2008,01/09/2017,D,concept,-2.32628E+18
+45340874,Levofloxacin 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,43063032307,01/08/2012,01/09/2017,D,concept,-5.30144E+18
+44462965,Hydrochlorothiazide 25 MG / Losartan Potassium 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,33261090400,01/09/2017,01/09/2017,D,concept,3.82323E+18
+44462039,meloxicam 7.5 MG Oral Tablet,Drug,NDC,11-digit NDC,,33261007040,01/09/2017,01/09/2017,D,concept,-5.01019E+18
+44989707,Triclosan 3 MG/ML Medicated Liquid Soap,Drug,NDC,11-digit NDC,,65585038704,01/07/2014,01/09/2017,D,concept,2.27214E+18
+44463573,Ibuprofen 20 MG/ML Oral Suspension,Drug,NDC,11-digit NDC,,58118994301,01/09/2017,01/09/2017,D,concept,-6.40167E+18
+45106184,Aspirin 325 MG Oral Tablet,Drug,NDC,11-digit NDC,,57896090125,01/05/2010,01/09/2017,D,concept,4.25332E+18
+44465988,12 HR dextromethorphan polistirex 6 MG/ML Extended Release Suspension,Drug,NDC,11-digit NDC,,50428031740,01/09/2017,01/09/2017,D,concept,2.18827E+18
+45369504,Ranitidine 75 MG Oral Tablet [Zantac],Drug,NDC,11-digit NDC,,00597012227,01/07/2009,01/09/2017,D,concept,5.96416E+17
+44462004,Diphenhydramine Hydrochloride 25 MG Oral Capsule,Drug,NDC,11-digit NDC,,11822033209,01/09/2017,01/09/2017,D,concept,2.10514E+17
+44462895,Ibuprofen 40 MG/ML Oral Suspension [Advil],Drug,NDC,11-digit NDC,,00573170772,01/09/2017,01/09/2017,D,concept,-7.53513E+18
+44465401,Cyclobenzaprine hydrochloride 7.5 MG Oral Tablet,Drug,NDC,11-digit NDC,,76519010009,01/09/2017,01/09/2017,D,concept,7.22985E+18
+45201829,RA GLUCOSE 4 GRAM TABLET CHEW,Drug,NDC,11-digit NDC,,11822253710,01/09/2017,01/09/2017,D,concept,-4.67882E+18
+45218936,RA ANTISEPTIC 10% SOLUTION,Drug,NDC,11-digit NDC,,11822377570,01/09/2017,01/09/2017,D,concept,-7.79116E+18
+44464574,24 HR Bupropion Hydrochloride 150 MG Extended Release Oral Tablet,Drug,NDC,11-digit NDC,,68788638701,01/06/2016,01/09/2017,D,concept,6.30724E+18
+44912562,RA GLYCERIN ADULT SUPPOSITORY,Drug,NDC,11-digit NDC,,11822332150,01/09/2017,01/09/2017,D,concept,6.29509E+18
+44933052,CVS COENZYME Q-10 100 MG SFTGL,Drug,NDC,11-digit NDC,,50428459954,01/09/2017,01/09/2017,D,concept,8.50055E+18
+44465231,Carisoprodol 350 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118017403,01/09/2017,01/09/2017,D,concept,3.99047E+18
+44408238,"sennosides, USP 17.2 MG Oral Tablet",Drug,NDC,11-digit NDC,,63189000450,01/06/2016,01/09/2017,D,concept,-4.72422E+18
+44461718,Pyrazinamide 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,54348081660,01/09/2017,01/09/2017,D,concept,-8.81102E+18
+44895412,RA ISOPROPYL ALCOHOL 91%,Drug,NDC,11-digit NDC,,11822393580,01/09/2017,01/09/2017,D,concept,-8.61375E+18
+45872939,Acetaminophen 325 MG / Hydrocodone Bitartrate 5 MG Oral Tablet,Drug,NDC,11-digit NDC,,51407050000,01/05/2014,01/09/2017,D,concept,-8.69231E+18
+45304492,RA GAS RELIEF 125 MG TAB CHEW,Drug,NDC,11-digit NDC,,11822986510,01/09/2017,01/09/2017,D,concept,7.32238E+16
+44466368,Calcium Carbonate 625 MG / Ergocalciferol 125 UNT Oral Tablet,Drug,NDC,11-digit NDC,,11822014610,01/09/2017,01/09/2017,D,concept,-6.78162E+18
+44466229,Haloperidol 2 MG Oral Tablet,Drug,NDC,11-digit NDC,,63874049314,01/09/2017,01/09/2017,D,concept,-3.2155E+18
+44464545,Chlorpromazine hydrochloride 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,63874049401,01/09/2017,01/09/2017,D,concept,-6.16698E+18
+44465125,Omeprazole 20 MG Delayed Release Oral Tablet,Drug,NDC,11-digit NDC,,50428026954,01/09/2017,01/09/2017,D,concept,2.63106E+18
+44465182,Mupirocin 0.02 MG/MG Topical Ointment,Drug,NDC,11-digit NDC,,53002098599,01/09/2017,01/09/2017,D,concept,-4.66549E+18
+44463442,"Docusate Sodium 50 MG / sennosides, USP 8.6 MG Oral Tablet",Drug,NDC,11-digit NDC,,50428948312,01/09/2017,01/09/2017,D,concept,9.83652E+17
+44870056,Penicillin V Potassium 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,63629161504,01/01/2013,01/09/2017,D,concept,-8.14768E+18
+44847575,CVS GENTLE LAXATIVE 10 MG SUPP,Drug,NDC,11-digit NDC,,50428690111,01/09/2017,01/09/2017,D,concept,1.87716E+18
+44460995,Naproxen sodium 220 MG Oral Tablet,Drug,NDC,11-digit NDC,,65504011104,01/09/2017,01/09/2017,D,concept,6.49627E+18
+46331863,Ceftriaxone 1000 MG Injection,Drug,NDC,11-digit NDC,,61786037901,01/10/2015,01/09/2017,D,concept,7.50665E+17
+44462628,ropinirole 1 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118025509,01/09/2017,01/09/2017,D,concept,4.55345E+18
+44425996,"sennosides, USP 8.6 MG Oral Tablet",Drug,NDC,11-digit NDC,,63189000341,01/06/2016,01/09/2017,D,concept,-6.63586E+18
+44976797,24 HR Diltiazem Hydrochloride 300 MG Extended Release Oral Capsule [Tiazac],Drug,NDC,11-digit NDC,,00456261530,01/02/2009,01/09/2017,D,concept,-5.51839E+17
+45017893,CVS MOTION SICKNESS RELIEF TAB,Drug,NDC,11-digit NDC,,50428452260,01/09/2017,01/09/2017,D,concept,-3.75488E+18
+44464688,Terbinafine hydrochloride 10 MG/ML Topical Cream,Drug,NDC,11-digit NDC,,11822290040,01/09/2017,01/09/2017,D,concept,-3.7484E+18
+44956301,Omeprazole 20 MG Enteric Coated Capsule,Drug,NDC,11-digit NDC,,67544051032,01/01/2009,01/09/2017,D,concept,1.94854E+18
+44460903,Stannous Fluoride 6.3 MG/ML Mouthwash [Fluoridex Daily Renewal],Drug,NDC,11-digit NDC,,59883000401,01/09/2017,01/09/2017,D,concept,-1.66069E+18
+44463693,Ondansetron 4 MG Disintegrating Oral Tablet,Drug,NDC,11-digit NDC,,68071069204,01/09/2017,01/09/2017,D,concept,-4.65832E+16
+45860914,Ibuprofen 100 MG/ML Topical Cream,Drug,NDC,11-digit NDC,,53217009801,01/11/2014,01/09/2017,D,concept,-6.93462E+18
+44461627,Diphenhydramine Hydrochloride 2.5 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,50428013846,01/09/2017,01/09/2017,D,concept,-5.40029E+18
+45359170,CVS CHILD ASPIRIN 81 MG CHW TB,Drug,NDC,11-digit NDC,,50428547802,01/09/2017,01/09/2017,D,concept,-1.23134E+18
+44466346,tramadol hydrochloride 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440857094,01/09/2017,01/09/2017,D,concept,-8.42418E+18
+44461063,Calcium Carbonate 600 MG / Cholecalciferol 800 UNT Oral Tablet,Drug,NDC,11-digit NDC,,00179804802,01/09/2017,01/09/2017,D,concept,3.02658E+17
+44861176,RA ANTI DIARRHEAL 2 MG CAPLET,Drug,NDC,11-digit NDC,,11822318460,01/09/2017,01/09/2017,D,concept,-7.45512E+18
+45026544,Simethicone 180 MG Oral Capsule [Phazyme],Drug,NDC,11-digit NDC,,00135042912,01/06/2007,01/09/2017,D,concept,1.58617E+18
+45120113,CVS OMEPRAZOLE MAG DR 20.6 MG,Drug,NDC,11-digit NDC,,50428488027,01/09/2017,01/09/2017,D,concept,4.76651E+18
+44461960,Acetaminophen 325 MG / Hydrocodone Bitartrate 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,00440760710,01/09/2017,01/09/2017,D,concept,8.23536E+18
+44461755,Hydrochlorothiazide 12.5 MG / Losartan Potassium 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118011603,01/09/2017,01/09/2017,D,concept,1.68534E+18
+44963197,RA MIGRAINE RELIEF CAPLET,Drug,NDC,11-digit NDC,,11822361580,01/09/2017,01/09/2017,D,concept,-5.54348E+18
+44465984,Capsaicin 1.5 MG/ML Topical Solution,Drug,NDC,11-digit NDC,,50428025829,01/09/2017,01/09/2017,D,concept,-1.16262E+18
+44464341,tramadol hydrochloride 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,53002043210,01/09/2017,01/09/2017,D,concept,-7.69324E+18
+45029568,Homatropine hydrobromide 50 MG/ML Ophthalmic Solution [Isopto Homatropine],Drug,NDC,11-digit NDC,,00998031505,01/06/2010,01/09/2017,D,concept,5.96609E+18
+44460311,Naproxen 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,33261008103,01/09/2017,01/09/2017,D,concept,3.33608E+18
+45346022,Furosemide 20 MG Oral Tablet,Drug,NDC,11-digit NDC,,58118429703,01/09/2013,01/09/2017,D,concept,-3.20826E+18
+45084641,Acetaminophen 33.3 MG/ML / Dextromethorphan Hydrobromide 1 MG/ML / doxylamine succinate 0.417 MG/ML Oral Solution,Drug,NDC,11-digit NDC,,41163018216,01/05/2011,01/09/2017,D,concept,4.64551E+18
+44461198,"sennosides, USP 15 MG Chewable Tablet",Drug,NDC,11-digit NDC,,49035022704,01/09/2017,01/09/2017,D,concept,-5.86579E+18
+44466272,Lidocaine 0.04 MG/MG Medicated Patch,Drug,NDC,11-digit NDC,,69336061115,01/09/2017,01/09/2017,D,concept,6.40807E+18
+45116632,RA OATMEAL MOISTURIZING LOTION,Drug,NDC,11-digit NDC,,11822700140,01/09/2017,01/09/2017,D,concept,4.16764E+18
+45338585,RA SLEEP AID 50 MG/30 ML LIQ,Drug,NDC,11-digit NDC,,11822833260,01/09/2017,01/09/2017,D,concept,-3.00698E+18
+36466958,aluminum zirconium tetrachlorohydrex gly 19g/100g TOPICAL STICK,Drug,NDC,11-digit NDC,,69423033273,13/10/2018,15/11/2021,D,concept,2.20684E+18
+45664494,CHILDRENS IBUPROFEN - ibuprofen suspension,Drug,SPL,OTC Drug,,1984374e-7639-4a4f-bf96-a614e663e0c4,01/01/1970,11/04/2023,U,concept,2.96983E+18
+1383079,alcohol 68mL/100mL TOPICAL GEL [anti-bacterial hand apple and cedarwood],Drug,NDC,11-digit NDC,,62670653700,23/06/2023,23/12/2023,D,concept,-5.77271E+18
+40048666,Ionamine,Drug,RxNorm,Brand Name,,5961,01/01/1970,05/04/2009,U,concept,-5.50976E+18
+40045657,HEPATITIS B IMMUNE GLOBULIN,Drug,RxNorm,Ingredient,,214611,01/01/1970,05/04/2009,U,concept,1.99019E+18
+40143737,Triprolidine 0.5 MG/ML Oral Suspension [Zymine XR],Drug,RxNorm,Branded Drug,,748654,30/12/2007,05/04/2009,U,concept,-3.02933E+18
+40141295,10 ML Gadopentetate Dimeglumine 469 MG/ML Prefilled Syringe [Magnevist],Drug,RxNorm,Branded Drug,,727963,02/09/2007,05/04/2009,D,concept,3.65336E+18
+40039855,Fish Oils 1000 MG Oral Capsule [Maxepa],Drug,RxNorm,Branded Drug,,141914,01/01/1970,05/04/2009,D,concept,4.53019E+18
+40148751,Sinecatechins 0.015 MG/MG Topical Ointment [Veregen],Drug,RxNorm,Branded Drug,,762644,30/03/2008,05/04/2009,U,concept,-5.9385E+18
+40018891,Brompheniramine 0.8 MG/ML / Pseudoephedrine 9 MG/ML Oral Solution [Rondec],Drug,RxNorm,Branded Drug,,352018,01/01/1970,05/04/2009,U,concept,-3.49975E+18
+40006552,Adenosine 25 MG/ML Injectable Solution [My-O-Den],Drug,RxNorm,Branded Drug,,351408,01/01/1970,05/04/2009,U,concept,-1.86584E+18
+40055855,hydrotalcite 1000 MG Oral Suspension,Drug,RxNorm,Clinical Drug,,249680,01/01/1970,05/04/2009,U,concept,6.20103E+18
+40046960,Guaifenesin 200 MG / Phenylpropanolamine 45 MG / Pseudoephedrine 5 MG Oral Capsule,Drug,RxNorm,Clinical Drug,,484836,01/01/1970,05/04/2009,U,concept,8.84169E+18
+40141099,15 ML Gadopentetate Dimeglumine 469 MG/ML Prefilled Syringe,Drug,RxNorm,Clinical Drug,,727960,02/09/2007,05/04/2009,D,concept,-8.03571E+18
+40024121,Chlorhexidine 0.0025 MG/MG / Tolnaftate 0.01 MG/MG Topical Powder,Drug,RxNorm,Clinical Drug,,225458,01/01/1970,05/04/2009,U,concept,-7.75801E+18
+40034923,Diltiazem 120 MG 24 Hour Extended Release Capsule,Drug,RxNorm,Clinical Drug,,284264,01/01/1970,05/04/2009,U,concept,-7.85986E+18
+40024150,Chlorhexidine 0.5 MG/ML Irrigation Solution,Drug,RxNorm,Clinical Drug,,153378,01/01/1970,05/04/2009,U,concept,-6.4027E+18
+40004217,Acetaminophen 130 MG / Chlorpheniramine 2 MG / Phenylephrine 10 MG / salicylamide 200 MG Oral Capsule,Drug,RxNorm,Clinical Drug,,308285,01/01/1970,05/04/2009,U,concept,-4.87087E+18
+40078248,Phentermine 37.5 MG Extended Release Capsule,Drug,RxNorm,Clinical Drug,,312385,01/01/1970,05/04/2009,U,concept,-3.28401E+18
+40024138,Chlorhexidine 0.04 MG/MG Topical Powder,Drug,RxNorm,Clinical Drug,,238855,01/01/1970,05/04/2009,U,concept,-2.29024E+18
+40149168,2 ML Triptorelin 5.62 MG/ML Prefilled Syringe,Drug,RxNorm,Clinical Drug,,791474,27/04/2008,05/04/2009,U,concept,-1.97265E+18
+40106599,Calcium Carbonate 500 MG [Cal Oys],Drug,RxNorm,Branded Drug Comp,,570714,11/09/2005,05/04/2009,U,concept,7.37141E+18
+40106838,Calcium Chloride 0.4 MG/ML / Magnesium Chloride 0.3 MG/ML / Potassium Chloride 0.7 MG/ML / Sodium Acetate 3.9 MG/ML / Sodium Chloride 6.4 MG/ML [B.S.S.],Drug,RxNorm,Branded Drug Comp,,574207,11/09/2005,05/04/2009,U,concept,5.83663E+18
+40007703,Amiodarone Oral Tablet [Geneva brand of amiodarone hydrochloride],Drug,RxNorm,Branded Drug Form,,368524,01/01/1970,05/04/2009,D,concept,2.14511E+18
+40150743,Imipramine Oral Capsule [Tofranil],Drug,RxNorm,Branded Drug Form,,797621,29/06/2008,05/04/2009,U,concept,-4.65111E+18
+40048703,Iopamidol Injectable Solution [Isovue-250],Drug,RxNorm,Branded Drug Form,,362667,01/01/1970,05/04/2009,D,concept,-3.99036E+18
+40039871,Fish Oils 720 MG,Drug,RxNorm,Clinical Drug Comp,,331943,01/01/1970,05/04/2009,D,concept,-2.10308E+18
+40016017,Calcium Carbonate 50 MG,Drug,RxNorm,Clinical Drug Comp,,335958,01/01/1970,05/04/2009,D,concept,-4.8563E+17
+40152234,Methionine 3.18 MG/ML,Drug,RxNorm,Clinical Drug Comp,,801597,27/07/2008,05/04/2009,D,concept,1.73875E+18
+40152317,Phenylalanine 3.4 MG/ML,Drug,RxNorm,Clinical Drug Comp,,801598,27/07/2008,05/04/2009,D,concept,-7.35601E+18
+40091190,Urea 6.4 MG/ML,Drug,RxNorm,Clinical Drug Comp,,340670,01/01/1970,05/04/2009,D,concept,4.19504E+18
+40149515,Ubiquinone 50 MG,Drug,RxNorm,Clinical Drug Comp,,793112,27/04/2008,05/04/2009,U,concept,-2.00323E+18
+44785341,Treprostinil 1 MG Oral Tablet [Orenitram],Drug,RxNorm,Branded Drug,,1485766,03/02/2014,02/03/2014,U,concept,-3.09937E+18
+44785348,Treprostinil Oral Tablet [Orenitram],Drug,RxNorm,Branded Drug Form,,1485755,03/02/2014,02/03/2014,U,concept,-3.19078E+18
+3568535,Hepatitis B (rDNA) 20micrograms/1ml vaccine suspension for injection vials,Drug,SNOMED,Pharma/Biol Product,,13113201000001101,01/04/2018,16/05/2018,U,concept,3.41392E+18
+46218704,Kalms Night 500mg tablets (G.R. Lane Health Products Ltd) 50 tablet,Drug,SNOMED,Pharma/Biol Product,,28293311000001109,07/01/2015,16/05/2018,U,concept,-4.67477E+17
+3570190,Mefenamic acid 50mg/5ml oral suspension,Drug,SNOMED,Pharma/Biol Product,,13112801000001109,01/04/2018,16/05/2018,U,concept,-2.1191E+18
+3564679,Chloroquine phosphate 250mg tablets and Proguanil 100mg tablets,Drug,SNOMED,Pharma/Biol Product,,13112601000001105,01/04/2018,16/05/2018,U,concept,-7.53276E+18
+42739971,"Electronic analysis of pacing cardioverter-defibrillator (includes interrogation, evaluation of pulse generator status, evaluation of programmable parameters at rest and during activity where applicable, using electrocardiographic recordin... (Deprecated)",Procedure,CPT4,CPT4,S,93744,01/01/1970,06/04/2009,,concept,2.9142E+18
+42740827,"Therapeutic, prophylactic or diagnostic injection (specify substance or drug); intravenous push, single or initial substance/drug (Deprecated)",Procedure,CPT4,CPT4,S,90774,13/02/2006,06/04/2009,,concept,6.76621E+18
+19133161,Factor VIII (Human) 66.7 UNT/ML / von Willebrand Factor (Human) 160 UNT/ML [Humate-P],Drug,RxNorm,Branded Drug Comp,,826583,04/01/2009,03/03/2014,D,concept,-4.39093E+18
+19066409,chaste berry extract,Drug,RxNorm,Ingredient,,259261,01/01/1970,31/07/2022,D,concept,6.80707E+18
+45892666,clotrimazole 10 MG/ML Topical Cream [Kerasal Toe & Foot],Drug,RxNorm,Branded Drug,,1598059,02/03/2015,31/07/2022,D,concept,9.0507E+18
+40233125,clonidine hydrochloride 0.17 MG Extended Release Oral Tablet,Drug,RxNorm,Clinical Drug,,1087323,06/02/2011,31/07/2022,U,concept,6.45356E+18
+40072172,Penicillin G 150000 UNT/ML / Penicillin G 1500000 UNT/ML Injectable Suspension,Drug,RxNorm,Clinical Drug,,204464,01/01/1970,31/07/2022,D,concept,1.42406E+18
+45776340,carboxymethylcellulose sodium 2.5 MG/ML [Thera Tears],Drug,RxNorm,Branded Drug Comp,,1547949,01/12/2014,31/07/2022,U,concept,-9.07683E+18
+40143381,penicillin G Injectable Solution [Bicillin],Drug,RxNorm,Branded Drug Form,,731562,30/12/2007,31/07/2022,D,concept,-8.41693E+18
+40155814,Polyethylene Glycol 400 / Propylene glycol Ophthalmic Solution [Systane Ultra],Drug,RxNorm,Branded Drug Form,,827715,04/01/2009,31/07/2022,D,concept,3.15759E+18
+738266,Doxepin 10 MG/ML,Drug,RxNorm,Clinical Drug Comp,,343138,01/01/1970,31/07/2022,D,concept,-4.42404E+18
+40168490,24 HR clonidine hydrochloride 0.3 MG Extended Release Oral Tablet,Drug,RxNorm,Quant Clinical Drug,,885882,03/01/2010,31/07/2022,D,concept,4.8946E+18
+3953260,FLUPHENAZINE HYDROCHLORIDE - fluphenazine hydrochloride tablet,Drug,NDC,11-digit NDC,,60505477105,12/04/2023,13/04/2023,D,concept,6.32665E+18
+45073210,Oxygen 99 % Gas for Inhalation,Drug,NDC,11-digit NDC,,58357637007,01/06/2007,01/09/2010,D,concept,-3.64232E+18
+45025490,Lisinopril 10 MG Oral Tablet [Prinivil],Drug,NDC,11-digit NDC,,00006010692,01/06/2007,01/09/2010,D,concept,-3.85384E+18
+44887514,Oxygen 99.9 % Gas for Inhalation,Drug,NDC,11-digit NDC,,63983033302,01/06/2007,01/09/2010,D,concept,8.66922E+18
+45223334,Zidovudine 10 MG/ML Injectable Solution [Retrovir],Drug,NDC,11-digit NDC,,51947868001,01/06/2007,01/09/2010,D,concept,-1.15989E+18
+45107716,Chlorpheniramine 4 MG / Hydrocodone Bitartrate 5 MG / Pseudoephedrine 60 MG Oral Tablet [Tussend],Drug,NDC,11-digit NDC,,60793085613,01/10/2009,01/09/2010,D,concept,-7.81314E+18
+45039939,carbinoxamine 0.4 MG/ML Oral Solution [Histex PD],Drug,NDC,11-digit NDC,,62022025716,01/06/2007,01/09/2010,D,concept,-3.7261E+18
+45365619,Oxygen 99.2 % Gas for Inhalation,Drug,NDC,11-digit NDC,,67770020003,01/06/2007,01/09/2010,D,concept,2.33168E+18
+44989647,carbinoxamine 0.4 MG/ML / Pseudoephedrine 3 MG/ML Oral Solution [Pediatex D],Drug,NDC,11-digit NDC,,65224032116,01/06/2007,01/09/2010,D,concept,8.17245E+18
+44990673,trandolapril 1 MG Oral Tablet,Drug,NDC,11-digit NDC,,68462018511,01/08/2009,01/09/2010,D,concept,-2.63759E+18
+45346431,carbinoxamine 4 MG / Pseudoephedrine 60 MG Oral Tablet [Rondec],Drug,NDC,11-digit NDC,,60346014830,01/06/2007,01/09/2010,D,concept,7.84392E+17
+45240397,28 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler [Advair 250/50],Drug,NDC,11-digit NDC,,51947069601,01/02/2010,01/09/2010,D,concept,5.71986E+18
+44869312,0.6 ML Fondaparinux sodium 12.5 MG/ML Prefilled Syringe [Arixtra],Drug,NDC,11-digit NDC,,60937323401,01/10/2009,01/09/2010,D,concept,-4.91354E+18
+45018395,carbinoxamine 4 MG / Pseudoephedrine 60 MG Oral Tablet [Rondec],Drug,NDC,11-digit NDC,,51479002205,01/06/2007,01/09/2010,D,concept,7.47546E+18
+45280441,Risperidone 1 MG/ML Oral Solution [Risperdal],Drug,NDC,11-digit NDC,,67544021032,01/09/2007,01/09/2010,D,concept,-4.0102E+17
+45257665,Isradipine 2.5 MG Oral Capsule,Drug,NDC,11-digit NDC,,52152026304,01/06/2007,01/09/2010,D,concept,-7.40047E+18
+45179365,Amylases 30 MG / CELLULASE 2 MG / Endopeptidases 6 MG / Lipase 75 MG Oral Capsule,Drug,NDC,11-digit NDC,,00091352225,01/06/2007,01/09/2010,D,concept,-2.95201E+18
+45191701,Nifedipine 60 MG Extended Release Tablet,Drug,NDC,11-digit NDC,,58016055606,01/06/2007,01/09/2010,D,concept,-6.38484E+18
+44979854,Oxygen 99.5 % Gas for Inhalation,Drug,NDC,11-digit NDC,,10297100001,01/06/2007,01/09/2010,D,concept,8.44267E+18
+45009119,Cephalexin 500 MG Oral Capsule,Drug,NDC,11-digit NDC,,00093314752,01/07/2009,01/09/2010,D,concept,-1.38435E+18
+45011952,Desiccated thyroid 195 MG Oral Tablet,Drug,NDC,11-digit NDC,,00832001410,01/06/2007,01/09/2010,D,concept,2.3988E+17
+45071152,Naproxen 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,54868296605,01/06/2007,01/09/2010,D,concept,3.90889E+18
+44907773,gabapentin 100 MG Oral Tablet,Drug,NDC,11-digit NDC,,00172444010,01/06/2007,01/09/2010,D,concept,-2.34644E+18
+45216582,Hydrocortisone 10 MG/ML / Neomycin 5 MG/ML / Polymyxin B 10000 UNT/ML Otic Solution,Drug,NDC,11-digit NDC,,00814174540,01/06/2007,01/09/2010,D,concept,7.12212E+18
+45226598,carbinoxamine 2 MG/ML / Dextromethorphan 4 MG/ML / Pseudoephedrine 25 MG/ML Oral Solution [Cardec DM],Drug,NDC,11-digit NDC,,58016401430,01/06/2007,01/09/2010,D,concept,-6.02061E+18
+44943805,Triamcinolone 40 MG/ML Injectable Suspension,Drug,NDC,11-digit NDC,,00682004205,01/06/2007,01/09/2010,D,concept,-7.2618E+18
+45335128,Testosterone 100 MG/ML Injectable Solution [Depandro 100],Drug,NDC,11-digit NDC,,00456101910,01/06/2007,01/09/2010,D,concept,-2.4591E+18
+45196868,Clozapine 200 MG Oral Tablet,Drug,NDC,11-digit NDC,,00172440546,01/06/2007,01/09/2010,D,concept,-2.10421E+18
+44925773,Triamcinolone 40 MG/ML Injectable Suspension,Drug,NDC,11-digit NDC,,00385105075,01/06/2007,01/09/2010,D,concept,-8.64178E+18
+45121548,0.375 ML Leuprolide Acetate 120 MG/ML Prefilled Syringe [Eligard],Drug,NDC,11-digit NDC,,53873099407,01/01/2009,01/09/2010,D,concept,-7.16903E+18
+45381990,pioglitazone 30 MG Oral Tablet [Actos],Drug,NDC,11-digit NDC,,64764030113,01/06/2007,01/09/2010,D,concept,-8.40468E+18
+45097282,Gramicidin 0.025 MG/ML / Neomycin 2.5 MG/ML / Polymyxin B 5000 UNT/ML Ophthalmic Solution,Drug,NDC,11-digit NDC,,00839666290,01/06/2007,01/09/2010,D,concept,-2.50835E+17
+45159040,Cimetidine 800 MG Oral Tablet,Drug,NDC,11-digit NDC,,62540771160,01/10/2009,01/09/2010,D,concept,-5.90462E+17
+45206159,nelarabine 5 MG/ML Injectable Solution [Arranon],Drug,NDC,11-digit NDC,,51947440106,01/06/2007,01/09/2010,D,concept,3.88656E+18
+44901589,Cyclobenzaprine hydrochloride 10 MG Oral Tablet,Drug,NDC,11-digit NDC,,55289012801,01/01/2009,01/09/2010,D,concept,1.89564E+17
+45140399,Nifedipine 60 MG Extended Release Tablet,Drug,NDC,11-digit NDC,,58016055675,01/06/2007,01/09/2010,D,concept,-9.1796E+18
+45021816,carbinoxamine 2 MG/ML / Dextromethorphan 4 MG/ML / Pseudoephedrine 25 MG/ML Oral Solution [Cardec DM],Drug,NDC,11-digit NDC,,58016401401,01/06/2007,01/09/2010,D,concept,-3.19482E+18
+45236062,pioglitazone 45 MG Oral Tablet [Actos],Drug,NDC,11-digit NDC,,11532001303,01/06/2007,01/09/2010,D,concept,3.74816E+18
+44933520,carbinoxamine 0.8 MG/ML / Dextromethorphan 3 MG/ML / Pseudoephedrine 12 MG/ML Oral Solution [Rondec DM],Drug,NDC,11-digit NDC,,51479002412,01/03/2008,01/09/2010,D,concept,8.89297E+18
+45039628,0.4 ML Fondaparinux sodium 12.5 MG/ML Prefilled Syringe [Arixtra],Drug,NDC,11-digit NDC,,60937323202,01/10/2009,01/09/2010,D,concept,2.00292E+18
+45326486,rosiglitazone 8 MG Oral Tablet [Avandia],Drug,NDC,11-digit NDC,,53873316002,01/06/2007,01/09/2010,D,concept,2.00015E+17
+44887545,carbinoxamine 0.334 MG/ML / Pseudoephedrine 2.5 MG/ML Oral Solution [PSE Allergy],Drug,NDC,11-digit NDC,,64376073116,01/08/2008,01/09/2010,D,concept,6.05031E+18
+45038265,Acyclovir 200 MG Oral Capsule,Drug,NDC,11-digit NDC,,58016015724,01/06/2007,01/09/2010,D,concept,6.18856E+17
+45133002,Ondansetron 4 MG Disintegrating Tablet,Drug,NDC,11-digit NDC,,10025526503,01/02/2008,01/09/2010,D,concept,2.08606E+18
+44877801,Ondansetron 8 MG Oral Tablet,Drug,NDC,11-digit NDC,,10025526601,01/06/2007,01/09/2010,D,concept,6.99051E+18
+45213406,Doxepin Hydrochloride 50 MG/ML Topical Cream [Prudoxin],Drug,NDC,11-digit NDC,,00064360003,01/09/2010,01/09/2010,D,concept,-6.92E+17
+45381991,pioglitazone 45 MG Oral Tablet [Actos],Drug,NDC,11-digit NDC,,64764045123,01/06/2007,01/09/2010,D,concept,8.88606E+18
+45258308,Paroxetine 12.5 MG Extended Release Tablet [Paxil CR],Drug,NDC,11-digit NDC,,53873320600,01/01/2009,01/09/2010,D,concept,-4.26451E+17
+44985227,Atovaquone 150 MG/ML Oral Suspension [Mepron],Drug,NDC,11-digit NDC,,53873054700,01/06/2007,01/09/2010,D,concept,-8.87446E+18
+45355233,Oxygen 99.5 % Gas for Inhalation,Drug,NDC,11-digit NDC,,10297100005,01/06/2007,01/09/2010,D,concept,-6.49798E+18
+45052785,Cefuroxime 500 MG Oral Tablet,Drug,NDC,11-digit NDC,,51947810901,01/06/2007,01/09/2010,D,concept,-5.13786E+18
+44946340,pioglitazone 45 MG Oral Tablet [Actos],Drug,NDC,11-digit NDC,,11532001301,01/06/2007,01/09/2010,D,concept,-4.50178E+18
+45326484,Atovaquone 150 MG/ML Oral Suspension [Mepron],Drug,NDC,11-digit NDC,,53873066500,01/06/2007,01/09/2010,D,concept,-2.42261E+18
+44851083,Nifedipine 60 MG Extended Release Tablet,Drug,NDC,11-digit NDC,,58016055693,01/06/2007,01/09/2010,D,concept,-3.46027E+18
+44919501,Nifedipine 60 MG Extended Release Tablet,Drug,NDC,11-digit NDC,,58016055682,01/06/2007,01/09/2010,D,concept,4.48817E+18
+45171963,Sumatriptan 5 MG/ACTUAT Nasal Spray,Drug,NDC,11-digit NDC,,51952652401,01/01/2009,01/09/2010,D,concept,-5.10719E+18
+45362570,Nifedipine 60 MG Extended Release Tablet,Drug,NDC,11-digit NDC,,58016055660,01/06/2007,01/09/2010,D,concept,4.20762E+18
+45292498,Paroxetine 20 MG Oral Tablet [Paxil],Drug,NDC,11-digit NDC,,53873321101,01/06/2007,01/09/2010,D,concept,-3.61459E+18
+44900462,Ondansetron 8 MG Oral Tablet [Zofran],Drug,NDC,11-digit NDC,,53873044702,01/06/2007,01/09/2010,D,concept,-5.93066E+18
+45359926,Ceftazidime 170 MG/ML Injectable Solution [Fortaz],Drug,NDC,11-digit NDC,,51952037902,01/06/2007,01/09/2010,D,concept,-8.13983E+18
+45257672,venlafaxine 50 MG Oral Tablet,Drug,NDC,11-digit NDC,,52152051604,01/05/2009,01/09/2010,D,concept,3.87614E+18
+1780414,miconazole nitrate 20 MG/ML Vaginal Cream,Drug,NDC,11-digit NDC,,70518320200,01/10/2021,01/08/2022,D,concept,1.83253E+18
+35405989,fexofenadine hydrochloride 60 MG Oral Tablet,Drug,NDC,11-digit NDC,,42291029690,01/11/2015,01/08/2022,D,concept,3.68103E+18
+44417608,dexamethasone phosphate 10 MG/ML Injectable Solution,Drug,NDC,11-digit NDC,,70518053200,01/06/2017,01/08/2022,D,concept,-5.39783E+18
+36601973,albuterol 0.833 MG/ML / ipratropium bromide 0.167 MG/ML Inhalation Solution,Drug,NDC,11-digit NDC,,70518235100,01/11/2019,01/08/2022,D,concept,9.05219E+18
+45151670,meclizine hydrochloride 25 MG Oral Tablet,Drug,NDC,11-digit NDC,,30142062008,01/11/2012,01/08/2022,D,concept,5.03675E+18
+1228771,ethanol 0.8 ML/ML Topical Gel,Drug,NDC,11-digit NDC,,75512005210,01/02/2021,01/08/2022,D,concept,-1.38265E+18
+1768229,benztropine mesylate 0.5 MG Oral Tablet,Drug,NDC,11-digit NDC,,70518168800,01/01/2019,01/08/2022,D,concept,-8.78535E+18
+45138506,coal tar 5 MG/ML Medicated Shampoo [Tera Gel],Drug,NDC,11-digit NDC,,54162025080,01/03/2011,01/08/2022,D,concept,6.59265E+18

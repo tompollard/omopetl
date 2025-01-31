@@ -10,6 +10,27 @@ staging_person_lookup:
         type: copy
         source_column: subject_id
 
+tmp_subject_race:
+  source_table: admissions
+  target_table: tmp_subject_race
+  columns:
+    - target_column: subject_id
+      transformation:
+        type: copy
+        source_column: subject_id
+    - target_column: race
+      transformation:
+        type: aggregate
+        source_columns:
+          - subject_id
+          - admittime
+          - race
+        group_by:
+          - subject_id
+          - admittime
+        order_by: admittime
+        aggregation: first
+
 person_mapping:
   source_table: patients
   target_table: person
