@@ -27,7 +27,6 @@ tmp_subject_race:
           - race
         group_by:
           - subject_id
-          - admittime
         order_by: admittime
         aggregation: first
 
