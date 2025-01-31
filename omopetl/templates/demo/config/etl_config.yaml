@@ -11,4 +11,5 @@ etl:
 
   mappings:
     - staging_person_lookup
+    - tmp_subject_race
     - person_mapping

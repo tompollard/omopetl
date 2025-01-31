@@ -1,0 +1,501 @@
+relationship_id,relationship_name,is_hierarchical,defines_ancestry,reverse_relationship_id,relationship_concept_id,load_table_id,load_row_id
+Denominator unit of,Presentation strength denominator unit of (SNOMED),0,0,Has denominator unit,581417,relationship,0
+Paral imprt ind,Has NHS dm+d parallel import indicator,0,0,Paral imprt of,32751,relationship,0
+Concept poss_eq from,Active possibly_equivalent_to inactive (SNOMED),0,0,Concept poss_eq to,44818963,relationship,0
+Maps to type,Non-standard to type concept map (OMOP),0,0,Type mapped from,44819237,relationship,0
+Has property type,Has property type,0,0,Property type of,5075,relationship,0
+Is hist in adult,Is historical in adult (HemOnc),0,0,Hist adult indic for,33081,relationship,0
+Dev intended site of,Device intended site of (SNOMED),0,0,Has dev intend site,32988,relationship,0
+ICD9P replaces,Concept replaces (ICD-9-Procedure),0,0,ICD9P replaced by,44818972,relationship,0
+Has complication,Has complication (SNOMED),0,0,During,581425,relationship,0
+Has dir proc site,Has direct procedure site (SNOMED),0,0,Dir proc site of,44818785,relationship,0
+Has priority,Has priority (SNOMED),0,0,Priority of,44818744,relationship,0
+Has release charact,Has dose form release characteristic (SNOMED),0,0,Release charact of,581467,relationship,0
+Has VMP,Has Virtual Medicinal Product (SNOMED),0,0,VMP of,45905739,relationship,0
+Dir device of,Direct device of (SNOMED),0,0,Has dir device,44818864,relationship,0
+Has setting,Has setting (LOINC),0,0,Setting of,32462,relationship,0
+Has precoord pair,Has precoordinated (Question-Answer/Variable-Value) pair,0,0,Precoord pair of,32970,relationship,0
+Occurrence of,Occurrence of (SNOMED),0,0,Has occurrence,44818848,relationship,0
+Characterizes,Characterizes (SNOMED),0,0,Is characterized by,5081,relationship,0
+RxNorm - ATC pr up,RxNorm/Extension to ATC primary upwards (OMOP),0,0,ATC - RxNorm pr up,32800,relationship,0
+Spec active ing of,Specific active ingredient of (SNOMED),0,0,Has spec active ing,45905749,relationship,0
+Freq Code - Typ bill,Frequency code to Typ bill Full (UB04),0,0,Typ bill - Freq Code,32404,relationship,0
+Mapped from,Standard to Non-standard map (OMOP),0,0,Maps to,44818976,relationship,0
+Has pathology,Has pathological process (SNOMED),0,0,Pathology of,44818745,relationship,0
+Has route,Has route (DM+D),0,0,Route of,45905744,relationship,0
+Has incipient,Has incipient (DM+D),0,0,Incipient of,45905740,relationship,0
+Precoord pair of,Precoordinated (Question-Answer/Variable-Value) pair of,0,0,Has precoord pair,32971,relationship,0
+Curr ped indic for,Current pediatric indication for (HemOnc),0,0,Is curr in ped,33080,relationship,0
+Filling of,Filling material of (SNOMED),0,0,Has filling,32992,relationship,0
+Has dev intend site,Has device intended site (SNOMED),0,0,Dev intended site of,32987,relationship,0
+RxNorm - VAProd eq,RxNorm to VA Product equivalent (NDF-RT),0,0,VAProd - RxNorm eq,44818945,relationship,0
+Causes,Causes (SNOMED),0,0,Caused by,45754811,relationship,0
+Schema to Variable,Schema to Variable (NAACCR),0,0,Variable to Schema,32649,relationship,0
+Has episodicity,Has episodicity (SNOMED),0,0,Episodicity of,44818763,relationship,0
+CAP-Nebraska eq,CAP to Nebraska Lexicon equivalent,0,0,Nebraska-CAP eq,32784,relationship,0
+ATC - SNOMED eq,ATC to SNOMED equivalent (RxNorm),0,0,SNOMED - ATC eq,45754850,relationship,0
+RxNorm - NDFRT name,RxNorm to NDF-RT equivalent by concept_name (OMOP),0,0,NDFRT - RxNorm name,44818922,relationship,0
+Concept poss_eq to,Inactive possibly_equivalent_to active (SNOMED),0,0,Concept poss_eq from,44818962,relationship,0
+Has temporal context,Has temporal context (SNOMED),0,0,Temporal context of,44818791,relationship,0
+Prod character of,Product characteristic of (SNOMED),0,0,Has prod character,32984,relationship,0
+Has coating material,Has coating material (SNOMED),0,0,Coating material of,33052,relationship,0
+Has steroid tx Rx,Has steroid therapy - RxNorm (HemOnc),0,0,Rx steroid tx of,33075,relationship,0
+Is hist in ped,Is historical in pediatric (HemOnc),0,0,Hist ped indic for,33089,relationship,0
+Direct site of,Direct site of (SNOMED),0,0,Has direct site,5080,relationship,0
+AMP of,Actual Medicinal Product of (SNOMED),0,0,Has AMP,45905757,relationship,0
+Rx PDC of,RxNorm PDC of (HemOnc),0,0,Has PDC Rx,33088,relationship,0
+Had accepted use,Had accepted use (HemOnc),0,0,Had accepted for,33083,relationship,0
+Has proc site,Has procedure site (SNOMED),0,0,Proc site of,44818743,relationship,0
+NDFRT to VA Class eq,NDFRT to VA Class equivalent (NDF-RT),0,0,VA Class to NDFRT eq,45754840,relationship,0
+Has FDA labeling,Has FDA labeling (HemOnc),0,0,FDA labeling of,33019,relationship,0
+Has Topic,Has Topic,0,0,Topic of,581415,relationship,0
+Using energy,Using energy (SNOMED),0,0,Energy used by,44818795,relationship,0
+RxNorm - Source eq,RxNorm to Drug Source equivalent (OMOP),0,0,Source - RxNorm eq,44818952,relationship,0
+Surface texture of,Surface texture of (SNOMED),0,0,Has surface texture,33061,relationship,0
+Reformulation of,Reformulation of (RxNorm),0,0,Reformulated in,44818722,relationship,0
+RxNorm - SNOMED eq,RxNorm to SNOMED equivalent (RxNorm),0,0,SNOMED - RxNorm eq,45754844,relationship,0
+ATC - RxNorm pr lat,ATC to RxNorm/Extension primary lateral (OMOP),0,0,RxNorm - ATC pr lat,32795,relationship,0
+Has standard brand,Has standard Brand Name (OMOP),0,0,Is standard brand of,228,relationship,0
+Pathology of,Pathological process of (SNOMED),0,0,Has pathology,44818843,relationship,0
+Using device,Using device (SNOMED),0,0,Device used by,44818794,relationship,0
+Has pept-drg cjg Rx,Has peptide-drug conjugate - RxNorm (HemOnc),0,0,Rx pept-drg cjg of,33035,relationship,0
+Unit mapped from,Unit concept to non-standard map (OMOP),0,0,Maps to unit,44819241,relationship,0
+Has pack,Has pack (SNOMED),0,0,Is pack of,45905758,relationship,0
+Has supportive med,Has supportive medication (HemOnc),0,0,Supportive med of,32632,relationship,0
+Has Value,Has Value,0,0,Value of,32972,relationship,0
+Has route of admin,Has route of administration (SNOMED),0,0,Route of admin of,44818799,relationship,0
+Nebraska-CAP eq,Nebraska Lexicon to CAP equivalent,0,0,CAP-Nebraska eq,32785,relationship,0
+Property type of,Property type of,0,0,Has property type,5076,relationship,0
+Episodicity of,Episodicity of (SNOMED),0,0,Has episodicity,44818861,relationship,0
+Has steroid tx,Has steroid therapy (HemOnc),0,0,Steroid tx of,33073,relationship,0
+Interpretation of,Interpretation of (SNOMED),0,0,Has interpretation,44818855,relationship,0
+CPT4 - CVX eq,CPT4 to CVX equivalent (CVX),0,0,CVX - CPT4 eq,32611,relationship,0
+Has finding site,Has finding site (SNOMED),0,0,Finding site of,44818762,relationship,0
+ICDO to Chapter,ICDO to Chapter,0,0,Chapter to ICDO,32955,relationship,0
+SNOMED - ind/CI,SNOMED to Indication/Contra-indication,0,0,Ind/CI - SNOMED,44818911,relationship,0
+Vaccine group of,Vaccine group of (CVX),0,0,Has vaccine group,32610,relationship,0
+Has Module,Has Module,0,0,Module of,581406,relationship,0
+Surf character of,Surface characteristic of (SNOMED),0,0,Has surface char,32986,relationship,0
+Incipient of,Incipient of (DM+D),0,0,Has incipient,45905752,relationship,0
+Has AMP,Has Actual Medicinal Product (SNOMED),0,0,AMP of,45905745,relationship,0
+Has time aspect,Has time aspect,0,0,Time aspect of,44818774,relationship,0
+Has targeted tx Rx,Has targeted therapy - RxNorm (HemOnc),0,0,Rx targeted tx of,33047,relationship,0
+Is standard brand of,Is standard Brand Name of (OMOP),0,0,Has standard brand,227,relationship,0
+Is sterile,Is sterile (SNOMED),0,0,Is sterile of,33062,relationship,0
+Dir proc site of,Direct procedure site of (SNOMED),0,0,Has dir proc site,44818883,relationship,0
+Excluded in map from,Standard to Non-standard exclude child (OMOP),0,0,Map excludes child,44818970,relationship,0
+LOINC - CPT4 eq,LOINC to CPT4 equivalent (SNOMED),0,0,CPT4 - LOINC eq,45956697,relationship,0
+Modification of,Is modification of (SNOMED),0,0,Has modification,32439,relationship,0
+Has extent,Has Extent (SNOMED),0,0,Extent of,45754816,relationship,0
+Concept was_a from,Active was_a inactive (SNOMED),0,0,Concept was_a to,44818965,relationship,0
+Has excipient,Has excipient (SNOMED),0,0,Excipient of,45905791,relationship,0
+ATC - RxNorm,ATC to RxNorm,0,0,RxNorm - ATC,44818810,relationship,0
+Focus of,Focus of (SNOMED),0,0,Has focus,44818857,relationship,0
+Time aspect of,Time aspect of,0,0,Has time aspect,44818872,relationship,0
+May be route of,May be route of (HemOnc),0,0,May have route,32635,relationship,0
+MS-DRG - DRG eq,MS-DRG to DRG equivalent (CMS),0,0,DRG - MS-DRG eq,44818937,relationship,0
+Has CD category,Has controlled drug category (DM+D),0,0,CD category of,32679,relationship,0
+Radiotherapy of,Radiotherapy of (HemOnc),0,0,Has radiotherapy,33042,relationship,0
+Kind of,Kind of (LOINC),0,0,Has kind,32461,relationship,0
+Concept alt_to from,Active alternative_to inactive (SNOMED),0,0,Concept alt_to to,44818961,relationship,0
+Conc denom unit of,Concentration strength denominator unit of (SNOMED),0,0,Has conc denom unit,32436,relationship,0
+Value of,Value of,0,0,Has Value,32973,relationship,0
+Interprets of,Interprets of (SNOMED),0,0,Has interprets,44818851,relationship,0
+Has unit of prod use,Has unit relating to the entity that can be handled (DM+D),0,0,Unit of prod use of,45905743,relationship,0
+Process extends from,Process extends from (SNOMED),0,0,Process extends to,33057,relationship,0
+Is pack of,Is pack of (SNOMED),0,0,Has pack,45905746,relationship,0
+ICDO br to OncoTree,ICDO broader to OncoTree,0,0,OncoTree to ICDO br,33012,relationship,0
+ATC to VA Class eq,ATC to VA Class equivalent (NDF-RT),0,0,VA Class to ATC eq,45754836,relationship,0
+ATC - RxNorm pr up,ATC to RxNorm/Extension primary upwards (OMOP),0,0,RxNorm - ATC pr up,32799,relationship,0
+VRP prescr stat of,VRP prescribing status of (SNOMED),0,0,VRP has prescr stat,45905807,relationship,0
+Has targeted therapy,Has targeted therapy (HemOnc),0,0,Targeted therapy of,33045,relationship,0
+ICD9CM - FDB Ind,ICD-9-CM to FDB Indication/Contraindication (FDB),0,0,FDB Ind - ICD9CM,44819288,relationship,0
+Relative to of,Relative to of (SNOMED),0,0,Relative to,32980,relationship,0
+Topography of ICDO,Topography of ICDO,0,0,Has Topography ICDO,581430,relationship,0
+Asso morph of,Associated morphology of (SNOMED),0,0,Has asso morph,44818867,relationship,0
+PPI parent code of,PPI parent code of,0,0,Has PPI parent code,32470,relationship,0
+Has count of ing,Has count of base of active ingredient (SNOMED),0,0,Count of ing of,32441,relationship,0
+Historic treated by,Historically treated by (HemOnc),0,0,Is historical in,32793,relationship,0
+Process extends to,Process extends to (SNOMED),0,0,Process extends from,33056,relationship,0
+Role of,Role of (LOINC),0,0,Has role,32459,relationship,0
+Is historical in,Is historically used in (HemOnc),0,0,Historic treated by,32792,relationship,0
+Schema to ICDO,Schema to ICDO Condition (NAACCR),0,0,ICDO to Schema,32645,relationship,0
+Disposition of,Disposition of (SNOMED),0,0,Has disposition,581462,relationship,0
+Has context,Has context (HemOnc),0,0,Context of,32618,relationship,0
+Has flavor,Has flavor (SNOMED),0,0,Flavor of,45905802,relationship,0
+VRP of,VRP of (SNOMED),0,0,Has VRP,45905799,relationship,0
+CAP value of,CAP value of,0,0,Has CAP value,32776,relationship,0
+Has indir proc site,Has indirect procedure site (SNOMED),0,0,Indir proc site of,44818786,relationship,0
+Has conc num val,Has concentration strength numerator value (SNOMED),0,0,Conc num val of,32431,relationship,0
+ATC - RxNorm sec lat,ATC to RxNorm/Extension secondary lateral (OMOP),0,0,RxNorm - ATC sec lat,32797,relationship,0
+Has modification,Has modification of (SNOMED),0,0,Modification of,32440,relationship,0
+Drug-drug inter for,Drug-drug interaction for (NDF),0,0,Has drug-drug inter,44818914,relationship,0
+Conc denom val of,Concentration strength denominator value of (SNOMED),0,0,Has conc denom val,32434,relationship,0
+Has legal category,Has legal category (SNOMED),0,0,Legal category of,45905812,relationship,0
+Relative part of,Relative part of (SNOMED),0,0,Has relative part,5072,relationship,0
+Severity of,Severity of (SNOMED),0,0,Has severity,44818845,relationship,0
+Etiology of,Etiology of (SNOMED),0,0,Has etiology,45754813,relationship,0
+Extent of,Extent of (SNOMED),0,0,Has extent,45754817,relationship,0
+Specimen topo of,Specimen source topography of (SNOMED),0,0,Has specimen topo,44818876,relationship,0
+Has relative part,Has relative part (SNOMED),0,0,Relative part of,5071,relationship,0
+Has disposition,Has disposition (SNOMED),0,0,Disposition of,581461,relationship,0
+Has role,Has role (LOINC),0,0,Role of,32458,relationship,0
+Chapter to ICDO,Chapter to ICDO,0,0,ICDO to Chapter,32954,relationship,0
+Finding site of,Finding site of (SNOMED),0,0,Has finding site,44818860,relationship,0
+Has intent,Has intent (SNOMED),0,0,Intent of,44818758,relationship,0
+Maps to unit,Non-standard to unit concept map (OMOP),0,0,Unit mapped from,44819238,relationship,0
+Has biosimilar,Has biosimilar,0,0,Biosimilar of,32977,relationship,0
+Has inherent,Has inherent (SNOMED),0,0,Inheres in,5078,relationship,0
+Concept same_as to,Inactive same_as active (SNOMED),0,0,Concept same_as from,44818958,relationship,0
+Has ARP,Has ARP (SNOMED),0,0,ARP of,45905796,relationship,0
+Using finding method,Using finding method (SNOMED),0,0,Finding method of,44818800,relationship,0
+LOINC replaced by,Concept replaced by (LOINC),0,0,LOINC replaces,44818714,relationship,0
+Has CAP value,Has CAP value,0,0,CAP value of,32777,relationship,0
+VRP has prescr stat,VRP has prescribing status (SNOMED),0,0,VRP prescr stat of,45905806,relationship,0
+Relative to,Relative to (SNOMED),0,0,Relative to of,32979,relationship,0
+Proc morph of,Procedure morphology of (SNOMED),0,0,Has proc morph,44818886,relationship,0
+Has type,Has type,0,0,Type of,32672,relationship,0
+Concept same_as from,Active same_as inactive (SNOMED),0,0,Concept same_as to,44818959,relationship,0
+Using acc device,Using access device (SNOMED),0,0,Acc device used by,44818797,relationship,0
+Variable to Schema,Variable to Schema (NAACCR),0,0,Schema to Variable,32650,relationship,0
+Has licensed route,Has licensed route (DM+D),0,0,Licensed route of,45905741,relationship,0
+Is CI of,Is contra-indication of (FDB),0,0,Has CI,44818906,relationship,0
+RxNorm - ATC,RxNorm to ATC,0,0,ATC - RxNorm,44818908,relationship,0
+Transformation of,Dose form transformation of (SNOMED),0,0,Has transformation,581470,relationship,0
+Has laterality,Has laterality (SNOMED),0,0,Laterality of,44818752,relationship,0
+Investig use for,Investigational use for (HemOnc),0,0,Has investig use,33086,relationship,0
+Has therap class,Has therapeutic class (NDF),0,0,Therap class of,44818912,relationship,0
+Plays role,Plays role,0,0,Role played by,32539,relationship,0
+Asso proc of,Associated procedure of (SNOMED),0,0,Has asso proc,44818882,relationship,0
+Has count of act ing,Count of active ingredients (SNOMED),0,0,Count of act ing in,32981,relationship,0
+Has due to,Has due to (SNOMED),0,0,Due to of,44818780,relationship,0
+Has component,Has component,0,0,Component of,44818767,relationship,0
+System of,System of,0,0,Has system,32716,relationship,0
+Has pept-drug cjgt,Has peptide-drug conjugate (HemOnc),0,0,Pept-drug cjgt of,33033,relationship,0
+Has asso finding,Has associated finding (SNOMED),0,0,Asso finding of,44818770,relationship,0
+VMP of,Virtual Medicinal Product of (SNOMED),0,0,Has VMP,45905751,relationship,0
+Proc site of,Procedure site of (SNOMED),0,0,Has proc site,44818841,relationship,0
+Has disc indicator,Has discontinued indicator (SNOMED),0,0,Disc indicator of,45905804,relationship,0
+Has method,Has method,0,0,Method of,44818751,relationship,0
+Supplier of,Supplier or manufacturer of (OMOP),0,0,Has supplier,249,relationship,0
+AMP restr ind of,NHS dm+d (dictionary of medicines and devices) AMP (actual medicinal product) availability restriction indicator of,0,0,Has AMP restr ind,32750,relationship,0
+Is curr in adult,Is current in adult (HemOnc),0,0,Curr adult indic for,33077,relationship,0
+Has pharma prep,Has pharmaceutical preparation (NDF),0,0,Pharma prep in,44818916,relationship,0
+SNOMED - VA Class eq,SNOMED to VA Class equivalent (RxNorm),0,0,VA Class - SNOMED eq,45754847,relationship,0
+Inherent location of,Inherent location of (SNOMED),0,0,Has inherent loc,5068,relationship,0
+Hist adult indic for,Historical adult indication for (HemOnc),0,0,Is hist in adult,33082,relationship,0
+Has technique,Has technique (SNOMED),0,0,Technique of,5069,relationship,0
+Has cytotox chemo Rx,Has cytotoxic chemotherapy - RxNorm (HemOnc),0,0,Cytotox chemo RX of,33023,relationship,0
+Has immunotherapy Rx,Has immunotherapy - RxNorm (HemOnc),0,0,Rx immunotherapy of,33031,relationship,0
+Has support med Rx,Has supportive medication - RxNorm (HemOnc),0,0,Rx support med of,32630,relationship,0
+Is characterized by,Is characterized by (SNOMED),0,0,Characterizes,5082,relationship,0
+Dir subst of,Direct substance of (SNOMED),0,0,Has dir subst,44818862,relationship,0
+Type mapped from,Type concept to non-standard map (OMOP),0,0,Maps to type,44819240,relationship,0
+Answer of,Answer of,0,0,Has Answer,45754684,relationship,0
+Maps to operator,Non-standard to operator concept map (OMOP),0,0,Operator mapped from,45754883,relationship,0
+Comp material of,Compositional material of (SNOMED),0,0,Has comp material,32990,relationship,0
+Has access,Has access (SNOMED),0,0,Access of,44818749,relationship,0
+Non-avail ind of,VMP non-availability indicator of (SNOMED),0,0,Has non-avail ind,45905795,relationship,0
+Hist ped indic for,Historical pediatric indication for (HemOnc),0,0,Is hist in ped,33090,relationship,0
+Device used by,Device used by (SNOMED),0,0,Using device,44818892,relationship,0
+Multilex has ing,Has ingredient (Multilex),0,0,Multilex ing of,44818950,relationship,0
+Has stage,Has Stage (SNOMED),0,0,Stage of,45754814,relationship,0
+Measurement of,Measurement method of (SNOMED),0,0,Has measurement,44818869,relationship,0
+Inheres in,Inheres in (SNOMED),0,0,Has inherent,5077,relationship,0
+Cytotox chemo RX of,Cytotoxic chemotherapy of - RxNorm (HemOnc),0,0,Has cytotox chemo Rx,33024,relationship,0
+Occurs after,Occurs after (SNOMED),0,0,Occurs before,44818783,relationship,0
+Has AB-drug cjgt,Has antibody-drug conjugate (HemOnc),0,0,AB-drug cjgt of,33015,relationship,0
+Endocrine tx of,Endocrine therapy of (HemOnc),0,0,Has endocrine tx,33026,relationship,0
+Life circumstan of,Life circumstance (SNOMED Vet),0,0,Has life circumstan,32556,relationship,0
+Specimen of,Specimen of (SNOMED),0,0,Has specimen,44818854,relationship,0
+Has recipient cat,Has recipient category (SNOMED),0,0,Recipient cat of,44818742,relationship,0
+Trade family grp of,Trade family group of (SNOMED),0,0,Has trade family grp,45905759,relationship,0
+Has focus,Has focus (SNOMED),0,0,Focus of,44818759,relationship,0
+Has proc device,Has procedure device (SNOMED),0,0,Proc device of,44818787,relationship,0
+Status of,Status of,0,0,Has status,33067,relationship,0
+Has relat context,Has subject relationship context (SNOMED),0,0,Relat context of,44818781,relationship,0
+Indir device of,Indirect device of (SNOMED),0,0,Has indir device,44818853,relationship,0
+Clinical course of,Has clinical course of (SNOMED),0,0,Has clinical course,44818896,relationship,0
+Had accepted for,Had accepted for (HemOnc),0,0,Had accepted use,33084,relationship,0
+Is translated from,Protein is translated from mRNA,0,0,Translates to,32922,relationship,0
+Revision status of,Revision status of (SNOMED),0,0,Has revision status,44818846,relationship,0
+OncoTree to ICDO br,OncoTree to ICDO broader,0,0,ICDO br to OncoTree,33011,relationship,0
+Has immunotherapy,Has immunotherapy (HemOnc),0,0,Immunotherapy of,33029,relationship,0
+Using finding inform,Using finding informer (SNOMED),0,0,Finding inform of,44818801,relationship,0
+Has surface texture,Has surface texture (SNOMED),0,0,Surface texture of,33060,relationship,0
+Due to of,Due to of (SNOMED),0,0,Has due to,44818878,relationship,0
+Laterality of,Laterality of (SNOMED),0,0,Has laterality,44818850,relationship,0
+Has subject matter,Has subject matter domain (LOINC),0,0,Subject matter of,32454,relationship,0
+Nebraska-CAP cat,Nebraska Lexicon to CAP category,0,0,CAP-Nebraska cat,32783,relationship,0
+Accepted use of,Accepted use of (HemOnc),0,0,Has accepted use,32787,relationship,0
+FDA indication of,FDA indication of (HemOnc),0,0,Has FDA indication,32789,relationship,0
+Unit of presen of,Unit of presentation of (SNOMED),0,0,Has unit of presen,32430,relationship,0
+Has permiss range,Has permissible range,0,0,Permiss range of,32664,relationship,0
+Morphology of,Morphology of (SNOMED),0,0,Has morphology,45754807,relationship,0
+Method of,Method of,0,0,Has method,44818849,relationship,0
+Proc device of,Procedure device of (SNOMED),0,0,Has proc device,44818885,relationship,0
+Has antineoplastic,Has antineoplastic (HemOnc),0,0,Antineoplastic of,32616,relationship,0
+Caused by,Caused by (SNOMED),0,0,Causes,45754810,relationship,0
+Is current in,Is currently used in (HemOnc),0,0,Current treated by,32790,relationship,0
+Disp dose form of,Dispensed dose form of (SNOMED),0,0,Has disp dose form,45905748,relationship,0
+Temp related to,Temporally related to (SNOMED),0,0,Has temp finding,581473,relationship,0
+Is standard form of,Is standard Dose Form of (OMOP),0,0,Has standard form,229,relationship,0
+Has indir device,Has indirect device (SNOMED),0,0,Indir device of,44818755,relationship,0
+Variable has date,Variable has date (NAACCR),0,0,Date of variable,32658,relationship,0
+Has accepted use,Has accepted use (HemOnc),0,0,Accepted use of,32786,relationship,0
+Acc device used by,Access device used by (SNOMED),0,0,Using acc device,44818895,relationship,0
+MedDRA - ICD9CM,MedDRA to ICD-9-CM (MSSO),0,0,ICD9CM - MedDRA,44819287,relationship,0
+Has direct site,Has direct site (SNOMED),0,0,Direct site of,5079,relationship,0
+ICDO to Schema,ICDO Condition to Schema (NAACCR),0,0,Schema to ICDO,32646,relationship,0
+Map excludes child,Non-standard to Standard exclude child (OMOP),0,0,Excluded in map from,44818974,relationship,0
+Has basis str subst,Has basis of strength substance (SNOMED),0,0,Basis str subst of,45905738,relationship,0
+Steroid tx of,Steroid therapy of (HemOnc),0,0,Has steroid tx,33074,relationship,0
+Has ontological form,Has ontological dose form presentation (DM+D),0,0,Ontological form of,32681,relationship,0
+Maps to number,Non-standard to value_as_number map (OMOP),0,0,Number mapped from,45754885,relationship,0
+SNOMED - LOINC eq,SNOMED to LOINC Hierarchy equivalent (LOINC),0,0,LOINC - SNOMED eq,45956696,relationship,0
+Has form,Has form (RxNorm),0,0,Form of,44818718,relationship,0
+Targ population of,Target population of (SNOMED),0,0,Has targ population,33065,relationship,0
+ICDO - SNOMED,ICDO - SNOMED,0,0,SNOMED - ICDO,581431,relationship,0
+Coating material of,Coating material of (SNOMED),0,0,Has coating material,33053,relationship,0
+Specimen morph of,Specimen source morphology of (SNOMED),0,0,Has specimen morph,44818875,relationship,0
+State of matter of,State of matter of (SNOMED),0,0,Has state of matter,581472,relationship,0
+Has causative agent,Has causative agent (SNOMED),0,0,Causative agent of,44818768,relationship,0
+Has Histology ICDO,Has Histology ICDO,0,0,Histology of ICDO,581427,relationship,0
+Map includes child,Non-standard to Standard include child (OMOP),0,0,Included in map from,44818975,relationship,0
+Stage of,Stage of (SNOMED),0,0,Has stage,45754815,relationship,0
+Add monitor ind of,NHS dm+d (dictionary of medicines and devices) additional monitoring indicator of,0,0,Has add monitor ind,32748,relationship,0
+Current treated by,Currently treated by (HemOnc),0,0,Is current in,32791,relationship,0
+Value to Schema,Value to Schema (NAACCR),0,0,Schema to Value,32648,relationship,0
+Has transformation,Has dose form transformation (SNOMED),0,0,Transformation of,581469,relationship,0
+Finding method of,Finding method of (SNOMED),0,0,Using finding method,44818898,relationship,0
+Concept replaces,Concept replaces,0,0,Concept replaced by,44818957,relationship,0
+Subst used by,Substance used by (SNOMED),0,0,Using subst,44818894,relationship,0
+Has scale type,Has scale type,0,0,Scale type of,44818773,relationship,0
+Category in Chapter,Category in Chapter,0,0,Chapter has Category,32952,relationship,0
+Rx steroid tx of,RxNorm steroid therapy of (HemOnc),0,0,Has steroid tx Rx,33076,relationship,0
+Has answer (PPI),Has answer (PPI),0,0,Answer of (PPI),32444,relationship,0
+Has Topography ICDO,Has Topography ICDO,0,0,Topography of ICDO,581429,relationship,0
+Typ bill3 - Typ bill,Typ bill 3 digits to Typ bill Full (UB04),0,0,Typ bill - Typ bill3,32406,relationship,0
+SNOMED - ATC eq,SNOMED to ATC equivalent (RxNorm),0,0,ATC - SNOMED eq,45754849,relationship,0
+Proc Schema to ICDO,Procedure Schema to ICDO Condition (NAACCR),0,0,ICDO to Proc Schema,32643,relationship,0
+Cytotoxic chemo of,Cytotoxic chemotherapy of (HemOnc),0,0,Has cytotoxic chemo,33022,relationship,0
+Release charact of,Dose form release characteristic of (SNOMED),0,0,Has release charact,581468,relationship,0
+RxNorm - ATC name,RxNorm to ATC equivalent by concept_name (OMOP),0,0,ATC - RxNorm name,44818927,relationship,0
+Has clinical course,Has clinical course (SNOMED),0,0,Clinical course of,44818798,relationship,0
+Local therapy of,Local therapy of (HemOnc),0,0,Has local therapy,32627,relationship,0
+ICD9P - SNOMED eq,ICD-9-Procedure to SNOMED equivalent (OMOP),0,0,SNOMED - ICD9P eq,44818802,relationship,0
+RxNorm - ATC pr lat,RxNorm/Extension to ATC pr lateral (OMOP),0,0,ATC - RxNorm pr lat,32796,relationship,0
+Surgical appr of,Surgical approach of (SNOMED),0,0,Has surgical appr,44818891,relationship,0
+RxNorm - ATC sec up,RxNorm/Extension to ATC secondary upwards (OMOP),0,0,ATC - RxNorm sec up,32802,relationship,0
+ATC to NDFRT eq,ATC to NDFRT equivalent (NDF-RT),0,0,NDFRT to ATC eq,45754838,relationship,0
+Manifestation of,Definitional manifestation of (SNOMED),0,0,Has manifestation,44818858,relationship,0
+Has comp material,Has compositional material (SNOMED),0,0,Comp material of,32989,relationship,0
+ICD9CM - MedDRA,ICD-9-CM to MedDRA (MSSO),0,0,MedDRA - ICD9CM,44819286,relationship,0
+Has precise ing,Has precise ingredient (RxNorm),0,0,Precise ing of,44818715,relationship,0
+Setting of,Setting of (LOINC),0,0,Has setting,32463,relationship,0
+Histology of ICDO,Histology of ICDO,0,0,Has Histology ICDO,581428,relationship,0
+Has morphology,Has Morphology (SNOMED),0,0,Morphology of,45754806,relationship,0
+Has CI,Has drug contra-indication (FDB),0,0,Is CI of,44818808,relationship,0
+Count of ing of,Count of base of active ingredient of (SNOMED),0,0,Has count of ing,32442,relationship,0
+Process output of,Process output of (SNOMED),0,0,Has process output,5074,relationship,0
+Has filling,Has filling (SNOMED),0,0,Filling of,32991,relationship,0
+Using subst,Using substance (SNOMED),0,0,Subst used by,44818796,relationship,0
+Has targ population,Has target population (SNOMED),0,0,Targ population of,33064,relationship,0
+RxNorm - ETC name,RxNorm to ETC equivalent by concept_name (OMOP),0,0,ETC - RxNorm name,44818925,relationship,0
+NDFRT - VAProd,NDF-RT to VA Product (NDF-RT),0,0,VAProd - NDFRT,44818943,relationship,0
+Intent of,Intent of (SNOMED),0,0,Has intent,44818856,relationship,0
+ARP of,ARP of (SNOMED),0,0,Has ARP,45905797,relationship,0
+Has state of matter,Has state of matter (SNOMED),0,0,State of matter of,581471,relationship,0
+UCUM replaced by,Concept replaced by (UCUM),0,0,UCUM replaces,44818978,relationship,0
+Has dir subst,Has direct substance (SNOMED),0,0,Dir subst of,44818764,relationship,0
+Unit of prod use of,Unit relating to the entity that can be handled of (DM+D),0,0,Has unit of prod use,45905755,relationship,0
+Has prec ingredient,Has precise active ingredient (SNOMED),0,0,Prec ingredient of,32427,relationship,0
+Schema to Value,Schema to Value (NAACCR),0,0,Value to Schema,32647,relationship,0
+Has cytotoxic chemo,Has cytotoxic chemotherapy (HemOnc),0,0,Cytotoxic chemo of,33021,relationship,0
+Absorbability of,Absorbability of (SNOMED),0,0,Has absorbability,33055,relationship,0
+Start date of,Start date of,0,0,Has start date,32714,relationship,0
+Parent item of,Parent item of (NAACCR),0,0,Has parent item,32657,relationship,0
+Has specimen morph,Has specimen source morphology (SNOMED),0,0,Specimen morph of,44818777,relationship,0
+Has manifestation,Has definitional manifestation (SNOMED),0,0,Manifestation of,44818760,relationship,0
+Has specimen topo,Has specimen source topography (SNOMED),0,0,Specimen topo of,44818778,relationship,0
+Finding inform of,Finding informer of (SNOMED),0,0,Using finding inform,44818899,relationship,0
+Has intended site,Has dose form intended site (SNOMED),0,0,Intended site of,581465,relationship,0
+Has severity,Has severity (SNOMED),0,0,Severity of,44818747,relationship,0
+End date of,End date of,0,0,Has end date,32712,relationship,0
+RxNorm - NDFRT eq,RxNorm to NDF-RT equivalent (RxNorm),0,0,NDFRT - RxNorm eq,44818839,relationship,0
+Supportive med of,Supportive medication of (HemOnc),0,0,Has supportive med,32633,relationship,0
+Is sterile of,Is sterile of (SNOMED),0,0,Is sterile,33063,relationship,0
+Has variant,Reference to variant,0,0,Variant of,32997,relationship,0
+Route of,Route of (DM+D),0,0,Has route,45905756,relationship,0
+Has radiotherapy,Has radiotherapy (HemOnc),0,0,Radiotherapy of,33041,relationship,0
+Has conc denom unit,Has concentration strength denominator unit (SNOMED),0,0,Conc denom unit of,32435,relationship,0
+Dir morph of,Direct morphology of (SNOMED),0,0,Has dir morph,44818863,relationship,0
+Conc num val of,Concentration strength numerator value of (SNOMED),0,0,Has conc num val,32432,relationship,0
+Date of variable,Date of variable (NAACCR),0,0,Variable has date,32659,relationship,0
+Energy used by,Energy used by (SNOMED),0,0,Using energy,44818893,relationship,0
+Has add monitor ind,Has NHS dm+d (dictionary of medicines and devices) additional monitoring indicator,0,0,Add monitor ind of,32747,relationship,0
+Form continuity of,Dose form continuity indicator (DM+D),0,0,Has form continuity,32686,relationship,0
+Has occurrence,Has occurrence (SNOMED),0,0,Occurrence of,44818750,relationship,0
+Approach of,Approach of (SNOMED),0,0,Has approach,45754821,relationship,0
+Unit of,Unit of,0,0,Has unit,32671,relationship,0
+Has standard ing,Has standard ingredient (OMOP),0,0,Is standard ing of,226,relationship,0
+ICDO to Proc Schema,ICDO Condition to Procedure Schema (NAACCR),0,0,Proc Schema to ICDO,32644,relationship,0
+Has spec active ing,Has specific active ingredient (SNOMED),0,0,Spec active ing of,45905737,relationship,0
+Has admin method,Has dose form administration method (SNOMED),0,0,Admin method of,581463,relationship,0
+FDB Ind - ICD9CM,FDB Indication/Contraindication to ICD-9-CM (FDB),0,0,ICD9CM - FDB Ind,44819289,relationship,0
+Has interprets,Has interprets (SNOMED),0,0,Interprets of,44818753,relationship,0
+Has inherent loc,Has inherent location (SNOMED),0,0,Inherent location of,5067,relationship,0
+RxNorm replaces,Concept replaces (RxNorm),0,0,RxNorm replaced by,44818947,relationship,0
+SMQ - MedDRA,SMQ consists of MedDRA (MedDRA),0,0,MedDRA - SMQ,44818811,relationship,0
+Excipient of,Excipient of (SNOMED),0,0,Has excipient,45905790,relationship,0
+Specimen proc of,Specimen procedure of (SNOMED),0,0,Has specimen proc,44818873,relationship,0
+Intended site of,Dose form intended site of (SNOMED),0,0,Has intended site,581466,relationship,0
+Has temp finding,Has temporal finding (SNOMED),0,0,Temp related to,581474,relationship,0
+Has surface char,Has surface characteristic (SNOMED),0,0,Surf character of,32985,relationship,0
+VMP has prescr stat,VMP has prescribing status (SNOMED),0,0,VMP prescr stat of,45905810,relationship,0
+Has etiology,Has Etiology (SNOMED),0,0,Etiology of,45754812,relationship,0
+Has property,Has property,0,0,Property of,44818772,relationship,0
+Maps to value,Non-standard to value_as_concept map (OMOP),0,0,Value mapped from,44819239,relationship,0
+Has radiotherapy Rx,Has radiotherapy - RxNorm (HemOnc),0,0,Rx radiotherapy of,33043,relationship,0
+Has strength,Has ingredient qualitative strength (SNOMED),0,0,Strength of,33058,relationship,0
+Typ bill - Freq Code,Typ bill Full to Frequency code (UB04),0,0,Freq Code - Typ bill,32403,relationship,0
+CD category of,Controlled drug cathehory of (DM+D),0,0,Has CD category,32680,relationship,0
+Denom value of,Presentation strength denominator value of (SNOMED),0,0,Has denomin value,581419,relationship,0
+Has endocrine tx,Has endocrine therapy (HemOnc),0,0,Endocrine tx of,33025,relationship,0
+Has prod character,Has product characteristic (SNOMED),0,0,Prod character of,32983,relationship,0
+Has asso proc,Has associated procedure (SNOMED),0,0,Asso proc of,44818784,relationship,0
+CPT4 - LOINC eq,CPT4 to LOINC equivalent (SNOMED),0,0,LOINC - CPT4 eq,45956698,relationship,0
+Answer of (PPI),Answer of (PPI),0,0,Has answer (PPI),32443,relationship,0
+Concept replaced by,Concept replaced by,0,0,Concept replaces,44818956,relationship,0
+Has investig use,Has investigational use (HemOnc),0,0,Investig use for,33085,relationship,0
+Has unit of admin,Has unit of administration (SNOMED),0,0,Unit of admin of,32409,relationship,0
+Tradename of,Tradename of (RxNorm),0,0,Has tradename,44818814,relationship,0
+OncoTree to ICDO eq,OncoTree to ICDO equivalent,0,0,ICDO to OncoTree eq,33009,relationship,0
+AB-drug cjgt of,Antibody-drug conjugate of (HemOnc),0,0,Has AB-drug cjgt,33016,relationship,0
+Has VRP,Has VRP (SNOMED),0,0,VRP of,45905798,relationship,0
+Question source of,Question source of,0,0,Has question source,32804,relationship,0
+CAP parent item of,CAP parent item of,0,0,Has CAP parent item,32779,relationship,0
+Strength of,Ingredient qualitative strength of (SNOMED),0,0,Has strength,33059,relationship,0
+Targeted therapy of,Targeted therapy of (HemOnc),0,0,Has targeted therapy,33046,relationship,0
+Priority of,Priority of (SNOMED),0,0,Has priority,44818842,relationship,0
+Multilex ing of,Ingredient of (Multilex),0,0,Multilex has ing,44818951,relationship,0
+NDFRT to ATC eq,NDFRT to ATC equivalent (NDF-RT),0,0,ATC to NDFRT eq,45754837,relationship,0
+Finding asso with,Finding associated with (SNOMED),0,0,Asso with finding,44818890,relationship,0
+During,During (SNOMED),0,0,Has complication,581424,relationship,0
+Has dir morph,Has direct morphology (SNOMED),0,0,Dir morph of,44818765,relationship,0
+Has trade family grp,Has trade family group (SNOMED),0,0,Trade family grp of,45905747,relationship,0
+Flavor of,Flavor of (SNOMED),0,0,Has flavor,45905803,relationship,0
+Asso finding of,Associated finding of (SNOMED),0,0,Has asso finding,44818868,relationship,0
+Radioconjugate of,Radioconjugate of (HemOnc),0,0,Has radioconjugate,33038,relationship,0
+Route of admin of,Route of administration of (SNOMED),0,0,Has route of admin,44818897,relationship,0
+Licensed route of,Licensed route of (DM+D),0,0,Has licensed route,45905753,relationship,0
+Permiss range of,Permissible range of,0,0,Has permiss range,32665,relationship,0
+CPT4 - SNOMED eq,CPT-4 to SNOMED equivalent (OMOP),0,0,SNOMED - CPT4 eq,44818804,relationship,0
+Count of act ing in,Is count of active ingredients in (SNOMED),0,0,Has count of act ing,32982,relationship,0
+Has life circumstan,Has life circumstance (SNOMED Vet),0,0,Life circumstan of,32555,relationship,0
+Has physiol state,Has physiologic state (SNOMED Vet),0,0,Physiol state of,32551,relationship,0
+Proc context of,Procedure context of (SNOMED),0,0,Has proc context,44818888,relationship,0
+Basis str subst of,Basis of strength substance of (SNOMED),0,0,Has basis str subst,45905750,relationship,0
+Precise ing of,Precise ingredient of (RxNorm),0,0,Has precise ing,44818813,relationship,0
+Has Answer,Has Answer,0,0,Answer of,45754683,relationship,0
+Has numerator value,Has presentation strength numerator value (SNOMED),0,0,Numerator value of,581422,relationship,0
+VA Class to ATC eq,VA Class to ATC equivalent (NDF-RT),0,0,ATC to VA Class eq,45754835,relationship,0
+Has revision status,Has revision status (SNOMED),0,0,Revision status of,44818748,relationship,0
+Form of,Form of (RxNorm),0,0,Has form,44818816,relationship,0
+Has process output,Has process output (SNOMED),0,0,Process output of,5073,relationship,0
+Has standard form,Has standard Dose Form (OMOP),0,0,Is standard form of,230,relationship,0
+Conc num unit of,Concentration strength numerator unit of (SNOMED),0,0,Has conc num unit,32438,relationship,0
+Numerator value of,Presentation strength numerator value of (SNOMED),0,0,Has numerator value,581423,relationship,0
+Operator mapped from,Operator concept to non-standard map (OMOP),0,0,Maps to operator,45754884,relationship,0
+Typ bill - Typ bill3,Typ bill Full to Typ bill 3 digits (UB04),0,0,Typ bill3 - Typ bill,32405,relationship,0
+Number mapped from,Value_as_number to non-standard map (OMOP),0,0,Maps to number,45754886,relationship,0
+RxNorm replaced by,Concept replaced by (RxNorm),0,0,RxNorm replaces,44818946,relationship,0
+Has specimen proc,Has specimen procedure (SNOMED),0,0,Specimen proc of,44818775,relationship,0
+Maps to,Non-standard to Standard map (OMOP),0,0,Mapped from,44818977,relationship,0
+Indir morph of,Indirect morphology of (SNOMED),0,0,Has indir morph,44818852,relationship,0
+Included in map from,Standard to Non-standard include child (OMOP),0,0,Map includes child,44818973,relationship,0
+Has endocrine tx Rx,Has endocrine therapy - RxNorm (HemOnc),0,0,Rx endocrine tx of,33027,relationship,0
+Free indicator of,NHS dm+d freenes indicator of,0,0,Has free indicator,32754,relationship,0
+Disc indicator of,Discontinued indicator of (SNOMED),0,0,Has disc indicator,45905805,relationship,0
+ATC - RxNorm sec up,ATC to RxNorm/Extension secondary upwards (OMOP),0,0,RxNorm - ATC sec up,32801,relationship,0
+Has meas component,Has Measured Component (SNOMED),0,0,Meas component of,45754808,relationship,0
+Proc duration of,Process duration of,0,0,Has proc duration,32756,relationship,0
+Part of,Part of (SNOMED),0,0,Has part of,44818844,relationship,0
+Has unit of presen,Has unit of presentation (SNOMED),0,0,Unit of presen of,32429,relationship,0
+ATC - RxNorm name,ATC to RxNorm equivalent by concept_name (OMOP),0,0,RxNorm - ATC name,44818926,relationship,0
+DRG - MS-DRG eq,DRG to MS-DRG equivalent (CMS),0,0,MS-DRG - DRG eq,44818936,relationship,0
+Meas component of,Measured Component of (SNOMED),0,0,Has meas component,45754809,relationship,0
+Type of,Type of,0,0,Has type,32673,relationship,0
+Type of service of,Type of service of (LOINC),0,0,Has type of service,32457,relationship,0
+Role played by,Role played by,0,0,Plays role,32540,relationship,0
+Has end date,Has end date,0,0,End date of,32711,relationship,0
+Has conc num unit,Has concentration strength numerator unit (SNOMED),0,0,Conc num unit of,32437,relationship,0
+ICDO to OncoTree eq,ICDO to OncoTree equivalent,0,0,OncoTree to ICDO eq,33010,relationship,0
+NDFRT - SNOMED eq,NDF-RT to SNOMED equivalent (RxNorm),0,0,SNOMED - NDFRT eq,45754846,relationship,0
+Has disp dose form,Has dispensed dose form (SNOMED),0,0,Disp dose form of,45905736,relationship,0
+Technique of,Technique of (SNOMED),0,0,Has technique,5070,relationship,0
+Has surgical appr,Has surgical approach (SNOMED),0,0,Surgical appr of,44818793,relationship,0
+Has status,Has status,0,0,Status of,33066,relationship,0
+Dose form of,Dose form of (SNOMED),0,0,Has dose form,44818880,relationship,0
+Causative agent of,Causative agent of (SNOMED),0,0,Has causative agent,44818866,relationship,0
+Has question source,Has question source,0,0,Question source of,32803,relationship,0
+Has kind,Has kind (LOINC),0,0,Kind of,32460,relationship,0
+Specimen identity of,Specimen source identity of (SNOMED),0,0,Has specimen source,44818874,relationship,0
+Precondition of,Precondition of (SNOMED),0,0,Has precondition,5066,relationship,0
+LOINC replaces,Concept replaces (LOINC),0,0,LOINC replaced by,44818812,relationship,0
+Has PPI parent code,Has PPI parent code,0,0,PPI parent code of,32469,relationship,0
+Dose form unit of,Unit relating to the size of (DM+D),0,0,Has dose form unit,45905754,relationship,0
+Subject matter of,Subject matter domain of (LOINC),0,0,Has subject matter,32455,relationship,0
+Biosimilar of,Biosimilar of,0,0,Has biosimilar,32978,relationship,0
+Has combi prod ind,Has combination product indicator (DM+D),0,0,Combi prod ind of,32683,relationship,0
+Concept was_a to,Inactive was_a active (SNOMED),0,0,Concept was_a from,44818964,relationship,0
+Active ing of,Active ingredient of (SNOMED),0,0,Has active ing,44818859,relationship,0
+Has measurement,Has measurement method (SNOMED),0,0,Measurement of,44818771,relationship,0
+Has local therapy,Has local therapy (HemOnc),0,0,Local therapy of,32626,relationship,0
+Has unit,Has unit,0,0,Unit of,32670,relationship,0
+Quantified form of,Quantified form of (RxNorm),0,0,Has quantified form,45754828,relationship,0
+Has specimen source,Has specimen source identity (SNOMED),0,0,Specimen identity of,44818776,relationship,0
+Has active ing,Has active ingredient (SNOMED),0,0,Active ing of,44818761,relationship,0
+Has dose form unit,Has unit relating to the size (DM+D),0,0,Dose form unit of,45905742,relationship,0
+Has radioconjugate,Has radioconjugate (HemOnc),0,0,Radioconjugate of,33037,relationship,0
+SNOMED - MedDRA eq,SNOMED to MedDRA equivalent (OMOP),0,0,MedDRA - SNOMED eq,44818903,relationship,0
+Followed by,Followed by (SNOMED),0,0,Follows,45905793,relationship,0
+Variant of,Variant refer to concept,0,0,Has variant,32998,relationship,0
+Has denominator unit,Has presentation strength denominator unit (SNOMED),0,0,Denominator unit of,581416,relationship,0
+Has basic dose form,Has basic dose form (SNOMED),0,0,Basic dose form of,581459,relationship,0
+Prep to Chem eq,Pharmaceutical Preparation to Chemical Structure equivalent (NDF-RT),0,0,Chem to Prep eq,45754842,relationship,0
+VAProd - NDFRT,VA Product to NDF-RT (NDF-RT),0,0,NDFRT - VAProd,44818942,relationship,0
+Property of,Property of,0,0,Has property,44818870,relationship,0
+Has AB-drug cjgt Rx,Has antibody-drug conjugate - RxNorm (HemOnc),0,0,Rx AB-drug cjgt of,33017,relationship,0
+Has precondition,Has precondition (SNOMED),0,0,Precondition of,5065,relationship,0
+Is transcribed from,mRNA is transcribed from genomic DNA,0,0,Transcribes to,32920,relationship,0
+Concept alt_to to,Inactive alternative_to active (SNOMED),0,0,Concept alt_to from,44818960,relationship,0
+Has asso morph,Has associated morphology (SNOMED),0,0,Asso morph of,44818769,relationship,0
+Finding context of,Finding context of (SNOMED),0,0,Has finding context,44818887,relationship,0
+Temporal context of,Temporal context of (SNOMED),0,0,Has temporal context,44818889,relationship,0
+Has type of service,Has type of service (LOINC),0,0,Type of service of,32456,relationship,0
+LOINC - SNOMED eq,LOINC Hierarchy to SNOMED equivalent (LOINC),0,0,SNOMED - LOINC eq,45956695,relationship,0
+Has dose form,Has dose form (SNOMED),0,0,Dose form of,44818782,relationship,0
+Value mapped from,Value_as_concept to non-standard map (OMOP),0,0,Maps to value,44819242,relationship,0
+VA Class - SNOMED eq,VA Class to SNOMED equivalent (RxNorm),0,0,SNOMED - VA Class eq,45754848,relationship,0
+Rx support med of,RxNorm Supportive medication of (HemOnc),0,0,Has support med Rx,32631,relationship,0
+Has denomin value,Has presentation strength denominator value (SNOMED),0,0,Denom value of,581418,relationship,0
+Has CAP protocol,Has CAP protocol,0,0,CAP protocol of,32780,relationship,0
+VMP prescr stat of,VMP prescribing status of (SNOMED),0,0,VMP has prescr stat,45905811,relationship,0
+Is a,Is a,0,0,Subsumes,44818821,relationship,0
+Has approach,Has Approach (SNOMED),0,0,Approach of,45754820,relationship,0
+VA Class to NDFRT eq,VA Class to NDFRT equivalent (NDF-RT),0,0,NDFRT to VA Class eq,45754839,relationship,0
+Immunotherapy of,Immunotherapy of (HemOnc),0,0,Has immunotherapy,33030,relationship,0
+Prec ingredient of,Precise active ingredient of (SNOMED),0,0,Has prec ingredient,32428,relationship,0
+Context of,Context of (HemOnc),0,0,Has context,32619,relationship,0
+RxNorm - ATC sec lat,RxNorm/Extension to ATC secondary lateral (OMOP),0,0,ATC - RxNorm sec lat,32798,relationship,0
+CAP protocol of,CAP protocol of,0,0,Has CAP protocol,32781,relationship,0
+Has system,Has system,0,0,System of,32715,relationship,0
+SNOMED - RxNorm eq,SNOMED to RxNorm equivalent (RxNorm),0,0,RxNorm - SNOMED eq,45754843,relationship,0
+Has start date,Has start date,0,0,Start date of,32713,relationship,0
+Has conc denom val,Has concentration strength denominator value (SNOMED),0,0,Conc denom val of,32433,relationship,0
+Physiol state of,Physiologic state of (SNOMED Vet),0,0,Has physiol state,32552,relationship,0
+ICD9P replaced by,Concept replaced by (ICD-9-Procedure),0,0,ICD9P replaces,44818971,relationship,0
+Pept-drug cjgt of,Peptide-drug conjugate of (HemOnc),0,0,Has pept-drug cjgt,33034,relationship,0
+Has non-avail ind,Has VMP non-availability indicator (SNOMED),0,0,Non-avail ind of,45905794,relationship,0
+UCUM replaces,Concept replaces (UCUM),0,0,UCUM replaced by,44818979,relationship,0
