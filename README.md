@@ -233,7 +233,29 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     - Orders by `admittime`
     - Selects the first recorded race by subject.
 
-13. Multi-Step Transformations: Apply a sequence of transformations to a single column.
+13. Generating Unique Identifiers: Generates a unique identifier for each row in the dataset.
+
+    Example: Example: Generate a UUID for `person_id`
+
+```
+- target_column: person_id
+  transformation:
+    type: generate_id
+    method: uuid
+- target_column: visit_id
+  transformation:
+    type: generate_id
+    method: incremental
+- target_column: hashed_subject_id
+  transformation:
+    type: generate_id
+    method: hash
+    source_column: subject_id
+```
+
+    Methods include: `uuid`, `incremental`, `hash`.
+
+14. Multi-Step Transformations: Apply a sequence of transformations to a single column.
 
     Example: Normalize a date and then filter rows based on the normalized value.
 

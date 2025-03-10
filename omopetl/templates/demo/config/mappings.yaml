@@ -5,6 +5,7 @@ staging_person_lookup:
     - target_column: person_id
       transformation:
         type: generate_id
+        method: uuid
     - target_column: subject_id
       transformation:
         type: copy
