@@ -233,7 +233,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     - Orders by `admittime`
     - Selects the first recorded race by subject.
 
-13. Generating Unique Identifiers: Generates a unique identifier for each row in the dataset.
+13. Generating Unique Identifiers: Generates a unique identifier for each row in the dataset. Methods include: `uuid`, `incremental`, `hash`.
 
     Example: Example: Generate a UUID for `person_id`
 
@@ -252,8 +252,6 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     method: hash
     source_column: subject_id
 ```
-
-    Methods include: `uuid`, `incremental`, `hash`.
 
 14. Multi-Step Transformations: Apply a sequence of transformations to a single column.
 
