@@ -202,14 +202,20 @@ class Transformer:
         # Optional ordering for aggregation
         order_by = transformation.get("order_by")
 
-        # Attempt to load the linked table from source directory
-        linked_table_path = os.path.join(self.project_path, "data", "source", f"{linked_target_table_name}.csv")
-        if not os.path.exists(linked_table_path):
-            # Fallback to the target directory if the table is not found in the source directory
-            linked_table_path = os.path.join(self.project_path, "data", "target", f"{linked_target_table_name}.csv")
-            if not os.path.exists(linked_table_path):
-                msg = f"Linked table '{linked_target_table_name}' not found in 'source' or 'target' directories."
-                raise FileNotFoundError(msg)
+        # List of directories to check in priority order
+        search_dirs = ["source", "lookups", "target"]
+
+        # Iterate over locations to find the linked table
+        linked_table_path = None
+        for directory in search_dirs:
+            path = os.path.join(self.project_path, "data", directory, f"{linked_target_table_name}.csv")
+            if os.path.exists(path):
+                linked_table_path = path
+                break
+
+        if not linked_table_path:
+            msg = f"Linked table '{linked_target_table_name}' not found in 'source', 'lookups', or 'target' directories."
+            raise FileNotFoundError(msg)
 
         linked_table = pd.read_csv(linked_table_path)
 
