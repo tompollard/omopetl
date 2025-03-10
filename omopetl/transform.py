@@ -1,7 +1,9 @@
+import hashlib
 import os
 import uuid
 import warnings
 
+import numpy as np
 import pandas as pd
 
 
@@ -447,8 +449,49 @@ class Transformer:
         return current_data.eval(formula)
 
     def transform_generate_id(self, current_data, target_column, transformation):
-        """Generate a universal unique identifier for each row in the source column."""
-        return pd.Series([str(uuid.uuid4()) for _ in range(len(self.data))])
+        """
+        Generate a unique ID for each row based on different methods.
+
+        Supported methods:
+        - 'uuid'         → Generates a UUID (default).
+        - 'incremental'  → Generates sequential numbers starting from 1.
+        - 'hash'         → Generates a SHA256 hash from a source column.
+
+        Parameters:
+        - current_data: DataFrame of the source data.
+        - target_column: The column to store the generated IDs.
+        - transformation: Dictionary containing transformation details.
+
+        Returns:
+        - Series: The generated ID column.
+        """
+        # Default to uuid
+        method = transformation.get("method", "uuid")
+        source_column = transformation.get("source_column", None)
+
+        # Ensure we have a valid dataframe to operate on
+        if current_data is None:
+            # Use the full table if no specific columns exist
+            current_data = self.data
+
+        num_rows = len(current_data)
+
+        if method == "uuid":
+            return pd.Series([str(uuid.uuid4()) for _ in range(num_rows)], index=current_data.index)
+
+        elif method == "incremental":
+            return pd.Series(range(1, num_rows + 1), index=current_data.index)
+
+        elif method == "hash":
+            if not source_column:
+                raise ValueError("'source_column' is required for 'hash' method.")
+            if source_column not in current_data.columns:
+                raise KeyError(f"Column '{source_column}' not found in source data.")
+
+            return current_data[source_column].astype(str).apply(lambda x: hashlib.sha256(x.encode()).hexdigest())
+
+        else:
+            raise ValueError(f"Unsupported ID generation method: {method}")
 
     # Helper method
     def perform_lookup(self, vocabulary, code):

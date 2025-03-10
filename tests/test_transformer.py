@@ -1,6 +1,9 @@
 from datetime import date
-import pytest
+import hashlib
+
 import pandas as pd
+import pytest
+
 from omopetl.transform import Transformer
 
 
@@ -223,6 +226,65 @@ def test_generate_id(transformer):
     assert len(transformed_data) == 3
 
 
+def test_transform_generate_uuid(mock_transformer):
+    """Test UUID generation for each row."""
+    sample_data = pd.DataFrame({"subject_id": [1, 2, 3, 4, 5]})
+    transformation = {"method": "uuid"}
+
+    generated_ids = mock_transformer.transform_generate_id(sample_data, "generated_uuid", transformation)
+
+    assert len(generated_ids) == len(sample_data)
+    assert all(isinstance(uid, str) and len(uid) == 36 for uid in generated_ids)
+    assert len(set(generated_ids)) == len(sample_data)
+
+
+def test_transform_generate_incremental(mock_transformer):
+    """Test incremental ID generation."""
+    sample_data = pd.DataFrame({"subject_id": [1, 2, 3, 4, 5]})
+    transformation = {"method": "incremental"}
+
+    generated_ids = mock_transformer.transform_generate_id(sample_data, "generated_id", transformation)
+
+    expected_ids = pd.Series([1, 2, 3, 4, 5], index=sample_data.index)
+    pd.testing.assert_series_equal(generated_ids, expected_ids, check_dtype=False)
+
+
+def test_transform_generate_hash(mock_transformer):
+    """Test hash-based ID generation from subject_id."""
+    sample_data = pd.DataFrame({"subject_id": ["abc", "def", "ghi"]})
+    transformation = {"method": "hash", "source_column": "subject_id"}
+
+    generated_ids = mock_transformer.transform_generate_id(sample_data, "hashed_id", transformation)
+
+    expected_hashes = sample_data["subject_id"].apply(lambda x: hashlib.sha256(x.encode()).hexdigest())
+    pd.testing.assert_series_equal(generated_ids, expected_hashes)
+
+
+def test_transform_generate_id_invalid_method(mock_transformer):
+    """Test that an invalid method raises a ValueError."""
+    sample_data = pd.DataFrame({"subject_id": [1, 2, 3]})
+    transformation = {"method": "invalid_method"}
+
+    try:
+        mock_transformer.transform_generate_id(sample_data, "generated_id", transformation)
+        assert False, "Expected ValueError for unsupported method"
+    except ValueError as e:
+        assert "Unsupported ID generation method" in str(e)
+
+
+def test_transform_generate_id_missing_source_column(mock_transformer):
+    """Test that missing source_column raises an error for hash method."""
+    sample_data = pd.DataFrame({"subject_id": [1, 2, 3]})
+
+    for method in ["hash"]:
+        transformation = {"method": method}
+        try:
+            mock_transformer.transform_generate_id(sample_data, "generated_id", transformation)
+            assert False, f"Expected ValueError for missing source_column in {method}"
+        except ValueError as e:
+            assert "'source_column' is required" in str(e)
+
+
 def test_lookup(mock_transformer):
     columns = [
         {
@@ -333,3 +395,4 @@ def test_transform_filter(mock_transformer):
 
     # Validate the output
     pd.testing.assert_frame_equal(transformed_data, expected_output)
+
