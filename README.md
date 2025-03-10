@@ -83,7 +83,17 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
       F: 8532
 ```
 
-3. Lookups: Maps source codes (e.g., ICD-10 codes) to standard concept IDs using a lookup table.
+3. Filtering: Removes rows that do not match a condition (applies `pd.query()`).
+
+    Example: Keep only visits on or after 2020-01-01.
+
+```
+- transformation:
+    type: filter
+    condition: "visit_start_datetime >= '2020-01-01'"
+```
+
+4. Lookups: Maps source codes (e.g., ICD-10 codes) to standard concept IDs using a lookup table.
 
     Example: Mapping ICD codes to SNOMED concept IDs.
 
@@ -98,7 +108,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     default_value: 0
 ```
 
-4. Date Normalization: Format or extract parts of dates (e.g., year, month, day) from source columns.
+5. Date Normalization: Format or extract parts of dates (e.g., year, month, day) from source columns.
 
     Example: Extracting the date in `YYYY-MM-DD` format from admittime.
 
@@ -110,7 +120,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     format: "%Y-%m-%d"
 ```
 
-5. Aggregation: Combines multiple rows or columns into summary values (e.g., `first`, `last`, `sum`) with optional ordering.
+6. Aggregation: Combines multiple rows or columns into summary values (e.g., `first`, `last`, `sum`) with optional ordering.
 
     Example:  Retrieving the earliest `visit_start_time` for a patient using `subject_id`
 
@@ -127,7 +137,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
       - visit_start_time
 ```
 
-6. Concatenation: Concatenate multiple columns into a single column, often used for generating unique identifiers.
+7. Concatenation: Concatenate multiple columns into a single column, often used for generating unique identifiers.
 
     Example: Concatenating `subject_id` and `stay_id` to form visit_detail_id.
 
@@ -139,7 +149,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     separator: "-"
 ```
 
-7. Default Values: Assign a default value to a column when the source column is missing or null.
+8. Default Values: Assign a default value to a column when the source column is missing or null.
 
     Example: Assigning a default concept ID to `visit_concept_id` when missing.
 
@@ -150,7 +160,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     value: 44818518
 ```
 
-8. Multi-Table References: Allows referencing tables in the data/target directory if they were created in previous steps.
+9. Multi-Table References: Allows referencing tables in the data/target directory if they were created in previous steps.
 
     Example: Using the `person` table to link `patient_id`s in a subsequent mapping.
 
@@ -165,7 +175,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
       method: first
 ```
 
-9. Conditional Transformations: Apply transformations based on conditions in the source data.
+10. Conditional Transformations: Apply transformations based on conditions in the source data.
 
     Example: Assigning different visit_concept_id values based on admission_type.
 
@@ -181,7 +191,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
         value: 9201
 ```
 
-10. Derived Columns: Calculate new columns from existing data (e.g., differences between dates).
+11. Derived Columns: Calculate new columns from existing data (e.g., differences between dates).
 
     Example: Calculating `length_of_stay` as the difference between dischtime and admittime.
 
@@ -193,7 +203,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     formula: "dischtime - admittime"
 ```
 
-11. Aggregation: Aggregates a column based on an aggregation method (e.g. `first`, `last`, `sum`) and `group_by` and `order_by` columns.
+12. Aggregation: Aggregates a column based on an aggregation method (e.g. `first`, `last`, `sum`) and `group_by` and `order_by` columns.
 
     Example: Select the earliest race entry by `subject_id`.
 
@@ -223,7 +233,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     - Orders by `admittime`
     - Selects the first recorded race by subject.
 
-12. Multi-Step Transformations: Apply a sequence of transformations to a single column.
+13. Multi-Step Transformations: Apply a sequence of transformations to a single column.
 
     Example: Normalize a date and then filter rows based on the normalized value.
 
