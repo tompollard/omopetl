@@ -300,3 +300,36 @@ def test_transform_link_without_order(transformer, project_path):
                                                   date(2023, 1, 1),
                                                   date(2023, 1, 3)]})
     pd.testing.assert_frame_equal(transformed_data, expected)
+
+
+def test_transform_filter(mock_transformer):
+    """
+    Test the filter transformation, ensuring it correctly removes rows based on a condition.
+    """
+
+    # Sample input data (admittime and subject_id)
+    sample_data = pd.DataFrame({
+        "subject_id": [1, 2, 3, 4, 5],
+        "admittime": ["2019-12-30", "2020-01-01", "2020-02-15", "2020-05-10", "2019-11-20"]
+    })
+
+    # Convert to datetime
+    sample_data["admittime"] = pd.to_datetime(sample_data["admittime"])
+
+    # Define transformation
+    transformation = {
+        "source_column": "admittime",
+        "condition": "admittime >= '2020-01-01'"
+    }
+
+    # Expected output after filtering (rows where admittime >= '2020-01-01')
+    expected_output = sample_data[sample_data["admittime"] >= "2020-01-01"].reset_index(drop=True)
+
+    # Apply transformation
+    transformed_data = mock_transformer.transform_filter(sample_data, "admittime", transformation)
+
+    # Reset index for transformed data
+    transformed_data = transformed_data.reset_index(drop=True)
+
+    # Validate the output
+    pd.testing.assert_frame_equal(transformed_data, expected_output)

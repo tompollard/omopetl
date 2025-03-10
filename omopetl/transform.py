@@ -416,6 +416,25 @@ class Transformer:
 
         return result_column
 
+    def transform_filter(self, current_data, target_column, transformation):
+        """
+        Filters rows in the dataset based on a query condition.
+
+        Parameters:
+        - current_data: DataFrame being processed.
+        - target_column: Not used in filtering, included for consistency.
+        - transformation: Dictionary containing transformation details.
+
+        Returns:
+        - DataFrame: The filtered data.
+        """
+        condition = transformation.get("condition")
+        if not condition:
+            raise ValueError("A 'condition' must be specified for the 'filter' transformation.")
+
+        # Apply filter using Pandas `query()`
+        return current_data.query(condition)
+
     def transform_derive(self, current_data, target_column, transformation):
         """Calculate derived values using a formula."""
         formula = transformation["formula"]
