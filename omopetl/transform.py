@@ -133,6 +133,10 @@ class Transformer:
             # Store the final transformed column
             transformed_data[target_column] = current_data
 
+        # Reorder columns based on target schema
+        expected_order = list(self.target_schema.get(self.table_name, {}).get("columns", {}).keys())
+        transformed_data = transformed_data.reindex(columns=expected_order)
+
         # Validate relationships
         self._validate_relationships(transformed_data)
 
