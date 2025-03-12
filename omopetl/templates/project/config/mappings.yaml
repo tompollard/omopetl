@@ -1,12 +1,12 @@
 person_mapping:
   - source_column: subject_id
-    target_column: person_id
+    add_column: person_id
 
   - source_column: dob
-    target_column: birth_datetime
+    add_column: birth_datetime
 
   - source_column: gender
-    target_column: gender_concept_id
+    add_column: gender_concept_id
     transformation:
       type: map
       values:

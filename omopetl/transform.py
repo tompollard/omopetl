@@ -95,7 +95,7 @@ class Transformer:
         transformed_data = pd.DataFrame()
 
         for column in columns:
-            target_column = column["target_column"]
+            target_column = column["add_column"]
             transformations = column.get("transformations", [column.get("transformation")])
 
             if not transformations or not isinstance(transformations, list):

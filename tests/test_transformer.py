@@ -96,7 +96,7 @@ def transformer(sample_data, project_path, source_schema, target_schema):
 def test_direct_mapping(transformer):
     columns = [
         {
-            "target_column": "gender_target",
+            "add_column": "gender_target",
             "transformation": {
                 "type": "copy",
                 "source_column": "gender",
@@ -111,7 +111,7 @@ def test_direct_mapping(transformer):
 def test_value_mapping(transformer):
     columns = [
         {
-            "target_column": "gender_concept_id",
+            "add_column": "gender_concept_id",
             "transformation": {
                 "type": "map",
                 "source_column": "gender",
@@ -128,7 +128,7 @@ def test_value_mapping(transformer):
 def test_normalize_date(transformer):
     column_mappings = [
         {
-            "target_column": "birth_datetime",
+            "add_column": "birth_datetime",
             "transformation": {
                 "type": "normalize_date",
                 "source_column": "dob",
@@ -150,7 +150,7 @@ def test_normalize_date(transformer):
 def test_concatenate(transformer):
     columns = [
         {
-            "target_column": "subject_gender_id",
+            "add_column": "subject_gender_id",
             "transformation": {
                 "type": "concatenate",
                 "source_columns": ["subject_id", "gender"],
@@ -167,7 +167,7 @@ def test_concatenate(transformer):
 def test_default(transformer):
     columns = [
         {
-            "target_column": "default_value_column",
+            "add_column": "default_value_column",
             "transformation": {
                 "type": "default",
                 "value": 42,
@@ -182,7 +182,7 @@ def test_default(transformer):
 def test_conditional_map(transformer):
     columns = [
         {
-            "target_column": "conditional_gender_id",
+            "add_column": "conditional_gender_id",
             "transformation": {
                 "type": "conditional_map",
                 "source_column": "gender",
@@ -200,7 +200,7 @@ def test_conditional_map(transformer):
 def test_derive(transformer):
     columns = [
         {
-            "target_column": "derived_column",
+            "add_column": "derived_column",
             "transformation": {
                 "type": "derive",
                 "source_column": "value",
@@ -215,7 +215,7 @@ def test_derive(transformer):
 def test_generate_id(transformer):
     columns = [
         {
-            "target_column": "person_id",
+            "add_column": "person_id",
             "transformation": {
                 "type": "generate_id"
             },
@@ -288,7 +288,7 @@ def test_transform_generate_id_missing_source_column(mock_transformer):
 def test_lookup(mock_transformer):
     columns = [
         {
-            "target_column": "condition_concept_id",
+            "add_column": "condition_concept_id",
             "transformation": {
                 "type": "lookup",
                 "source_column": "icd_code",
@@ -314,7 +314,7 @@ def test_lookup(mock_transformer):
 def test_output_type_validation(transformer):
     columns = [
         {
-            "target_column": "derived_column",
+            "add_column": "derived_column",
             "transformation": {
                 "type": "derive",
                 "source_column": "value",
@@ -346,7 +346,7 @@ def test_transform_link_without_order(transformer, project_path):
     # Define the transformation
     columns = [
         {
-            "target_column": "visit_start_time",
+            "add_column": "visit_start_time",
             "transformation": {
                 "type": "link",
                 "linked_table": "visits",
