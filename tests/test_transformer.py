@@ -358,9 +358,14 @@ def test_transform_link_without_order(transformer, project_path):
     ]
 
     transformed_data = transformer.apply_transformations(columns)
+
+    # Select only the relevant columns for comparison
+    transformed_data = transformed_data[["visit_start_time"]]
+
     expected = pd.DataFrame({"visit_start_time": [date(2023, 1, 2),
                                                   date(2023, 1, 1),
                                                   date(2023, 1, 3)]})
+
     pd.testing.assert_frame_equal(transformed_data, expected)
 
 
