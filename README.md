@@ -63,7 +63,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Mapping subject_id in patients to person_id in PERSON.
 
 ```
-- target_column: person_id
+- add_column: person_id
   transformation:
     type: copy
     source_column: subject_id
@@ -74,7 +74,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Mapping gender values `M` and `F` in patients to OMOP concept IDs `8507` (male) and `8532` (female).
 
 ```
-- target_column: gender_concept_id
+- add_column: gender_concept_id
   transformation:
     type: map
     source_column: gender
@@ -98,7 +98,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Mapping ICD codes to SNOMED concept IDs.
 
 ```
-- target_column: condition_concept_id
+- add_column: condition_concept_id
   transformation:
     type: lookup
     source_column: icd_code
@@ -113,7 +113,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Extracting the date in `YYYY-MM-DD` format from admittime.
 
 ```
-- target_column: visit_start_datetime
+- add_column: visit_start_datetime
   transformation:
     type: normalize_date
     source_column: admittime
@@ -125,7 +125,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example:  Retrieving the earliest `visit_start_time` for a patient using `subject_id`
 
 ```
-- target_column: visit_start_time
+- add_column: visit_start_time
   transformation:
     type: link
     linked_table: visits
@@ -142,7 +142,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Concatenating `subject_id` and `stay_id` to form visit_detail_id.
 
 ```
-- target_column: visit_detail_id
+- add_column: visit_detail_id
   transformation:
     type: concatenate
     source_columns: [subject_id, stay_id]
@@ -154,7 +154,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Assigning a default concept ID to `visit_concept_id` when missing.
 
 ```
-- target_column: visit_concept_id
+- add_column: visit_concept_id
   transformation:
     type: default
     value: 44818518
@@ -165,7 +165,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Using the `person` table to link `patient_id`s in a subsequent mapping.
 
 ```
-- target_column: patient_id
+- add_column: patient_id
   transformation:
     type: link
     linked_table: person
@@ -180,7 +180,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Assigning different visit_concept_id values based on admission_type.
 
 ```
-- target_column: visit_concept_id
+- add_column: visit_concept_id
   transformation:
     type: conditional_map
     source_column: admission_type
@@ -196,7 +196,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Calculating `length_of_stay` as the difference between dischtime and admittime.
 
 ```
-- target_column: length_of_stay
+- add_column: length_of_stay
   transformation:
     type: derive
     source_columns: [admittime, dischtime]
@@ -212,11 +212,11 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     source_table: admissions
     target_table: tmp_subject_race
     columns:
-      - target_column: subject_id
+      - add_column: subject_id
         transformation:
           type: copy
           source_column: subject_id
-      - target_column: race
+      - add_column: race
         transformation:
           type: aggregate
           source_columns:
@@ -238,15 +238,15 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Example: Generate a UUID for `person_id`
 
 ```
-- target_column: person_id
+- add_column: person_id
   transformation:
     type: generate_id
     method: uuid
-- target_column: visit_id
+- add_column: visit_id
   transformation:
     type: generate_id
     method: incremental
-- target_column: hashed_subject_id
+- add_column: hashed_subject_id
   transformation:
     type: generate_id
     method: hash
@@ -258,7 +258,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     Example: Normalize a date and then filter rows based on the normalized value.
 
 ```
-- target_column: visit_start_datetime
+- add_column: visit_start_datetime
   transformations:
     - type: normalize_date
       source_column: admittime
@@ -369,11 +369,11 @@ etl:
 
 ```
 person_mapping:
-  - target_column: person_id
+  - add_column: person_id
     transformation:
       type: copy
       source_column: subject_id
-  - target_column: gender_concept_id
+  - add_column: gender_concept_id
     transformation:
       type: map
       source_column: gender
@@ -382,19 +382,19 @@ person_mapping:
         F: 8532
 
 visit_occurrence_mapping:
-  - target_column: visit_occurrence_id
+  - add_column: visit_occurrence_id
     transformation:
       type: copy
       source_column: hadm_id
-  - target_column: person_id
+  - add_column: person_id
     transformation:
       type: copy
       source_column: subject_id
-  - target_column: visit_start_datetime
+  - add_column: visit_start_datetime
     transformation:
       type: copy
       source_column: admittime
-  - target_column: visit_end_datetime
+  - add_column: visit_end_datetime
     transformation:
       type: copy
       source_column: dischtime

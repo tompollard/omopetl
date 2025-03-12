@@ -37,7 +37,7 @@ def test_transform_aggregate(mock_transformer_race, sample_admissions):
     based on admittime per subject_id.
     """
     transformation = {
-        "target_column": "race",
+        "add_column": "race",
         "source_columns": ["subject_id", "admittime", "race"],
         "group_by": ["subject_id"],
         "order_by": "admittime",
