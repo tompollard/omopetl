@@ -1,7 +1,7 @@
 staging_person_lookup:
   source_table: patients
   target_table: staging_person_lookup
-  columns:
+  sequence:
     - add_column: person_id
       transformation:
         type: generate_id
@@ -14,7 +14,7 @@ staging_person_lookup:
 tmp_subject_race:
   source_table: admissions
   target_table: tmp_subject_race
-  columns:
+  sequence:
     - add_column: subject_id
       transformation:
         type: copy
@@ -34,7 +34,7 @@ tmp_subject_race:
 person_mapping:
   source_table: patients
   target_table: person
-  columns:
+  sequence:
     - add_column: person_id
       transformation:
         type: link
