@@ -259,7 +259,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
 
 ```
 - add_column: visit_start_datetime
-  transformations:
+  transformation:
     - type: normalize_date
       source_column: admittime
       format: "%Y-%m-%d"
