@@ -94,9 +94,17 @@ class Transformer:
         """
         transformed_data = pd.DataFrame()
 
-        for column in sequence:
-            target_column = column["add_column"]
-            transformations = column.get("transformations", [column.get("transformation")])
+        for step in sequence:
+            target_column = step["add_column"]
+            transformations = step.get("transformation")
+
+            # Normalize transformation to always be a list
+            if isinstance(transformations, dict):
+                transformations = [transformations]  # Convert single dict to list
+            elif isinstance(transformations, list):
+                pass
+            else:
+                raise ValueError(f"Invalid transformations format for column '{target_column}'")
 
             if not transformations or not isinstance(transformations, list):
                 raise ValueError(f"Invalid or missing transformations for column '{target_column}'")
@@ -444,13 +452,23 @@ class Transformer:
         if not condition:
             raise ValueError("A 'condition' must be specified for the 'filter' transformation.")
 
+        # Ensure current_data is a DataFrame before querying
+        if isinstance(current_data, pd.Series):
+            current_data = current_data.to_frame() 
+
         # Apply filter using Pandas `query()`
         return current_data.query(condition)
 
     def transform_derive(self, current_data, target_column, transformation):
         """Calculate derived values using a formula."""
         formula = transformation["formula"]
-        return current_data.eval(formula)
+
+        if isinstance(current_data, pd.DataFrame):
+            return current_data.eval(formula)
+        elif isinstance(current_data, pd.Series):
+            return pd.eval(formula, local_dict={"number": current_data})
+        else:
+            raise TypeError(f"Unsupported data type for eval: {type(current_data)}")
 
     def transform_generate_id(self, current_data, target_column, transformation):
         """
