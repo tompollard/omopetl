@@ -211,7 +211,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
 - tmp_subject_race:
     source_table: admissions
     target_table: tmp_subject_race
-    columns:
+    sequence:
       - add_column: subject_id
         transformation:
           type: copy
@@ -277,7 +277,7 @@ After creating your new project with `omopetl startproject <PROJECTNAME>`, you w
 ```
 patients:
   table_name: patients
-  columns:
+  sequence:
     subject_id:
       type: Integer
       primary_key: true
@@ -286,7 +286,7 @@ patients:
 
 admissions:
   table_name: admissions
-  columns:
+  sequence:
     hadm_id:
       type: Integer
       primary_key: true
