@@ -82,19 +82,19 @@ class Transformer:
         self.lookup_cache[lookup_name] = lookup_table
         return lookup_table
 
-    def apply_transformations(self, columns, strict=True):
+    def apply_transformations(self, sequence, strict=True):
         """
         Apply transformations based on column mappings.
 
         Parameters:
-        - columns: List of mappings with transformation details.
+        - sequence: List of mappings with transformation details.
 
         Returns:
         - DataFrame: Transformed data with only the specified columns.
         """
         transformed_data = pd.DataFrame()
 
-        for column in columns:
+        for column in sequence:
             target_column = column["add_column"]
             transformations = column.get("transformations", [column.get("transformation")])
 
