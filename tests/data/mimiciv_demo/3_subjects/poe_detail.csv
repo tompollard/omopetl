@@ -1,0 +1,96 @@
+poe_id,poe_seq,subject_id,field_name,field_value
+10002495-231,231,10002495,Transfer to,Medicine
+10002495-35,35,10002495,Admit to,Medicine
+10002495-305,305,10002495,Discharge Planning,Finalized
+10002495-310,310,10002495,Discharge Planning,Finalized
+10002495-306,306,10002495,Discharge When,Discharge Now
+10002495-311,311,10002495,Discharge When,Discharge Now
+10002495-231,231,10002495,Admit category,Admit to inpatient
+10002495-35,35,10002495,Admit category,Admit to inpatient
+10002495-156,156,10002495,Code status,Resuscitate (Full code)
+10002495-262,262,10002495,Code status,Resuscitate (Full code)
+10002495-68,68,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-41,41,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-219,219,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-176,176,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-282,282,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-139,139,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-263,263,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10002495-207,207,10002495,Tubes & Drains type,Indwelling urinary catheter (IUC) - Foley
+10001217-245,245,10001217,Transfer to,Surgery
+10001217-77,77,10001217,Admit to,Surgery
+10001217-71,71,10001217,Admit to,Surgery
+10001217-205,205,10001217,Admit to,Surgery
+10001217-207,207,10001217,Admit to,Surgery
+10001217-116,116,10001217,Transfer to,Surgery
+10001217-177,177,10001217,Admit to,Surgery
+10001217-105,105,10001217,Admit to,Surgery
+10001217-36,36,10001217,Admit to,Surgery
+10001217-163,163,10001217,Discharge Planning,Finalized
+10001217-166,166,10001217,Discharge Planning,Finalized
+10001217-282,282,10001217,Discharge Planning,Finalized
+10001217-286,286,10001217,Discharge Planning,Finalized
+10001217-168,168,10001217,Discharge When,Discharge Now
+10001217-287,287,10001217,Discharge When,Discharge Now
+10001217-283,283,10001217,Discharge When,Discharge Now
+10001217-105,105,10001217,Admit category,Admit to inpatient
+10001217-71,71,10001217,Admit category,Admit to inpatient
+10001217-205,205,10001217,Admit category,Admit to inpatient
+10001217-207,207,10001217,Admit category,Admit to inpatient
+10001217-116,116,10001217,Admit category,Admit to inpatient
+10001217-245,245,10001217,Admit category,Admit to inpatient
+10001217-286,286,10001217,Admit category,Admit to inpatient
+10001217-287,287,10001217,Admit category,Admit to inpatient
+10001217-177,177,10001217,Admit category,Place in observation
+10001217-36,36,10001217,Admit category,Place in observation
+10001217-77,77,10001217,Admit category,Place in observation
+10000032-104,104,10000032,Admit to,Medicine
+10000032-19,19,10000032,Admit to,Medicine
+10000032-75,75,10000032,Admit to,Medicine
+10000032-198,198,10000032,Transfer to,Medicine
+10000032-252,252,10000032,Admit to,Medicine
+10000032-224,224,10000032,Admit to,Medicine
+10000032-70,70,10000032,Admit to,Medicine
+10000032-230,230,10000032,Admit to,Medicine
+10000032-16,16,10000032,Admit to,Medicine
+10000032-170,170,10000032,Transfer to,Medicine
+10000032-41,41,10000032,Admit to,Medicine
+10000032-55,55,10000032,Discharge Planning,Finalized
+10000032-109,109,10000032,Discharge Planning,Finalized
+10000032-212,212,10000032,Discharge Planning,Finalized
+10000032-111,111,10000032,Discharge Planning,Finalized
+10000032-282,282,10000032,Discharge Planning,Finalized
+10000032-213,213,10000032,Discharge When,Discharge Now
+10000032-112,112,10000032,Discharge When,Discharge Now
+10000032-283,283,10000032,Discharge When,Discharge Now
+10000032-56,56,10000032,Discharge When,Discharge Now
+10000032-133,133,10000032,Admit to,MICU - Orange
+10000032-140,140,10000032,Admit to,MICU - Orange
+10000032-56,56,10000032,Admit category,Admit to inpatient
+10000032-224,224,10000032,Admit category,Admit to inpatient
+10000032-170,170,10000032,Admit category,Admit to inpatient
+10000032-104,104,10000032,Admit category,Admit to inpatient
+10000032-198,198,10000032,Admit category,Admit to inpatient
+10000032-112,112,10000032,Admit category,Admit to inpatient
+10000032-109,109,10000032,Admit category,Admit to inpatient
+10000032-111,111,10000032,Admit category,Admit to inpatient
+10000032-252,252,10000032,Admit category,Admit to inpatient
+10000032-212,212,10000032,Admit category,Admit to inpatient
+10000032-283,283,10000032,Admit category,Admit to inpatient
+10000032-282,282,10000032,Admit category,Admit to inpatient
+10000032-140,140,10000032,Admit category,Admit to inpatient
+10000032-19,19,10000032,Admit category,Admit to inpatient
+10000032-230,230,10000032,Admit category,Admit to inpatient
+10000032-41,41,10000032,Admit category,Admit to inpatient
+10000032-55,55,10000032,Admit category,Admit to inpatient
+10000032-133,133,10000032,Admit category,Admit to inpatient
+10000032-213,213,10000032,Admit category,Admit to inpatient
+10000032-75,75,10000032,Admit category,Admit to inpatient
+10000032-16,16,10000032,Admit category,Place in observation
+10000032-70,70,10000032,Admit category,Place in observation
+10000032-155,155,10000032,Code status,Resuscitate (Full code)
+10000032-48,48,10000032,Code status,Resuscitate (Full code)
+10000032-276,276,10000032,Code status,Resuscitate (Full code)
+10000032-96,96,10000032,Code status,Resuscitate (Full code)
+10000032-193,193,10000032,Code status,Do not resuscitate (DNR/DNI)
+10000032-197,197,10000032,Code status,Do not resuscitate (DNR/DNI)
