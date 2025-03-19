@@ -231,7 +231,10 @@ class Transformer:
             msg = f"Linked table '{linked_target_table_name}' not found in 'source', 'lookups', or 'target' directories."
             raise FileNotFoundError(msg)
 
-        linked_table = pd.read_csv(linked_table_path)
+        if "delimiter" in transformation:
+            linked_table = pd.read_csv(linked_table_path, sep=transformation["delimiter"])
+        else:
+            linked_table = pd.read_csv(linked_table_path)
 
         # Handle aggregation if specified
         aggregation = transformation.get("aggregation")

@@ -120,7 +120,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     format: "%Y-%m-%d"
 ```
 
-6. Aggregation: Combines multiple rows or columns into summary values (e.g., `first`, `last`, `sum`) with optional ordering.
+6. Aggregation: Combines multiple rows or columns into summary values (e.g., `first`, `last`, `sum`) with optional ordering. For linked tables which aren't comma delimited, you can pass any delimiter recognized as a separator by `pandas.read_csv`.
 
     Example:  Retrieving the earliest `visit_start_time` for a patient using `subject_id`
 
@@ -131,6 +131,7 @@ Where multiple source tables map to a target table, **`omopetl` follows a "link 
     linked_table: visits
     link_column: subject_id
     source_column: visit_start_time
+    delimiter: "\t"
     aggregation:
       method: first
     order_by:
