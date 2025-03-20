@@ -211,6 +211,11 @@ class Transformer:
         if not link_column:
             raise KeyError("'link_column' is required for a 'link' transformation.")
 
+        if 'link_alias' in transformation:
+            link_alias = transformation["link_alias"]
+        else:
+            link_alias = link_column
+
         source_column = transformation["source_column"]
 
         # Optional ordering for aggregation
@@ -264,7 +269,7 @@ class Transformer:
         self.data = self.data.merge(
             aggregated_data,
             how="left",
-            left_on=link_column,
+            left_on=link_alias,
             right_on=link_column,
             suffixes=("", "")
         )
