@@ -1,0 +1,108 @@
+staging_person_lookup:
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    person_id:
+      type: String
+
+tmp_subject_race:
+  table_name: tmp_subject_race
+  columns:
+    subject_id:
+      type: Integer
+      primary_key: true
+    race:
+      type: String
+    race_concept_id:
+      type: Integer
+
+person:
+  columns:
+    person_id:
+      type: String
+      primary_key: true
+    gender_concept_id:
+      type: Integer
+    year_of_birth:
+      type: Integer
+    month_of_birth:
+      type: Integer
+    day_of_birth:
+      type: Integer
+    birth_datetime:
+      type: DateTime
+    race_concept_id:
+      type: Integer
+    ethnicity_concept_id:
+      type: Integer
+    location_id:
+      type: Integer
+    provider_id:
+      type: Integer
+    care_site_id:
+      type: Integer
+    person_source_value:
+      type: String
+    gender_source_value:
+      type: String
+    gender_source_concept_id:
+      type: Integer
+    race_source_value:
+      type: String
+    race_source_concept_id:
+      type: Integer
+    ethnicity_source_value:
+      type: String
+    ethnicity_source_concept_id:
+      type: Integer
+
+visit_occurrence:
+  columns:
+    visit_occurrence_id:
+      type: Integer
+    person_id:
+      type: Integer
+    visit_concept_id:
+      type: Integer
+    visit_start_date:
+      type: Date
+    visit_start_datetime:
+      type: DateTime
+    visit_end_date:
+      type: Date
+    visit_end_datetime:
+      type: DateTime
+    visit_type_concept_id:
+      type: Integer
+    provider_id:
+      type: Integer
+    care_site_id:
+      type: Integer
+    visit_source_value:
+      type: String
+    visit_source_concept_id:
+      type: Integer
+    admitted_from_concept_id:
+      type: Integer
+    admitted_from_source_value:
+      type: String
+    discharged_to_concept_id:
+      type: Integer
+    discharged_to_source_value:
+      type: String
+    preceding_visit_occurrence_id:
+      type: Integer
+
+observation_period:
+  columns:
+    observation_period_id:
+      type: Integer
+    person_id:
+      type: Integer
+    observation_period_start_date:
+      type: Date
+    observation_period_end_date:
+      type: Date
+    period_type_concept_id:
+      type: Date

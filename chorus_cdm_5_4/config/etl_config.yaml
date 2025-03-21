@@ -1,0 +1,15 @@
+etl:
+  source:
+    type: csv
+    directory: ./data/source
+    schema_file: ./config/source_schema.yaml
+
+  target:
+    type: csv
+    directory: ./data/target
+    schema_file: ./config/target_schema.yaml
+
+  mappings:
+    - staging_person_lookup
+    - tmp_subject_race
+    - person_mapping

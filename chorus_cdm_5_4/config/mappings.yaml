@@ -1,0 +1,227 @@
+staging_person_lookup:
+  source_table: patients
+  target_table: staging_person_lookup
+  sequence:
+    - add_column: person_id
+      transformation:
+        type: copy
+        source_column: subject_id
+#        type: generate_id
+#        method: incremental
+#        method: hash
+#        source_column: subject_id
+    - add_column: subject_id
+      transformation:
+        type: copy
+        source_column: subject_id
+
+tmp_subject_race:
+  source_table: admissions
+  target_table: tmp_subject_race
+  sequence:
+    - add_column: subject_id
+      transformation:
+        type: copy
+        source_column: subject_id
+    - add_column: race
+      transformation:
+        type: aggregate
+        source_columns:
+          - subject_id
+          - admittime
+          - race
+        group_by:
+          - subject_id
+        order_by: admittime
+        aggregation: first
+    - add_column: source_race_concept_id
+      transformation:
+       - type: link
+         linked_table: CONCEPT
+         link_column: concept_name
+         link_alias: race
+         source_column: concept_id # , domain_id
+         delimiter: "\t"
+#       - type: filter
+#         source_column: concept_id
+#         condition: "domain_id = 'Race' or 'Ethnicity'"
+# NOTE: should only map to Ethnicity if not found in Race first
+    - add_column: race_concept_id
+      transformation:
+#		○ concept_relationship
+#			§ 1st step: filter to maps_to and only take concept_id_2 (exactMatch's)
+#			§ 2nd step: map to anything that subsumes
+#           § 3rd step: concatenate
+
+#tmp_care_site:
+#  source_table: transfers
+#  target_table: tmp_care_site
+#  sequence:
+#    - add_column: care_site_id
+#      transformation:
+#        type: generate_id
+#        method: incremental
+
+person_mapping:
+  source_table: patients
+  target_table: person
+  sequence:
+    - add_column: person_id
+      transformation:
+        type: link
+        linked_table: staging_person_lookup
+        link_column: subject_id
+        link_alias: subject_id
+        source_column: person_id
+    - add_column: gender_concept_id
+      transformation:
+        type: conditional_map
+        source_column: gender
+        conditions:
+          - condition: "gender == 'F'"
+            value: 8532  # FEMALE
+          - condition: "gender == 'M'"
+            value: 8507  # MALE
+        default: 0
+    - add_column: year_of_birth
+      transformation:
+        type: derive
+        source_columns:
+          - anchor_year
+          - anchor_age
+        formula: "anchor_year - anchor_age"
+    - add_column: month_of_birth
+      transformation:
+        type: default
+        value: null
+    - add_column: day_of_birth
+      transformation:
+        type: default
+        value: null
+    - add_column: birth_datetime
+      transformation:
+        type: default
+        value: null
+    - add_column: race_concept_id
+      transformation:
+        type: default
+        value: 0
+#        - type: link
+#          linked_table: tmp_subject_race
+#          link_column: subject_id
+#          source_column: race_concept_id
+    - add_column: race_source_value
+      transformation:
+        type: default
+        value: null
+#        - type: link
+#          linked_table: tmp_subject_race
+#          link_column: subject_id
+#          source_column: race
+    - add_column: ethnicity_concept_id
+      transformation:
+        type: default
+        value: 0
+#        type: conditional_map
+#        source_column: race_source_value
+#        conditions:
+#          - condition: "race_source_value == '%HISPANIC/LATINO%'"
+#            value: 38003563
+#          - condition: "race_source_value == '%HISPANIC OR LATINO%'"
+#            value: 38003563
+#          - condition: "race_source_value != '%HISPANIC/LATINO%'"
+#            value: 38003564
+    - add_column: location_id
+      transformation:
+        type: default
+        value: null
+    - add_column: provider_id
+      transformation:
+        type: default
+        value: null
+    - add_column: care_site_id
+      transformation:
+        type: default
+        value: null
+    - add_column: person_source_value
+      transformation:
+        type: copy
+        source_column: subject_id
+    - add_column: gender_source_value
+      transformation:
+        type: copy
+        source_column: gender
+    - add_column: gender_source_concept_id
+      transformation:
+        type: default
+        value: null
+    - add_column: race_source_concept_id
+      transformation:
+        type: default
+        value: 0
+#        - type: link
+#          linked_table: tmp_subject_race
+#          link_column: subject_id
+#          source_column: source_race_concept_id
+    - add_column: ethnicity_source_value
+      transformation:
+        type: default
+        value: null
+    - add_column: ethnicity_source_concept_id
+      transformation:
+        type: default
+        value: 0
+    - add_column: ethnicity_concept_id
+      transformation:
+        type: default
+        value: null
+
+#visit_occurrence_mapping:
+#  source_table: admissions
+#  target_table: visit_occurrence
+#    - add_column: visit_occurrence_id
+#      transformation:
+#          type: generate_id
+#          method: incremental
+#    - add_column: person_id
+#      transformation:
+#        type: copy
+#        source_column: subject_id
+#    - add_column: visit_concept_id
+#      transformation:
+#        type: default
+#        value: 0
+##        type: link
+##        linked_table: gcpt_vis_admission
+##        link_column: admission_type and concept_code
+##        source_column: target_concept_id
+##        NOTE NEED TO BE ABLE TO APPEND FROM TABLES WITH no hadm_id (labevents, microbiologyevents)
+##        All of the tables with no hadm_id get an admission_type of 'AMBULATORY OBSERVATION'
+#    - add_column: visit_start_date
+#      # NOTE: to get the start date you look across admissions (limited by dischtime but not admittime), transfers, labevents, microbiologyevents
+#      transformation:
+#        type: default
+#        value: '1111-01-01'
+#    - add_column: visit_start_datetime
+#      # NOTE: to get the start date you look across admissions (limited by dischtime but not admittime), transfers, labevents, microbiologyevents
+#      transformation:
+#        type: default
+#        value: '1111-01-01 10:59:59'
+#    - add_column: visit_end_date
+#      # NOTE: to get the start date you look across admissions (limited by dischtime but not admittime), transfers, labevents, microbiologyevents
+#      transformation:
+#        type: default
+#        value: '1111-01-01'
+#    - add_column: visit_end_datetime
+#      # NOTE: to get the start date you look across admissions (limited by dischtime but not admittime), transfers, labevents, microbiologyevents
+#      transformation:
+#        type: default
+#        value: '1111-01-01 23:59:59'
+#    - add_column: visit_type_concept_id
+#      transformation:
+#        type: default
+#        value: 32817
+#    - add_column: provider_id
+#      transformation:
+#        type: default
+#        value: 0

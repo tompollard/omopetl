@@ -1,0 +1,24 @@
+#validation:
+#  person:
+#    - column: person_id
+#      rule: not_null
+#    - column: gender_concept_id
+#      rule: not_null
+#    - column: year_of_birth
+#      rule: not_null
+#    - column: race_concept_id
+#      rule: not_null
+#    - column: ethnicity_concept_id
+#      rule: not_null
+#
+#  observation_period:
+#    - column: observation_period_id
+#      rule: not_null
+#    - column: person_id
+#      rule: not_null
+#    - column: observation_period_start_date
+#      rule: not_null
+#    - column: observation_period_end_date
+#      rule: not_null
+#    - column: period_type_concept_id
+#      rule: not_null
